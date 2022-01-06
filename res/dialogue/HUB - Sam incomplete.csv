@@ -1,0 +1,23 @@
+TYPE,DATA
+LEFT,IAN_IDLE
+RIGHT,SAM_IDLE
+MESSAGE,"How has the quest for my stomach gone?
+
+I hope not all is terribly wrong!"
+LEFT,IAN_ANGRY
+MESSAGE,"I don't even know where we are!"
+LEFT,IAN_THINKING
+MESSAGE,"Where would I find food?"
+RIGHT,SAM_IDLE
+MESSAGE,"I'll tell you with a beat,
+
+Right across this street, you'll find the Kitchen
+Now whip up something good to eat!"
+SNIPPET,Audio.playVoice("ian what")
+LEFT,IAN_THINKING
+MESSAGE,"What?"
+RIGHT,SAM_IDLE
+MESSAGE,"Make me something healthy to please my palate.
+
+The 1950s wealthy jelly; the perfect salad."
+SNIPPET,Audio.playBGM("warmup by brutalmoose")

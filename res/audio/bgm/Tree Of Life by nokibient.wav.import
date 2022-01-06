@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Tree Of Life by nokibient.wav-c3aa976c3ea376c9f3a64165b1a66842.sample"
+
+[deps]
+
+source_file="res://res/audio/bgm/Tree Of Life by nokibient.wav"
+dest_files=[ "res://.import/Tree Of Life by nokibient.wav-c3aa976c3ea376c9f3a64165b1a66842.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

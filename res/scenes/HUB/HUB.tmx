@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.3.3" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="100" height="100" tilewidth="6" tileheight="6" infinite="0" nextlayerid="24" nextobjectid="101">
+ <imagelayer id="14" name="background" visible="0" offsetx="-642.667" offsety="-214.667">
+  <image source="background.png" width="1920" height="1080"/>
+  <properties>
+   <property name="depth" type="float" value="100"/>
+  </properties>
+ </imagelayer>
+ <imagelayer id="21" name="far background" offsetx="-570" offsety="-186">
+  <image source="far background.png" width="1920" height="1080"/>
+  <properties>
+   <property name="depth" type="float" value="50"/>
+  </properties>
+ </imagelayer>
+ <imagelayer id="20" name="background" offsetx="-570" offsety="-186">
+  <image source="background.png" width="1920" height="1080"/>
+  <properties>
+   <property name="depth" type="float" value="25"/>
+  </properties>
+ </imagelayer>
+ <imagelayer id="19" name="ground" offsetx="-570" offsety="-186">
+  <image source="ground.png" width="1920" height="1080"/>
+  <properties>
+   <property name="depth" type="float" value="1"/>
+  </properties>
+ </imagelayer>
+ <objectgroup color="#ffff00" id="15" name="hotspot">
+  <object id="76" name="OST" type="hotspot" x="0" y="0" width="6" height="6">
+   <properties>
+    <property name="auto_exec" type="bool" value="true"/>
+    <property name="snippet" value="Audio.playBGM(&quot;warmup by brutalmoose&quot;)"/>
+   </properties>
+  </object>
+  <object id="80" name="Look Up" type="hotspot" x="23.0652" y="198.753" width="98.7273" height="68.1818">
+   <properties>
+    <property name="snippet" value="Animation.load(&quot;res/imv/HUB - Look Up.imv&quot;)"/>
+    <property name="wireless" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="81" name="Arcade Entrance" type="hotspot" x="341.511" y="295.034" width="16.3031" height="30.1818">
+   <properties>
+    <property name="snippet" value="Scene.load(&quot;res/scenes/arcade.tmx&quot;)"/>
+    <property name="wireless" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="84" name="Hallway Entrance" type="hotspot" x="57.9356" y="281.436" width="32.4395" height="43.5341">
+   <properties>
+    <property name="snippet" value="Scene.load(&quot;res/scenes/Infinihallway/Infinihallway.tmx&quot;)"/>
+    <property name="wireless" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="93" name="Shut Door" type="hotspot" x="609.973" y="278.284" width="17.1781" height="46.5568">
+   <properties>
+    <property name="snippet" value="Dialogue.load(&quot;res/dialogue/HUB - Shut Door.csv&quot;)"/>
+   </properties>
+  </object>
+  <object id="94" name="Panel" type="hotspot" x="601.973" y="307.96" width="7.03782" height="16.9429">
+   <properties>
+    <property name="script" value="res/scripts/HUB - Panel.wren"/>
+   </properties>
+  </object>
+  <object id="95" name="Sam Dialogue" type="hotspot" x="462.182" y="298.636" width="16.246" height="27.4545">
+   <properties>
+    <property name="script" value="res/scripts/HUB - Sam.wren"/>
+    <property name="wireless" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="96" name="Stairs Entrance" type="hotspot" x="217.286" y="292.034" width="16.3031" height="30.1818">
+   <properties>
+    <property name="snippet" value="Scene.load(&quot;res/scenes/Kitchen/Kitchen.tmx&quot;)"/>
+    <property name="wireless" type="bool" value="false"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#ff0000" id="18" name="floor">
+  <object id="79" type="floor" x="-18.9778" y="325.044">
+   <polyline points="0,0 637.891,-0.0444444"/>
+  </object>
+ </objectgroup>
+ <objectgroup color="#ff00ff" id="23" name="items"/>
+ <objectgroup color="#0055ff" id="17" name="props">
+  <object id="85" name="Sam" type="prop" x="462.356" y="298.833" width="16" height="27">
+   <properties>
+    <property name="depth" type="float" value="-3"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#00ff00" id="16" name="trigger">
+  <object id="100" name="SPLURP" type="trigger" x="292.461" y="322.056" width="5" height="3">
+   <properties>
+    <property name="depth" type="float" value="1"/>
+    <property name="exec_on_enter" type="bool" value="true"/>
+    <property name="exec_on_exit" type="bool" value="false"/>
+    <property name="snippet" value="Audio.playSFX(&quot;splurp&quot;)"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#ff00ff" id="13" name="spawn">
+  <object id="34" name="DEFAULT" type="player_start" x="224.75" y="324.75">
+   <properties>
+    <property name="face_left" type="bool" value="false"/>
+    <property name="fade_speed" type="float" value="1.234"/>
+    <property name="fadein_on_start" type="bool" value="true"/>
+    <property name="previous_scene_that_activates" value=""/>
+   </properties>
+   <point/>
+  </object>
+  <object id="82" name="Arcade Start" type="player_start" x="349.182" y="324.818">
+   <properties>
+    <property name="face_left" type="bool" value="true"/>
+    <property name="fade_speed" type="float" value="1.234"/>
+    <property name="fadein_on_start" type="bool" value="true"/>
+    <property name="previous_scene_that_activates" value="res/scenes/arcade.tmx"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="97" name="Infinihallway Start" type="player_start" x="73.0909" y="324.818">
+   <properties>
+    <property name="face_left" type="bool" value="true"/>
+    <property name="fade_speed" type="float" value="1.234"/>
+    <property name="fadein_on_start" type="bool" value="true"/>
+    <property name="previous_scene_that_activates" value="res/scenes/Infinihallway/Infinihallway.tmx"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="98" name="Room 100 Start" type="player_start" x="73.125" y="324.5">
+   <properties>
+    <property name="face_left" type="bool" value="false"/>
+    <property name="fade_speed" type="float" value="1.234"/>
+    <property name="fadein_on_start" type="bool" value="true"/>
+    <property name="previous_scene_that_activates" value="res/scenes/Infinihallway/Door 100/Door 100.tmx"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
+</map>

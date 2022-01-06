@@ -1,0 +1,22 @@
+[remap]
+
+importer="vnen.tiled_importer"
+type="PackedScene"
+path="res://.import/Door 100.tmx-bb886bacface7b0831120f1558de8310.scn"
+
+[deps]
+
+source_file="res://res/scenes/Infinihallway/Door 100/Door 100.tmx"
+dest_files=[ "res://.import/Door 100.tmx-bb886bacface7b0831120f1558de8310.scn" ]
+
+[params]
+
+custom_properties=true
+tile_metadata=false
+uv_clip=true
+image_flags=7
+collision_layer=1
+embed_internal_images=false
+save_tiled_properties=false
+add_background=true
+post_import_script=""

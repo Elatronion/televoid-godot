@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.tootl_csv_dialogue_importer"
+type="Resource"
+path="res://.import/Arcade - Oo.csv-04596ccd888f1a603d14fef09803f430.tres"
+
+[deps]
+
+source_file="res://res/dialogue/Arcade - Oo.csv"
+dest_files=[ "res://.import/Arcade - Oo.csv-04596ccd888f1a603d14fef09803f430.tres" ]
+
+[params]
+

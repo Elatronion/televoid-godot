@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.tootl_csv_dialogue_importer"
+type="Resource"
+path="res://.import/test.csv-4b655973d4b8c57e660eac4b6eeea838.tres"
+
+[deps]
+
+source_file="res://res/dialogue/test.csv"
+dest_files=[ "res://.import/test.csv-4b655973d4b8c57e660eac4b6eeea838.tres" ]
+
+[params]
+

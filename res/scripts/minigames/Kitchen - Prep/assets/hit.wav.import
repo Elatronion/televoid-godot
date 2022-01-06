@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/hit.wav-2c8a2a6c8cd57c4fb7d9b0a23b3929ba.sample"
+
+[deps]
+
+source_file="res://res/scripts/minigames/Kitchen - Prep/assets/hit.wav"
+dest_files=[ "res://.import/hit.wav-2c8a2a6c8cd57c4fb7d9b0a23b3929ba.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

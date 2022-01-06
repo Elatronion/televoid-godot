@@ -1,0 +1,22 @@
+[remap]
+
+importer="vnen.tiled_importer"
+type="PackedScene"
+path="res://.import/Stairs.tmx-605e5d317f14527d9faa8659e571d676.scn"
+
+[deps]
+
+source_file="res://res/scenes/Stairs/Stairs.tmx"
+dest_files=[ "res://.import/Stairs.tmx-605e5d317f14527d9faa8659e571d676.scn" ]
+
+[params]
+
+custom_properties=true
+tile_metadata=false
+uv_clip=true
+image_flags=7
+collision_layer=1
+embed_internal_images=false
+save_tiled_properties=false
+add_background=true
+post_import_script=""

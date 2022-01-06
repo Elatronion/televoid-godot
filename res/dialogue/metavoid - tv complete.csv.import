@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.tootl_csv_dialogue_importer"
+type="Resource"
+path="res://.import/metavoid - tv complete.csv-d407699b5c215311b808b9b6fc0c3636.tres"
+
+[deps]
+
+source_file="res://res/dialogue/metavoid - tv complete.csv"
+dest_files=[ "res://.import/metavoid - tv complete.csv-d407699b5c215311b808b9b6fc0c3636.tres" ]
+
+[params]
+

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ground hit.wav-082a045fd655b7dc1f6d484a9d25e042.sample"
+
+[deps]
+
+source_file="res://res/audio/sfx/ground hit.wav"
+dest_files=[ "res://.import/ground hit.wav-082a045fd655b7dc1f6d484a9d25e042.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

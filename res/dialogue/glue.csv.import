@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.tootl_csv_dialogue_importer"
+type="Resource"
+path="res://.import/glue.csv-07c41e9904feb3e8caf33f97348c8c62.tres"
+
+[deps]
+
+source_file="res://res/dialogue/glue.csv"
+dest_files=[ "res://.import/glue.csv-07c41e9904feb3e8caf33f97348c8c62.tres" ]
+
+[params]
+

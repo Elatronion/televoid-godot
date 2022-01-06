@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.tootl_csv_dialogue_importer"
+type="Resource"
+path="res://.import/End - fake exit.csv-d2d0324be9c2d4b42db2f693800cd153.tres"
+
+[deps]
+
+source_file="res://res/dialogue/End - fake exit.csv"
+dest_files=[ "res://.import/End - fake exit.csv-d2d0324be9c2d4b42db2f693800cd153.tres" ]
+
+[params]
+

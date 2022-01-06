@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://res/imv/intro.imv" type="PackedScene" id=1]
+[ext_resource path="res://scenes/prefabs/Jukebox/Jukebox.tscn" type="PackedScene" id=2]
+
+[node name="GeneratedIMVScene" type="Node2D"]
+
+[node name="Jukebox" parent="." instance=ExtResource( 2 )]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="IntroIMV" parent="." instance=ExtResource( 1 )]

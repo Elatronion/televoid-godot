@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.tootl_csv_dialogue_importer"
+type="Resource"
+path="res://.import/HUB - Shut Door.csv-0f5528102a2a63761a88c422726a7e3d.tres"
+
+[deps]
+
+source_file="res://res/dialogue/HUB - Shut Door.csv"
+dest_files=[ "res://.import/HUB - Shut Door.csv-0f5528102a2a63761a88c422726a7e3d.tres" ]
+
+[params]
+

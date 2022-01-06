@@ -1,0 +1,12 @@
+TYPE,DATA
+RIGHT,NULL
+LEFT,IAN_THINKING
+MESSAGE,"This seems to be some kind of panel...
+Probably to open that door.
+There's symbols on the panel.
+Maybe they mean something?"
+LEFT,IAN_IDLE
+MESSAGE,"A VHS, a helmet, and a... moose?"
+LEFT,IAN_THINKING
+MESSAGE,"Hm, I do see a slot a VHS could slip into.
+Maybe it's some kind of weird keycard-like system."

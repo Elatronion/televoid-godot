@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/hit.wav-ee23b508ccb92f187b0ad3e7fd533cf0.sample"
+
+[deps]
+
+source_file="res://res/scripts/minigames/breakout_assets/hit.wav"
+dest_files=[ "res://.import/hit.wav-ee23b508ccb92f187b0ad3e7fd533cf0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

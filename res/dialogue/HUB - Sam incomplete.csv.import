@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.tootl_csv_dialogue_importer"
+type="Resource"
+path="res://.import/HUB - Sam incomplete.csv-a55a90818621d67bc2469463d724ea2c.tres"
+
+[deps]
+
+source_file="res://res/dialogue/HUB - Sam incomplete.csv"
+dest_files=[ "res://.import/HUB - Sam incomplete.csv-a55a90818621d67bc2469463d724ea2c.tres" ]
+
+[params]
+

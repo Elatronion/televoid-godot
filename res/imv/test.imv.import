@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.imv_importer"
+type="Animation"
+path="res://.import/test.imv-2ea9741691d9f8780e761cc3123f8394.tres"
+
+[deps]
+
+source_file="res://res/imv/test.imv"
+dest_files=[ "res://.import/test.imv-2ea9741691d9f8780e761cc3123f8394.tres" ]
+
+[params]
+

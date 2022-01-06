@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.tootl_csv_dialogue_importer"
+type="Resource"
+path="res://.import/stairs sign.csv-f280d34dbe06124fc9ab235d8a1fdbe8.tres"
+
+[deps]
+
+source_file="res://res/dialogue/stairs sign.csv"
+dest_files=[ "res://.import/stairs sign.csv-f280d34dbe06124fc9ab235d8a1fdbe8.tres" ]
+
+[params]
+

@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.tootl_csv_dialogue_importer"
+type="Resource"
+path="res://.import/HUB - Sam complete.csv-a7b663fe5d329ba30b550fb707631406.tres"
+
+[deps]
+
+source_file="res://res/dialogue/HUB - Sam complete.csv"
+dest_files=[ "res://.import/HUB - Sam complete.csv-a7b663fe5d329ba30b550fb707631406.tres" ]
+
+[params]
+

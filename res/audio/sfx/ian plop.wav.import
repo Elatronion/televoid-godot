@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ian plop.wav-081c2fa03790406d4b7cbf4fbba507cd.sample"
+
+[deps]
+
+source_file="res://res/audio/sfx/ian plop.wav"
+dest_files=[ "res://.import/ian plop.wav-081c2fa03790406d4b7cbf4fbba507cd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

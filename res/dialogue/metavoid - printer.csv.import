@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.tootl_csv_dialogue_importer"
+type="Resource"
+path="res://.import/metavoid - printer.csv-65f1619d93bf98801b4e5cc568792271.tres"
+
+[deps]
+
+source_file="res://res/dialogue/metavoid - printer.csv"
+dest_files=[ "res://.import/metavoid - printer.csv-65f1619d93bf98801b4e5cc568792271.tres" ]
+
+[params]
+

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/crowd ooh.wav-5ce471c51dc7a1937038d53035386cfd.sample"
+
+[deps]
+
+source_file="res://res/audio/sfx/crowd ooh.wav"
+dest_files=[ "res://.import/crowd ooh.wav-5ce471c51dc7a1937038d53035386cfd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

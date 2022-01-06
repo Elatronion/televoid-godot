@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/maze by brutalmoose.wav-9277214751060f2e9c7ee4d4b7585d94.sample"
+
+[deps]
+
+source_file="res://res/audio/bgm/maze by brutalmoose.wav"
+dest_files=[ "res://.import/maze by brutalmoose.wav-9277214751060f2e9c7ee4d4b7585d94.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

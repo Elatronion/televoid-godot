@@ -1,0 +1,12 @@
+TYPE,DATA
+RIGHT,NULL
+LEFT,IAN_HAPPY
+SNIPPET,Audio.playSFX("microwave start")
+MESSAGE,"And when you heat your meal...
+...It's like your own private little show."
+MESSAGE,"A show that's..."
+MESSAGE,"...just..."
+MESSAGE,"...for..."
+MESSAGE,"...you."
+SNIPPET,Audio.playSFX("microwave end")
+MESSAGE,"Huh?- Oh, it's done."

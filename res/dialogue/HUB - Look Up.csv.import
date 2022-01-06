@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.tootl_csv_dialogue_importer"
+type="Resource"
+path="res://.import/HUB - Look Up.csv-9e4aacc0df3c6d926200f345aaaea69f.tres"
+
+[deps]
+
+source_file="res://res/dialogue/HUB - Look Up.csv"
+dest_files=[ "res://.import/HUB - Look Up.csv-9e4aacc0df3c6d926200f345aaaea69f.tres" ]
+
+[params]
+

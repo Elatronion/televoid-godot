@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ian no5.wav-569c0e0137a7473a4876bfe21d8b7eb2.sample"
+
+[deps]
+
+source_file="res://res/audio/sfx/ian no5.wav"
+dest_files=[ "res://.import/ian no5.wav-569c0e0137a7473a4876bfe21d8b7eb2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

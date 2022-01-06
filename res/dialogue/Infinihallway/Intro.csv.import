@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.tootl_csv_dialogue_importer"
+type="Resource"
+path="res://.import/Intro.csv-946352f9d8e93f35742929ec8a00bcfb.tres"
+
+[deps]
+
+source_file="res://res/dialogue/Infinihallway/Intro.csv"
+dest_files=[ "res://.import/Intro.csv-946352f9d8e93f35742929ec8a00bcfb.tres" ]
+
+[params]
+

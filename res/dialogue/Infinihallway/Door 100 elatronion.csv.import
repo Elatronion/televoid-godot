@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.tootl_csv_dialogue_importer"
+type="Resource"
+path="res://.import/Door 100 elatronion.csv-bbd5c41a67951302b642ff4207e2dfe4.tres"
+
+[deps]
+
+source_file="res://res/dialogue/Infinihallway/Door 100 elatronion.csv"
+dest_files=[ "res://.import/Door 100 elatronion.csv-bbd5c41a67951302b642ff4207e2dfe4.tres" ]
+
+[params]
+

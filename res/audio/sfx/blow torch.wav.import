@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/blow torch.wav-30713d85a281d90470c2f38485c72369.sample"
+
+[deps]
+
+source_file="res://res/audio/sfx/blow torch.wav"
+dest_files=[ "res://.import/blow torch.wav-30713d85a281d90470c2f38485c72369.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

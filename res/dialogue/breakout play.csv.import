@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.tootl_csv_dialogue_importer"
+type="Resource"
+path="res://.import/breakout play.csv-0880d598e7ae5567ccf0224469db9c71.tres"
+
+[deps]
+
+source_file="res://res/dialogue/breakout play.csv"
+dest_files=[ "res://.import/breakout play.csv-0880d598e7ae5567ccf0224469db9c71.tres" ]
+
+[params]
+

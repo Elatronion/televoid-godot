@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.tootl_csv_dialogue_importer"
+type="Resource"
+path="res://.import/HUB - Sam cooked tv dinner.csv-8bea6082a314d331902a837cfa7996b2.tres"
+
+[deps]
+
+source_file="res://res/dialogue/HUB - Sam cooked tv dinner.csv"
+dest_files=[ "res://.import/HUB - Sam cooked tv dinner.csv-8bea6082a314d331902a837cfa7996b2.tres" ]
+
+[params]
+

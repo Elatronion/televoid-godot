@@ -1,0 +1,29 @@
+TYPE,DATA
+RIGHT,ARCADE_DUDE_IDLE
+LEFT,IAN_IDLE
+MESSAGE,"Here you go."
+RIGHT,ARCADE_DUDE_IDLE
+MESSAGE,"CONGRATULATIONS!!!"
+MESSAGE,"That is super impressive!!
+You must be some kind of retro arcade king."
+LEFT,IAN_IDLE
+MESSAGE,"Ummm... No, but thanks."
+RIGHT,ARCADE_DUDE_IDLE
+MESSAGE,"As a reward, here's your gift!
+A stuffed toy moose!"
+LEFT,IAN_HAPPY
+MESSAGE,"Thanks, it was sort of nostalgic
+playing all these old games.
+You know, I can't put my finger on it...
+But, even you seem somewhat familiar."
+RIGHT,ARCADE_DUDE_IDLE
+MESSAGE,"..."
+LEFT,IAN_IDLE
+SNIPPET,Audio.playSFX("ian seeya")
+MESSAGE,"...
+Well, see you around!"
+SNIPPET,Inventory.remove("breakout ticket")
+SNIPPET,Inventory.remove("wheely-fun ticket")
+SNIPPET,Inventory.remove("spacerocks ticket")
+SNIPPET,Inventory.remove("invaders ticket")
+SNIPPET,Inventory.add("brutal moose")

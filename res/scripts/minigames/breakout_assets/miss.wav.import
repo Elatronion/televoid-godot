@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/miss.wav-df059175856e7281dbd87b5daa5b4fdc.sample"
+
+[deps]
+
+source_file="res://res/scripts/minigames/breakout_assets/miss.wav"
+dest_files=[ "res://.import/miss.wav-df059175856e7281dbd87b5daa5b4fdc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

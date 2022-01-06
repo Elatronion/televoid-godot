@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/outervoid rise.wav-c91f87aa63a15d857749cd745668e878.sample"
+
+[deps]
+
+source_file="res://res/audio/sfx/outervoid rise.wav"
+dest_files=[ "res://.import/outervoid rise.wav-c91f87aa63a15d857749cd745668e878.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

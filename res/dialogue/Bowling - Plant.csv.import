@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.tootl_csv_dialogue_importer"
+type="Resource"
+path="res://.import/Bowling - Plant.csv-df7c6008ff311b745e05bc356311f054.tres"
+
+[deps]
+
+source_file="res://res/dialogue/Bowling - Plant.csv"
+dest_files=[ "res://.import/Bowling - Plant.csv-df7c6008ff311b745e05bc356311f054.tres" ]
+
+[params]
+

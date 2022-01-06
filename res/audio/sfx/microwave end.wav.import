@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/microwave end.wav-5a17b6a961f73d5d95a549c1ebc54551.sample"
+
+[deps]
+
+source_file="res://res/audio/sfx/microwave end.wav"
+dest_files=[ "res://.import/microwave end.wav-5a17b6a961f73d5d95a549c1ebc54551.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,14 @@
+[remap]
+
+importer="elatronion.imv_importer"
+type="PackedScene"
+path="res://.import/intro.imv-8db7922ba95a86c49c20aec02b1005c7.scn"
+
+[deps]
+
+source_file="res://res/imv/intro.imv"
+dest_files=[ "res://.import/intro.imv-8db7922ba95a86c49c20aec02b1005c7.scn" ]
+
+[params]
+
+y_is_down=true

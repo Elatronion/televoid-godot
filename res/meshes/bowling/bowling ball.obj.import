@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/bowling ball.obj-7227a2fe60d1f635ccaf142a5f2d5243.mesh"
+
+[deps]
+
+files=[ "res://.import/bowling ball.obj-7227a2fe60d1f635ccaf142a5f2d5243.mesh" ]
+
+source_file="res://res/meshes/bowling/bowling ball.obj"
+dest_files=[ "res://.import/bowling ball.obj-7227a2fe60d1f635ccaf142a5f2d5243.mesh", "res://.import/bowling ball.obj-7227a2fe60d1f635ccaf142a5f2d5243.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

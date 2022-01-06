@@ -1,0 +1,22 @@
+[remap]
+
+importer="vnen.tiled_importer"
+type="PackedScene"
+path="res://.import/minigame-test.tmx-74d74c759c536bb107ca83f00a9fbcd2.scn"
+
+[deps]
+
+source_file="res://res/scenes/minigame-test.tmx"
+dest_files=[ "res://.import/minigame-test.tmx-74d74c759c536bb107ca83f00a9fbcd2.scn" ]
+
+[params]
+
+custom_properties=true
+tile_metadata=false
+uv_clip=true
+image_flags=7
+collision_layer=1
+embed_internal_images=false
+save_tiled_properties=false
+add_background=true
+post_import_script=""

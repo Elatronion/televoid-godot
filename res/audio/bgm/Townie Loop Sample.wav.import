@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Townie Loop Sample.wav-e546a5c135a88bc206f6c546bde40a96.sample"
+
+[deps]
+
+source_file="res://res/audio/bgm/Townie Loop Sample.wav"
+dest_files=[ "res://.import/Townie Loop Sample.wav-e546a5c135a88bc206f6c546bde40a96.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

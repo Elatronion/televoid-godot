@@ -1,0 +1,14 @@
+[remap]
+
+importer="elatronion.imv_importer"
+type="PackedScene"
+path="res://.import/End - White.imv-ba26115f0e41a03edd5255d897bbe061.scn"
+
+[deps]
+
+source_file="res://res/imv/End - White.imv"
+dest_files=[ "res://.import/End - White.imv-ba26115f0e41a03edd5255d897bbe061.scn" ]
+
+[params]
+
+y_is_down=true

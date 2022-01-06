@@ -1,0 +1,22 @@
+[remap]
+
+importer="vnen.tiled_importer"
+type="PackedScene"
+path="res://.import/bowling.tmx-645af77a44e3961dbfdd07942ab3bb9b.scn"
+
+[deps]
+
+source_file="res://res/scenes/bowling.tmx"
+dest_files=[ "res://.import/bowling.tmx-645af77a44e3961dbfdd07942ab3bb9b.scn" ]
+
+[params]
+
+custom_properties=true
+tile_metadata=false
+uv_clip=true
+image_flags=7
+collision_layer=1
+embed_internal_images=false
+save_tiled_properties=false
+add_background=true
+post_import_script=""

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/big door open.wav-17e13b937e432989594f4f8c176c58f1.sample"
+
+[deps]
+
+source_file="res://res/audio/sfx/big door open.wav"
+dest_files=[ "res://.import/big door open.wav-17e13b937e432989594f4f8c176c58f1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

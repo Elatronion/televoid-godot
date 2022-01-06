@@ -1,0 +1,14 @@
+[remap]
+
+importer="elatronion.imv_importer"
+type="PackedScene"
+path="res://.import/credits.imv-518a0fbf0514d6d90856b17028955aa2.scn"
+
+[deps]
+
+source_file="res://res/imv/credits.imv"
+dest_files=[ "res://.import/credits.imv-518a0fbf0514d6d90856b17028955aa2.scn" ]
+
+[params]
+
+y_is_down=true

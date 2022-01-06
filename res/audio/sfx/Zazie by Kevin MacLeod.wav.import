@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Zazie by Kevin MacLeod.wav-8cf2c2b1b95441a5ac7a16713010cb34.sample"
+
+[deps]
+
+source_file="res://res/audio/sfx/Zazie by Kevin MacLeod.wav"
+dest_files=[ "res://.import/Zazie by Kevin MacLeod.wav-8cf2c2b1b95441a5ac7a16713010cb34.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

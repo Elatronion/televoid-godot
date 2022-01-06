@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.3.3" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="100" height="100" tilewidth="6" tileheight="6" infinite="0" nextlayerid="14" nextobjectid="37">
+ <objectgroup color="#ffff00" id="11" name="Hotspots">
+  <object id="25" name="OST" type="hotspot" x="0" y="594" width="6" height="6">
+   <properties>
+    <property name="auto_exec" type="bool" value="true"/>
+    <property name="snippet" value="Audio.playBGM(&quot;spaces by brutalmoose&quot;)"/>
+   </properties>
+  </object>
+  <object id="35" name="Intro Dialogue" type="hotspot" x="0" y="582" width="6" height="6">
+   <properties>
+    <property name="auto_exec" type="bool" value="true"/>
+    <property name="snippet" value="if (Inventory.has(&quot;flag intro&quot;)) {
+	Audio.playSFX(&quot;Resume&quot;)
+	Dialogue.load(&quot;res/dialogue/Infinihallway/Intro.csv&quot;)
+	Inventory.remove(&quot;flag intro&quot;)
+}"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#8000ff" id="12" name="Player Starting Positions">
+  <object id="30" name="Ian Spawn from Intro (door 6)" type="player_start" x="336" y="18">
+   <properties>
+    <property name="face_left" type="bool" value="false"/>
+    <property name="fade_speed" type="float" value="1.234"/>
+    <property name="fadein_on_start" type="bool" value="true"/>
+    <property name="previous_scene_that_activates" value="res/scenes/intro.tmx"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="31" name="Ian Spawn from Stairs" type="player_start" x="387" y="18">
+   <properties>
+    <property name="face_left" type="bool" value="false"/>
+    <property name="fade_speed" type="float" value="1.234"/>
+    <property name="fadein_on_start" type="bool" value="true"/>
+    <property name="previous_scene_that_activates" value="res/scenes/Stairs/Stairs.tmx"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="33" name="Ian Spawn from NULL (test)" type="player_start" x="387.03" y="17.9053">
+   <properties>
+    <property name="face_left" type="bool" value="false"/>
+    <property name="fade_speed" type="float" value="1.234"/>
+    <property name="fadein_on_start" type="bool" value="true"/>
+    <property name="previous_scene_that_activates" value=""/>
+   </properties>
+   <point/>
+  </object>
+  <object id="34" name="HUB Start" type="player_start" x="30" y="18">
+   <properties>
+    <property name="face_left" type="bool" value="false"/>
+    <property name="fade_speed" type="float" value="1.234"/>
+    <property name="fadein_on_start" type="bool" value="true"/>
+    <property name="previous_scene_that_activates" value="res/scenes/HUB/HUB.tmx"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="13" name="items"/>
+</map>

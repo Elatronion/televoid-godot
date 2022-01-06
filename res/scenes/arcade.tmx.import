@@ -1,0 +1,22 @@
+[remap]
+
+importer="vnen.tiled_importer"
+type="PackedScene"
+path="res://.import/arcade.tmx-f820be049a46202294e11600c440290f.scn"
+
+[deps]
+
+source_file="res://res/scenes/arcade.tmx"
+dest_files=[ "res://.import/arcade.tmx-f820be049a46202294e11600c440290f.scn" ]
+
+[params]
+
+custom_properties=true
+tile_metadata=true
+uv_clip=true
+image_flags=3
+collision_layer=1
+embed_internal_images=false
+save_tiled_properties=true
+add_background=true
+post_import_script=""

@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.tootl_csv_dialogue_importer"
+type="Resource"
+path="res://.import/Kitchen - Ingredients complete.csv-43f4ea9949281a1741310478d69965df.tres"
+
+[deps]
+
+source_file="res://res/dialogue/Kitchen - Ingredients complete.csv"
+dest_files=[ "res://.import/Kitchen - Ingredients complete.csv-43f4ea9949281a1741310478d69965df.tres" ]
+
+[params]
+

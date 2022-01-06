@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/devtalk bowling 27.wav-e1c7d093cbdf17413107f228ef72acaf.sample"
+
+[deps]
+
+source_file="res://res/audio/sfx/devtalk bowling 27.wav"
+dest_files=[ "res://.import/devtalk bowling 27.wav-e1c7d093cbdf17413107f228ef72acaf.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

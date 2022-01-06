@@ -1,0 +1,30 @@
+TYPE,DATA
+RIGHT,ARCADE_DUDE_IDLE
+LEFT,IAN_IDLE
+SNIPPET,Audio.playSFX("ian uh1")
+MESSAGE,"Uuuh.."
+RIGHT,ARCADE_DUDE_IDLE
+MESSAGE,"It seems like you haven't got enough tickets...
+Come see me once you have one ticket
+from each machine!
+You MUST play and win every game!"
+RIGHT,ARCADE_DUDE_IDLE
+MESSAGE,"Then, and only then, will you receive a gift!
+An AWESOME gift.
+A RAD GIFT!"
+SNIPPET,Audio.playSFX("ian no4")
+LEFT,IAN_IDLE
+MESSAGE,"No, wait. That's not how arcades work.
+You're telling me that these machines won't spit out 
+a varying amount of tickets based on my achievements 
+in the game, but instead only reward me once 
+for beating the game outright?"
+LEFT,IAN_ANGRY
+MESSAGE,"And that I MUST win at every single game in your
+arcade just to get ONE gift!?"
+RIGHT,ARCADE_DUDE_IDLE
+MESSAGE,"...
+We don't have many gifts...
+Plus, the games are free to play!"
+LEFT,IAN_IDLE
+MESSAGE,"Mmmkay..."

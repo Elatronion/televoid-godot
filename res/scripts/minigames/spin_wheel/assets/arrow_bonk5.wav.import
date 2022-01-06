@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/arrow_bonk5.wav-dc26290db014c9c688538123d025278c.sample"
+
+[deps]
+
+source_file="res://res/scripts/minigames/spin_wheel/assets/arrow_bonk5.wav"
+dest_files=[ "res://.import/arrow_bonk5.wav-dc26290db014c9c688538123d025278c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

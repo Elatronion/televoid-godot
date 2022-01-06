@@ -1,0 +1,14 @@
+[remap]
+
+importer="elatronion.imv_importer"
+type="PackedScene"
+path="res://.import/HUB - Look Up.imv-c322c2843f5c7425b6713f021c625861.scn"
+
+[deps]
+
+source_file="res://res/imv/HUB - Look Up.imv"
+dest_files=[ "res://.import/HUB - Look Up.imv-c322c2843f5c7425b6713f021c625861.scn" ]
+
+[params]
+
+y_is_down=true

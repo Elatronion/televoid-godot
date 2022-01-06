@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Moose by nokibient.wav-d21b4b7bcc94d7cdc0d315ee1c308513.sample"
+
+[deps]
+
+source_file="res://res/audio/bgm/Moose by nokibient.wav"
+dest_files=[ "res://.import/Moose by nokibient.wav-d21b4b7bcc94d7cdc0d315ee1c308513.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

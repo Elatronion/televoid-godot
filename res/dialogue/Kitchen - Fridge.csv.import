@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.tootl_csv_dialogue_importer"
+type="Resource"
+path="res://.import/Kitchen - Fridge.csv-af50d8f0299e53c797c57f47c128405d.tres"
+
+[deps]
+
+source_file="res://res/dialogue/Kitchen - Fridge.csv"
+dest_files=[ "res://.import/Kitchen - Fridge.csv-af50d8f0299e53c797c57f47c128405d.tres" ]
+
+[params]
+
