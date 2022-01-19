@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/prefabs/Dialogue/Dialogue.gd" type="Script" id=1]
+[ext_resource path="res://res/textures/dialogue/FRANK_IDLE.png" type="Texture" id=2]
+[ext_resource path="res://res/textures/dialogue/IAN_IDLE.png" type="Texture" id=3]
+
+[node name="Dialogue" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterLeft" type="TextureRect" parent="."]
+margin_left = -1.0
+margin_top = 251.0
+margin_right = 475.0
+margin_bottom = 720.0
+texture = ExtResource( 3 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterRight" type="TextureRect" parent="."]
+margin_left = 804.0
+margin_top = 240.0
+margin_right = 1280.0
+margin_bottom = 719.0
+texture = ExtResource( 2 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 173.0
+margin_top = -208.0
+margin_right = -173.0
+margin_bottom = -24.0
+color = Color( 0.529412, 0.156863, 0.784314, 0.686275 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 15
+custom_constants/margin_top = 15
+custom_constants/margin_left = 15
+custom_constants/margin_bottom = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer"]
+margin_left = 15.0
+margin_top = 76.0
+margin_right = 919.0
+margin_bottom = 107.0
+text = "This is a message
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}

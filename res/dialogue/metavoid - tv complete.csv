@@ -1,6 +1,6 @@
 TYPE,DATA
 LEFT,IAN_IDLE
-MESSAGE,"Guess I'll just... feed the TV a TV dinner
+MESSAGE,"Guess I'll just... feed the TV a TV dinner.
 Ha ha, so funny...
 Ha ha ha... ha..."
 SNIPPET,Audio.playVoice("unknown")
