@@ -7,7 +7,7 @@ var _current_event = -1
 var _left_character_sprite = null
 var _right_character_sprite = null
 
-onready var label = $ColorRect/MarginContainer/Label
+onready var label = $ColorRect/Label
 onready var texture_character_left = $CharacterLeft
 onready var texture_character_right = $CharacterRight
 

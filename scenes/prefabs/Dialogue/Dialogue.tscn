@@ -1,8 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/prefabs/Dialogue/Dialogue.gd" type="Script" id=1]
 [ext_resource path="res://res/textures/dialogue/FRANK_IDLE.png" type="Texture" id=2]
 [ext_resource path="res://res/textures/dialogue/IAN_IDLE.png" type="Texture" id=3]
+[ext_resource path="res://res/fonts/VCR OSD Mono.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 29
+font_data = ExtResource( 4 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
 
 [node name="Dialogue" type="Control"]
 anchor_right = 1.0
@@ -13,10 +21,13 @@ __meta__ = {
 }
 
 [node name="CharacterLeft" type="TextureRect" parent="."]
-margin_left = -1.0
-margin_top = 251.0
-margin_right = 475.0
-margin_bottom = 720.0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -640.0
+margin_top = -500.0
+margin_right = -140.0
 texture = ExtResource( 3 )
 stretch_mode = 6
 __meta__ = {
@@ -24,10 +35,14 @@ __meta__ = {
 }
 
 [node name="CharacterRight" type="TextureRect" parent="."]
-margin_left = 804.0
-margin_top = 240.0
-margin_right = 1280.0
-margin_bottom = 719.0
+anchor_left = 0.5
+anchor_top = 0.999
+anchor_right = 0.5
+anchor_bottom = 0.999
+margin_left = 140.0
+margin_top = -499.28
+margin_right = 640.0
+margin_bottom = 0.719971
 texture = ExtResource( 2 )
 stretch_mode = 6
 __meta__ = {
@@ -35,34 +50,29 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = 173.0
+margin_left = -467.0
 margin_top = -208.0
-margin_right = -173.0
+margin_right = 467.0
 margin_bottom = -24.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 color = Color( 0.529412, 0.156863, 0.784314, 0.686275 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+[node name="Label" type="Label" parent="ColorRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_constants/margin_right = 15
-custom_constants/margin_top = 15
-custom_constants/margin_left = 15
-custom_constants/margin_bottom = 15
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="ColorRect/MarginContainer"]
-margin_left = 15.0
-margin_top = 76.0
-margin_right = 919.0
-margin_bottom = 107.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+theme = SubResource( 2 )
 text = "This is a message
 "
 __meta__ = {
