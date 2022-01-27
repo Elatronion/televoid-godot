@@ -10,7 +10,7 @@ const default_zoom = 0.25
 const player_path = "/root/SceneManager/CurrentScene/SceneTMX/Player"
 const player_camera_path = "/root/SceneManager/CurrentScene/SceneTMX/Player/Camera2D"
 
-enum GameState {IMV, PLAY}
+enum GameState {IMV, DIALOGUE, PLAY}
 
 var game_state = GameState.PLAY
 
@@ -20,7 +20,8 @@ var items = [null, null, null, null, null, null, null, null, null, null]
 
 func _process(delta):
 	if Input.is_action_just_pressed("F1"):
-		PlayBGM("sad again by brutalmoose")
+		LoadDialogue("res/dialogue/Arcade - Giftshop complete.csv")
+		#PlayBGM("sad again by brutalmoose")
 	if Input.is_action_just_pressed("F2"):
 		LoadIMV("res://res/imv/HUB - Look Up.imv")
 	if Input.is_action_just_pressed("F3"):
@@ -52,6 +53,13 @@ func LoadIMV(imv_path):
 	var imv_resource = load(imv_path)
 	var imv_instance = imv_resource.instance()
 	self.add_child(imv_instance)
+
+func LoadDialogue(dialogue_path):
+	var dialogue = load("res://scenes/prefabs/Dialogue/Dialogue.tscn")
+	var dialogue_instance = dialogue.instance()
+	dialogue_instance.dialogue_path = "res://" + dialogue_path
+	self.add_child(dialogue_instance)
+	
 
 func PlayBGM(song_by_artist):
 	self.emit_signal("play_bgm", song_by_artist)
