@@ -12,15 +12,13 @@ font_data = ExtResource( 4 )
 [sub_resource type="Theme" id=2]
 default_font = SubResource( 1 )
 
-[node name="Dialogue" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="Dialogue" type="CanvasLayer"]
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="CharacterLeft" type="TextureRect" parent="."]
+[node name="CharacterLeftCanvas" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="CharacterLeft" type="TextureRect" parent="CharacterLeftCanvas"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -34,7 +32,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CharacterRight" type="TextureRect" parent="."]
+[node name="CharacterRightCanvas" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="CharacterRight" type="TextureRect" parent="CharacterRightCanvas"]
 anchor_left = 0.5
 anchor_top = 0.999
 anchor_right = 0.5
@@ -78,3 +79,11 @@ text = "This is a message
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
+[connection signal="mouse_entered" from="ColorRect" to="." method="_on_ColorRect_mouse_entered"]
+[connection signal="mouse_exited" from="ColorRect" to="." method="_on_ColorRect_mouse_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
