@@ -72,6 +72,9 @@ func _process(delta):
 	
 	_processFloor(delta)
 	
+	if GameManager.game_state != GameManager.GameState.PLAY:
+		return
+	
 	_processControls()
 	match current_state:
 		State.IDLE:
