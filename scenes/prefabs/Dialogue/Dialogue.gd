@@ -32,6 +32,17 @@ var _right_character_modulate_a = 1
 
 var _mouse_hover = false
 
+func end_dialogue():
+	GameManager.SetState(GameManager.GameState.PLAY)
+	timer.start()
+	label.visible = false
+	_is_finished = true
+	interpolate_speed = 5
+	_left_character_desired_y = _finish_y
+	_left_character_modulate_a = 0
+	_right_character_desired_y = _finish_y
+	_right_character_modulate_a = 0
+
 func _ready():
 	_proceed_dialogue()
 	GameManager.SetState(GameManager.GameState.DIALOGUE)
@@ -53,15 +64,7 @@ func _proceed_dialogue():
 	_current_event += 1
 	var number_of_dialogue_events = dialogue_resource.events.size()
 	if _current_event >= number_of_dialogue_events:
-		GameManager.SetState(GameManager.GameState.PLAY)
-		timer.start()
-		label.visible = false
-		_is_finished = true
-		interpolate_speed = 5
-		_left_character_desired_y = _finish_y
-		_left_character_modulate_a = 0
-		_right_character_desired_y = _finish_y
-		_right_character_modulate_a = 0
+		end_dialogue()
 	else:
 		_process_dialogue_event(dialogue_resource.events[_current_event])
 
