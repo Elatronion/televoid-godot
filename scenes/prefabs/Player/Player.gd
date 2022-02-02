@@ -61,6 +61,9 @@ func Interact(delta):
 func _ready():
 	$AnimatedSprite.flip_h = face_left_on_start
 	GameManager.connect("hotspot_interaction", self, "_on_Hotspot_interaction")
+	print(GameManager.current_scene)
+	if GameManager.current_scene == "res/scenes/Infinihallway/Infinihallway.tmx":
+		start_bpm_effect()
 
 func _process(delta):
 	if GameManager.game_state != GameManager.GameState.IMV:
@@ -136,3 +139,6 @@ func _on_Hotspot_interaction(hotspot):
 	current_hotspot = hotspot
 	destination = hotspot.global_position + Vector2(hotspot.width/2, hotspot.height/2)
 	SetState(State.WALKING)
+
+func start_bpm_effect():
+	$AnimatedSprite/Timer.start()
