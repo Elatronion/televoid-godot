@@ -2,31 +2,51 @@ extends Node2D
 
 const SECTION_WIDTH =  54
 const SECTION_HEIGHT = 58
+const RENDER_DISTANCE = 15
 
-const HOTSPOT_WIDTH =  15
-const HOTSPOT_HEIGHT = 29
+var hallway_scene = preload("res://scenes/levels/Infinihallway/HallwaySection.tscn")
 
-const RENDER_DISTANCE = 5
+var hallway_section = preload("res://res/textures/sprites/Outervoid/Hallway Section.png")
+var hallway_destroyed = preload("res://res/textures/sprites/Outervoid/Hallway - Destroyed.png")
 
-var hotspot = preload("res://scenes/prefabs/Hotspot/Hotspot.tscn")
-var hallway = preload("res://scenes/levels/Infinihallway/HallwaySection.tscn")
+var current_last = -2
+
+var doors_with_hotspot = {}
 
 func infinihallway_create_door_hotspot(index, script):
+	doors_with_hotspot[index] = script
+
+func script_at_index(index):
+	var script_for_door = "res/scripts/Infinihallway/Door Else.wren"
+	if index in doors_with_hotspot.keys():
+		script_for_door = doors_with_hotspot[index]
+	return script_for_door
+
+func add_hallway_section(index):
 	var hallway_scale = Vector2(SECTION_WIDTH, SECTION_HEIGHT)
 	var hallway_position = Vector2(hallway_scale.x / 2 + index * hallway_scale.x, -20)
-	var hotspot_scale = Vector2(HOTSPOT_WIDTH, HOTSPOT_HEIGHT)
-	var hotspot_position = Vector2(hallway_position.x + hotspot_scale.x / 2 - 25, hallway_position.y + hotspot_scale.y / 2 - 13)
 	
-	var hotspot_instance = hotspot.instance()
-	hotspot_instance.position = hotspot_position
-	hotspot_instance.scale = hotspot_scale
-	hotspot_instance.wren_script = script
-	self.add_child(hotspot_instance)
-	
-	var hallway_instance = hallway.instance()
-	hallway_instance.position = hallway_position
-	hallway_instance.z_index = -5
-	self.add_child(hallway_instance)
+	var sprite_instance = hallway_scene.instance()
+	sprite_instance.name = str(index)
+	sprite_instance.position = hallway_position
+	sprite_instance.z_index = -5
+	sprite_instance.texture = hallway_section
+	sprite_instance.get_node("Label").text = str(index)
+	sprite_instance.get_node("Hotspot").wren_script = script_at_index(index)
+	self.add_child(sprite_instance)
+	current_last = index
+
+func remove_hallway_section(index):
+	if index >= -1:
+		get_node(str(index)).queue_free()
+		var last_hallway_section = get_node(str(index+1))
+		last_hallway_section.texture = hallway_destroyed
+		for child in last_hallway_section.get_children():
+			child.queue_free()
+
+func step():
+	remove_hallway_section(current_last-RENDER_DISTANCE)
+	add_hallway_section(current_last+1)
 
 func _ready():
 	infinihallway_create_door_hotspot(1, "res/scripts/Infinihallway/Door 1-5.wren");
@@ -57,3 +77,25 @@ func _ready():
 	infinihallway_create_door_hotspot(90, "res/scripts/Infinihallway/Door 90.wren");
 	infinihallway_create_door_hotspot(99, "res/scripts/Infinihallway/Door 99.wren");
 	infinihallway_create_door_hotspot(100, "res/scripts/Infinihallway/Door 100.wren");
+	for i in range(current_last, RENDER_DISTANCE):
+		step()
+
+var _player = null
+func _find_player():
+	_player = get_node(GameManager.player_path)
+
+func _process(delta):
+	if _player == null:
+		_find_player()
+		return
+	
+	if _player.position.x > (current_last - RENDER_DISTANCE * 0.5) * SECTION_WIDTH:
+		step()
+	if _player.position.x < (current_last-RENDER_DISTANCE) * SECTION_WIDTH:
+		exit_infinihallway()
+
+var _load_left = false
+func exit_infinihallway():
+	if not _load_left:
+		_load_left = true
+		GameManager.LoadScene("res/scenes/HUB/HUB.tmx")
