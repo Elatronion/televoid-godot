@@ -20,7 +20,7 @@ func execute():
 	elif wren_snippet.length() != 0:
 		GameManager.ExecuteWrenSnippet(wren_snippet)
 	elif wren_script.length() != 0:
-		GameManager.ExecuteWrenScript(wren_snippet)
+		GameManager.ExecuteWrenScript(wren_script)
 	else:
 		print("Hotspot: Execution unkonwn!")
 
