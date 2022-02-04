@@ -28,6 +28,8 @@ func _process(delta):
 		LoadScene("res/scenes/HUB/HUB.tmx")
 	if Input.is_action_just_pressed("F4"):
 		LoadScene("res/scenes/arcade.tmx")
+	if Input.is_action_just_pressed("F5"):
+		LoadScene("res/scenes/Infinihallway/Infinihallway.tmx")
 
 func SetState(state):
 	game_state = state

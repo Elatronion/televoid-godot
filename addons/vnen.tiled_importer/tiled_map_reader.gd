@@ -188,6 +188,12 @@ func build(source_path, options):
 		parlayer.add_child(colorizer)
 		colorizer.owner = root
 
+	if source_path == "res://res/scenes/Infinihallway/Infinihallway.tmx":
+		var infinihallway = load("res://scenes/levels/Infinihallway/Infinihallway.tscn")
+		var infinihallway_instance = infinihallway.instance()
+		root.add_child(infinihallway_instance)
+		infinihallway_instance.set_owner(root)
+
 	return root
 
 # Creates a layer node from the data
