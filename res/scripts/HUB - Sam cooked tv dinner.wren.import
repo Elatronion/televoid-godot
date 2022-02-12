@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.wren_importer"
+type="Resource"
+path="res://.import/HUB - Sam cooked tv dinner.wren-a08da68276d7f7ffa5f523d28f5f8cad.tres"
+
+[deps]
+
+source_file="res://res/scripts/HUB - Sam cooked tv dinner.wren"
+dest_files=[ "res://.import/HUB - Sam cooked tv dinner.wren-a08da68276d7f7ffa5f523d28f5f8cad.tres" ]
+
+[params]
+

@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.wren_importer"
+type="Resource"
+path="res://.import/invaders.wren-7f818377b1c07997f3e19856e51cc6b3.tres"
+
+[deps]
+
+source_file="res://res/scripts/minigames/invaders/invaders.wren"
+dest_files=[ "res://.import/invaders.wren-7f818377b1c07997f3e19856e51cc6b3.tres" ]
+
+[params]
+

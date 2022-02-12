@@ -16,7 +16,17 @@ var game_state = GameState.PLAY
 
 var previous_scene = ""
 var current_scene = ""
-var items = [null, null, null, null, null, null, null, null, null, null]
+var items = ["blow torch", null, null, null, null, null, null, null, null, null]
+
+#onready var tootlwren = preload("res://gdnative/tootlwren.gdns").new()
+var tootlwren = null
+func _ready():
+	tootlwren = load("res://gdnative/tootlwren.gdns").new()
+	add_child(tootlwren)
+	tootlwren.connect("load_scene", self, "LoadScene")
+	tootlwren.connect("load_dialogue", self, "LoadDialogue")
+	tootlwren.connect("play_bgm", self, "PlayBGM")
+	tootlwren.parse_wren_snippet("System.print(\"Hello, GDWren!\")")
 
 func _process(delta):
 	if Input.is_action_just_pressed("F1"):
@@ -67,7 +77,8 @@ func PlayBGM(song_by_artist):
 	self.emit_signal("play_bgm", song_by_artist)
 
 func ExecuteWrenSnippet(wren_snippet):
-	print("Executing Wren Snippet '%s'" % wren_snippet)
+	tootlwren.parse_wren_snippet("import \"televoid-core\" for Scene, Inventory, Dialogue, Minigame, Audio, Animation, Character, GameSaver\n" + wren_snippet)
 
 func ExecuteWrenScript(wren_script):
-	print("Executing Wren Script '%s'" % wren_script)
+	var wren_script_resource = load(wren_script)
+	tootlwren.parse_wren_snippet(wren_script_resource.resource_name)

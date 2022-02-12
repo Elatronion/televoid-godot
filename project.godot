@@ -46,7 +46,7 @@ window/size/height=720
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/elatronion.imv_importer/plugin.cfg", "res://addons/elatronion.tootl_csv_dialogue_importer/plugin.cfg", "res://addons/vnen.tiled_importer/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/elatronion.imv_importer/plugin.cfg", "res://addons/elatronion.tootl_csv_dialogue_importer/plugin.cfg", "res://addons/elatronion.wren_importer/plugin.cfg", "res://addons/vnen.tiled_importer/plugin.cfg" )
 
 [importer_defaults]
 

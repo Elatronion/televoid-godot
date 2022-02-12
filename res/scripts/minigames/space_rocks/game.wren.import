@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.wren_importer"
+type="Resource"
+path="res://.import/game.wren-b7a2e47e1ee9984c66a7667ec827a491.tres"
+
+[deps]
+
+source_file="res://res/scripts/minigames/space_rocks/game.wren"
+dest_files=[ "res://.import/game.wren-b7a2e47e1ee9984c66a7667ec827a491.tres" ]
+
+[params]
+
