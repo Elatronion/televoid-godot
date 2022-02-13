@@ -16,7 +16,7 @@ var game_state = GameState.PLAY
 
 var previous_scene = ""
 var current_scene = ""
-var items = ["blow torch", null, null, null, null, null, null, null, null, null]
+var items = [null, null, null, null, null, null, null, null, null, null]
 
 #onready var tootlwren = preload("res://gdnative/tootlwren.gdns").new()
 var tootlwren = null
@@ -73,6 +73,7 @@ func LoadIMV(imv_path):
 	self.add_child(imv_instance)
 
 func LoadDialogue(dialogue_path):
+	print("Load Dialogue " + dialogue_path)
 	var dialogue = load("res://scenes/prefabs/Dialogue/Dialogue.tscn")
 	var dialogue_instance = dialogue.instance()
 	dialogue_instance.dialogue_path = "res://" + dialogue_path
