@@ -50,6 +50,12 @@ func AddItem(item_string):
 			items[i] = item_string
 			return
 
+func RemoveItem(item_string):
+	for i in range(0, 10):
+		if items[i] == item_string:
+			items[i] = null
+			return
+
 func HasItem(item_string):
 	for i in range(0, 10):
 		if items[i] == item_string:
