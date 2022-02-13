@@ -1,13 +1,14 @@
 [remap]
 
 importer="elatronion.imv_importer"
-type="Animation"
-path="res://.import/splash.imv-187eb2b5abe4b8aff5d545ef8b71eef1.tres"
+type="PackedScene"
+path="res://.import/splash.imv-187eb2b5abe4b8aff5d545ef8b71eef1.scn"
 
 [deps]
 
 source_file="res://res/imv/splash.imv"
-dest_files=[ "res://.import/splash.imv-187eb2b5abe4b8aff5d545ef8b71eef1.tres" ]
+dest_files=[ "res://.import/splash.imv-187eb2b5abe4b8aff5d545ef8b71eef1.scn" ]
 
 [params]
 
+y_is_down=true

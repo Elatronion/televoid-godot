@@ -16,7 +16,7 @@ var game_state = GameState.PLAY
 
 var previous_scene = ""
 var current_scene = ""
-var items = [null, null, null, null, null, null, null, null, null, null]
+var items = ["blow torch", null, null, null, null, null, null, null, null, null]
 
 #onready var tootlwren = preload("res://gdnative/tootlwren.gdns").new()
 var tootlwren = null
@@ -26,6 +26,7 @@ func _ready():
 	tootlwren.connect("load_scene", self, "LoadScene")
 	tootlwren.connect("load_dialogue", self, "LoadDialogue")
 	tootlwren.connect("play_bgm", self, "PlayBGM")
+	tootlwren.connect("load_imv", self, "LoadIMV")
 	tootlwren.parse_wren_snippet("System.print(\"Hello, GDWren!\")")
 
 func _process(delta):
