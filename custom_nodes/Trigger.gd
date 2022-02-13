@@ -9,9 +9,9 @@ export var height = 0
 
 func execute():
 	if wren_snippet.length() != 0:
-		print("Executing Wren Snippet '%s'" % wren_snippet)
+		GameManager.ExecuteWrenSnippet(wren_snippet)
 	elif wren_script.length() != 0:
-		print("Executing Wren Script '%s'" % wren_script)
+		GameManager.ExecuteWrenScript(wren_script)
 	else:
 		print("Trigger: Execution unkonwn!")
 
