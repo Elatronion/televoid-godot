@@ -2,8 +2,8 @@
 .import/
 export.cfg
 export_presets.cfg
-gdnative/bin/*.so
-gdnative/bin/*.dll
+gdnative/bin/**/*.so
+gdnative/bin/**/*.dll
 
 # Imported translations (automatically generated from CSV files)
 *.translation
