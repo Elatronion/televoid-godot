@@ -4,6 +4,7 @@ export.cfg
 export_presets.cfg
 gdnative/bin/**/*.so
 gdnative/bin/**/*.dll
+gdnative/bin/**/*.wasm
 
 # Imported translations (automatically generated from CSV files)
 *.translation

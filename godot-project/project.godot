@@ -33,6 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Televoid: Out of The Loop - Godot Edition"
+run/main_scene="res://scenes/prefabs/SceneManager/SceneManager.tscn"
 config/icon="res://icon.png"
 
 [autoload]
