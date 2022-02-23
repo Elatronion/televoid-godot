@@ -124,7 +124,8 @@ class Breakout {
         string = "YOU LOOSE"
       }
     }
-    Window.renderText(string, 480, 270, 75)
+    System.print(string)
+    //Window.renderText(string, 480, 270, 75)
 
     Window.render("wheel-y good background", 0, 0, 1920/1.25, 1080/1.25)
   }

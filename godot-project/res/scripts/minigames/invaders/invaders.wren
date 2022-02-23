@@ -89,7 +89,7 @@ class SpaceInvaders {
         ResourceManager.loadTexture("res/scripts/minigames/invaders/assets/ship.png", "INVADERS HEALTH")
 
         reset()
-        Dialogue.load("res/dialogue/Arcade - Play Invaders.csv")
+        //Dialogue.load("res/dialogue/Arcade - Play Invaders.csv")
     }
 
     reset() {
@@ -279,13 +279,13 @@ class SpaceInvaders {
       Window.render("arcade screen", 0, 0, 1920, 1080)
 
       if(SpaceInvaders.getGameState() == SpaceInvaders.STATE_LOOSE) {
-        Window.renderText("You Loose!\nPress  'R'", 0, 0, 100)
+        //Window.renderText("You Loose!\nPress  'R'", 0, 0, 100)
         if(Input.getKey(Input.KEY_R)) {
           reset()
         }
       }
       if(SpaceInvaders.getGameState() == SpaceInvaders.STATE_WIN) {
-        Window.renderText("You Win!", 0, 0, 100)
+        //Window.renderText("You Win!", 0, 0, 100)
       }
 
         Window.render("INVADERS SHIP", _player)

@@ -20,6 +20,7 @@ var items = ["blow torch", null, null, null, null, null, null, null, null, null]
 
 #onready var tootlwren = preload("res://gdnative/tootlwren.gdns").new()
 var tootlwren = null
+var minigame_tootlwren = null
 func _ready():
 	tootlwren = load("res://gdnative/tootlwren.gdns").new()
 	add_child(tootlwren)
@@ -27,11 +28,12 @@ func _ready():
 	tootlwren.connect("load_dialogue", self, "LoadDialogue")
 	tootlwren.connect("play_bgm", self, "PlayBGM")
 	tootlwren.connect("load_imv", self, "LoadIMV")
+	tootlwren.connect("load_minigame", self, "LoadMinigame")
 	tootlwren.parse_wren_snippet("System.print(\"Hello, GDWren!\")")
 
 func _process(delta):
 	if Input.is_action_just_pressed("F1"):
-		LoadDialogue("res/dialogue/Arcade - Giftshop complete.csv")
+		LoadMinigame("res/scripts/minigames/main_menu.wren", true)
 		#PlayBGM("sad again by brutalmoose")
 	if Input.is_action_just_pressed("F2"):
 		LoadIMV("res://res/imv/HUB - Look Up.imv")
@@ -41,6 +43,23 @@ func _process(delta):
 		LoadScene("res/scenes/arcade.tmx")
 	if Input.is_action_just_pressed("F5"):
 		LoadScene("res/scenes/Infinihallway/Infinihallway.tmx")
+
+func GetKey(key_code):
+	return GlobalInput.is_key_pressed(key_code)
+func GetKeyDown(key_code):
+	return GlobalInput.is_key_just_pressed(key_code)
+func GetKeyUp(key_code):
+	return GlobalInput.is_key_just_released(key_code)
+func GetMouse(mouse_button):
+	return GlobalInput.is_mouse_pressed(mouse_button)
+func GetMouseDown(mouse_button):
+	return GlobalInput.is_mouse_just_pressed(mouse_button)
+func GetMouseUp(mouse_button):
+	return GlobalInput.is_mouse_just_released(mouse_button)
+func GetMouseX():
+	return GlobalInput.get_mouse_position().x
+func GetMouseY():
+	return GlobalInput.get_mouse_position().y
 
 func SetState(state):
 	game_state = state
@@ -79,7 +98,22 @@ func LoadDialogue(dialogue_path):
 	var dialogue_instance = dialogue.instance()
 	dialogue_instance.dialogue_path = "res://" + dialogue_path
 	self.add_child(dialogue_instance)
+
+var minigame_scene = preload("res://scenes/prefabs/Minigame/Minigame.tscn")
+func LoadMinigame(minigame_path, can_exit):
+	var minigame_tootlwren = load("res://gdnative/tootlwren.gdns").new()
+	var wren_script_resource = load(minigame_path)
+	minigame_tootlwren.connect("load_scene", self, "LoadScene")
+	minigame_tootlwren.connect("load_dialogue", self, "LoadDialogue")
+	minigame_tootlwren.connect("play_bgm", self, "PlayBGM")
+	minigame_tootlwren.connect("load_imv", self, "LoadIMV")
+	minigame_tootlwren.connect("load_minigame", self, "LoadMinigame")
+	add_child(minigame_tootlwren)
 	
+	var minigame_scene_instance = minigame_scene.instance()
+	minigame_scene_instance.minigame_tootlwren = minigame_tootlwren
+	self.add_child(minigame_scene_instance)
+	minigame_scene_instance.init(wren_script_resource.resource_name)
 
 func PlayBGM(song_by_artist):
 	self.emit_signal("play_bgm", song_by_artist)

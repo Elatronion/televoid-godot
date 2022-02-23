@@ -187,8 +187,8 @@ class Input {
   static KEY_MENU               { 348 }
 
   /* mouse buttons */
-  static MOUSE_LEFT             { 0 }
-  static MOUSE_RIGHT            { 1 }
+  static MOUSE_LEFT             { 1 }
+  static MOUSE_RIGHT            { 2 }
 }
 
 class ResourceManager {
