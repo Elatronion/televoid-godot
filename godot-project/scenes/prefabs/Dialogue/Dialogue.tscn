@@ -1,16 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/prefabs/Dialogue/Dialogue.gd" type="Script" id=1]
 [ext_resource path="res://res/textures/dialogue/FRANK_IDLE.png" type="Texture" id=2]
 [ext_resource path="res://res/textures/dialogue/IAN_IDLE.png" type="Texture" id=3]
-[ext_resource path="res://res/fonts/VCR OSD Mono.ttf" type="DynamicFontData" id=4]
-
-[sub_resource type="DynamicFont" id=1]
-size = 29
-font_data = ExtResource( 4 )
-
-[sub_resource type="Theme" id=2]
-default_font = SubResource( 1 )
+[ext_resource path="res://VHS.theme" type="Theme" id=4]
 
 [node name="Dialogue" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -73,7 +66,7 @@ margin_left = 16.0
 margin_top = 16.0
 margin_right = -16.0
 margin_bottom = -16.0
-theme = SubResource( 2 )
+theme = ExtResource( 4 )
 text = "This is a message
 "
 __meta__ = {
