@@ -1,6 +1,9 @@
 tool
 extends EditorImportPlugin
 
+const player_camera_path = "/root/SceneManager/CurrentScene/SceneTMX/Player/Camera2D"
+const og_tootl_camera_z_distance = 100 * 4
+
 func get_importer_name():
 	return "elatronion.imv_importer"
 
@@ -281,7 +284,7 @@ func load_imv_scene(source_file, options):
 			regex.compile("(?<=\").*(?=\")") # Find text between quotes exclusive
 			var result = regex.search(line).get_string()
 			if result == "camera":
-				var camera_path = GameManager.player_camera_path
+				var camera_path = player_camera_path
 				position_x_track_index = animation.add_track(Animation.TYPE_VALUE)
 				animation.track_set_path(position_x_track_index, camera_path + ":global_position:x")
 				#animation.track_insert_key(position_x_track_index, 0, x)
@@ -314,7 +317,7 @@ func load_imv_scene(source_file, options):
 			elif keyframe_property == "z":
 				current_track_index = position_z_track_index
 				if last_element_type == ElementType.ObjectElement:
-					var converted_keyframe_data = keyframe_data / GameManager.og_tootl_camera_z_distance
+					var converted_keyframe_data = keyframe_data / og_tootl_camera_z_distance
 					keyframe_data = Vector2(converted_keyframe_data, converted_keyframe_data)
 			elif keyframe_property == "sx":
 				current_track_index = scale_x_track_index

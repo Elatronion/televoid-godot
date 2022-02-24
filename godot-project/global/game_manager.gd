@@ -16,7 +16,7 @@ var game_state = GameState.PLAY
 
 var previous_scene = ""
 var current_scene = ""
-var items = [null, null, null, null, null, null, null, null, null, null]
+var items = ["helmet", "VHS", "brutal moose", null, null, null, null, null, null, null]
 
 #onready var tootlwren = preload("res://gdnative/tootlwren.gdns").new()
 var tootlwren = null
@@ -37,8 +37,8 @@ func _process(delta):
 		#LoadMinigame("res/scripts/minigames/main_menu.wren", true)
 		#PlayBGM("sad again by brutalmoose")
 	if Input.is_action_just_pressed("F2"):
-		RemoveItem("blow torch")
-		#LoadIMV("res://res/imv/HUB - Look Up.imv")
+		#RemoveItem("blow torch")
+		LoadIMV("res://res/imv/HUB - Look Up.imv")
 	if Input.is_action_just_pressed("F3"):
 		LoadScene("res/scenes/HUB/HUB.tmx")
 	if Input.is_action_just_pressed("F4"):

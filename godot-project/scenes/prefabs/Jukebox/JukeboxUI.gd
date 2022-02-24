@@ -24,9 +24,12 @@ func _process(delta):
 	offset.x += (desired_x_offset - offset.x) * 8 * delta
 
 func _play_song(song_by_artist):
+	print(song_by_artist)
 	var song_artist = song_by_artist.split(" by ", true);
 	var song = song_artist[0]
-	var artist = song_artist[1]
+	var artist = "???"
+	if song_artist.size() >= 2:
+		artist = song_artist[1]
 	
 	if current_song == "":
 		radio_audio.stream = load("res://res/audio/bgm/"+song_by_artist+".wav")
