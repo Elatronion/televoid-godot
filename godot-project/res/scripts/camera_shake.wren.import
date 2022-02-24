@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.wren_importer"
+type="Resource"
+path="res://.import/camera_shake.wren-5fdb6e66e891c996569d1d52a3ab2e1c.tres"
+
+[deps]
+
+source_file="res://res/scripts/camera_shake.wren"
+dest_files=[ "res://.import/camera_shake.wren-5fdb6e66e891c996569d1d52a3ab2e1c.tres" ]
+
+[params]
+

@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.wren_importer"
+type="Resource"
+path="res://.import/HUB - Panel.wren-1efd483a6741f6eae05f71a87d8d16ac.tres"
+
+[deps]
+
+source_file="res://res/scripts/HUB - Panel.wren"
+dest_files=[ "res://.import/HUB - Panel.wren-1efd483a6741f6eae05f71a87d8d16ac.tres" ]
+
+[params]
+

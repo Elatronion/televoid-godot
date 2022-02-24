@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.wren_importer"
+type="Resource"
+path="res://.import/Door 6.wren-23f31b7adaf107db2a386d606948ea31.tres"
+
+[deps]
+
+source_file="res://res/scripts/Infinihallway/Door 6.wren"
+dest_files=[ "res://.import/Door 6.wren-23f31b7adaf107db2a386d606948ea31.tres" ]
+
+[params]
+

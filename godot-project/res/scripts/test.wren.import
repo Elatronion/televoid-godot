@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.wren_importer"
+type="Resource"
+path="res://.import/test.wren-d148c5b4948be0c4eac320e45caa9594.tres"
+
+[deps]
+
+source_file="res://res/scripts/test.wren"
+dest_files=[ "res://.import/test.wren-d148c5b4948be0c4eac320e45caa9594.tres" ]
+
+[params]
+

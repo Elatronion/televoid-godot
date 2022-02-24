@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.wren_importer"
+type="Resource"
+path="res://.import/game.wren-199dec3479ee2907f698eb2c705ed6f8.tres"
+
+[deps]
+
+source_file="res://res/scripts/minigames/Kitchen - Prep/game.wren"
+dest_files=[ "res://.import/game.wren-199dec3479ee2907f698eb2c705ed6f8.tres" ]
+
+[params]
+

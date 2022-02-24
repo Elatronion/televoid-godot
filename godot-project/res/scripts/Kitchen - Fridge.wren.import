@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.wren_importer"
+type="Resource"
+path="res://.import/Kitchen - Fridge.wren-81c7de419ad074ba6ec3bf5b7623c137.tres"
+
+[deps]
+
+source_file="res://res/scripts/Kitchen - Fridge.wren"
+dest_files=[ "res://.import/Kitchen - Fridge.wren-81c7de419ad074ba6ec3bf5b7623c137.tres" ]
+
+[params]
+

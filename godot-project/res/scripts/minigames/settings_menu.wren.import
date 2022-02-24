@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.wren_importer"
+type="Resource"
+path="res://.import/settings_menu.wren-e41dd07cec8f9358c5bce0b5a98cb47d.tres"
+
+[deps]
+
+source_file="res://res/scripts/minigames/settings_menu.wren"
+dest_files=[ "res://.import/settings_menu.wren-e41dd07cec8f9358c5bce0b5a98cb47d.tres" ]
+
+[params]
+
