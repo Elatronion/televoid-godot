@@ -4,10 +4,10 @@
 [ext_resource path="res://VHS.theme" type="Theme" id=4]
 
 [node name="Dialogue" type="CanvasLayer"]
+layer = 2
 script = ExtResource( 1 )
 
 [node name="CharacterLeftCanvas" type="CanvasLayer" parent="."]
-layer = 0
 
 [node name="CharacterLeft" type="TextureRect" parent="CharacterLeftCanvas"]
 anchor_left = 0.5
@@ -23,7 +23,6 @@ __meta__ = {
 }
 
 [node name="CharacterRightCanvas" type="CanvasLayer" parent="."]
-layer = 0
 
 [node name="CharacterRight" type="TextureRect" parent="CharacterRightCanvas"]
 anchor_left = 0.5
