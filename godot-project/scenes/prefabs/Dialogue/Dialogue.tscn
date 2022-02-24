@@ -1,8 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scenes/prefabs/Dialogue/Dialogue.gd" type="Script" id=1]
-[ext_resource path="res://res/textures/dialogue/FRANK_IDLE.png" type="Texture" id=2]
-[ext_resource path="res://res/textures/dialogue/IAN_IDLE.png" type="Texture" id=3]
 [ext_resource path="res://VHS.theme" type="Theme" id=4]
 
 [node name="Dialogue" type="CanvasLayer"]
@@ -19,7 +17,6 @@ anchor_bottom = 1.0
 margin_left = -640.0
 margin_top = -500.0
 margin_right = -140.0
-texture = ExtResource( 3 )
 stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
@@ -37,7 +34,6 @@ margin_left = 140.0
 margin_top = -499.28
 margin_right = 640.0
 margin_bottom = 0.719971
-texture = ExtResource( 2 )
 stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
