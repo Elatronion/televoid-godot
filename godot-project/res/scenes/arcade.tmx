@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.2" tiledversion="1.3.3" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="100" height="100" tilewidth="6" tileheight="6" infinite="0" nextlayerid="25" nextobjectid="53">
  <imagelayer id="23" name="background" offsetx="-229.5" offsety="-154.833">
-  <image source="../../../../../../../../mnt/Black6/Projects/Televoid/televoid/tootl/res/scenes/arcade_background.png" width="1280" height="720"/>
+  <image source="arcade_background.png" width="1280" height="720"/>
   <properties>
    <property name="depth" type="float" value="25"/>
   </properties>
@@ -13,7 +13,7 @@
   </properties>
  </imagelayer>
  <imagelayer id="21" name="FX01" offsetx="-436.166" offsety="-150.833">
-  <image source="../../../../../../../../mnt/Black6/Projects/Televoid/televoid/tootl/res/scenes/FX01.png" width="1280" height="720"/>
+  <image source="FX01.png" width="1280" height="720"/>
   <properties>
    <property name="depth" type="float" value="0"/>
   </properties>
