@@ -87,23 +87,45 @@ func _process(delta):
 		State.INTERACTING:
 			Interact(delta)
 
+func _floor_node_left_at_x(floor_polygon, floor_position, x):
+	var left_most_node_position = Vector2(-100000000, 0)
+	for i in range(floor_polygon.size()):
+		var current_floor_node_position = floor_position + floor_polygon[i]
+		if current_floor_node_position.x > left_most_node_position.x and current_floor_node_position.x < x:
+			left_most_node_position = current_floor_node_position
+	
+	return left_most_node_position
+
+func _floor_node_right_at_x(floor_polygon, floor_position, x):
+	var right_most_node_position = Vector2(100000000, 0)
+	for i in range(floor_polygon.size()):
+		var current_floor_node_position = floor_position + floor_polygon[i]
+		if current_floor_node_position.x < right_most_node_position.x and current_floor_node_position.x > x:
+			right_most_node_position = current_floor_node_position
+	
+	return right_most_node_position
+
 func _floor_height_at_x(x):
 	var height = 0
 	
 	var floors = get_tree().get_nodes_in_group("Floor")
 	if not floors.empty():
-		var floor_polygon = floors[0].get_polygon()
-		var floor_position = floors[0].global_position
-		for i in range(floor_polygon.size()-1):
-			var current_floor_node_position = floor_position + floor_polygon[i]
-			var next_floor_node_position = floor_position + floor_polygon[i+1]
-			if 	(
-				current_floor_node_position.x < x and
-				next_floor_node_position.x > x
-				):
-					var ratio = (x - current_floor_node_position.x) / (next_floor_node_position.x - current_floor_node_position.x)
-					height = lerp(current_floor_node_position.y, next_floor_node_position.y, ratio);
-					break
+		
+		var floor_polygon = null
+		var floor_position = null
+		
+		for f in floors:
+			var floor_is_visible = f.get_parent().get_parent().visible
+			if floor_is_visible == true:
+				floor_polygon = f.get_polygon()
+				floor_position = f.global_position
+				break
+		
+		if floor_polygon != null:
+			var left_floor_node = _floor_node_left_at_x(floor_polygon, floor_position, x)
+			var right_floor_node = _floor_node_right_at_x(floor_polygon, floor_position, x)
+			var ratio = (x - left_floor_node.x) / (right_floor_node.x - left_floor_node.x)
+			height = lerp(left_floor_node.y, right_floor_node.y, ratio);
 		
 		# LEFT/RIGHT FLOOR COLLISION #
 #		var margin = 1
