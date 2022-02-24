@@ -25,6 +25,8 @@ func _update_item_graphics():
 		if GameManager.items[i] != null:
 			var item_icon = load("res://res/textures/sprites/inventory/items/" + GameManager.items[i] + ".png")
 			item_icon_node.texture = item_icon
+		else:
+			item_icon_node.texture = null
 	# Update right half
 	for i in range(5, 10):
 		var item_icon_node_path = "AspectRatioContainer/MarginContainer/HBoxContainer/HBoxContainerRight/ItemContainer" + str(i) + "/ItemSlot/ItemIcon"
@@ -32,3 +34,5 @@ func _update_item_graphics():
 		if GameManager.items[i] != null:
 			var item_icon = load("res://res/textures/sprites/inventory/items/" + GameManager.items[i] + ".png")
 			item_icon_node.texture = item_icon
+		else:
+			item_icon_node.texture = null
