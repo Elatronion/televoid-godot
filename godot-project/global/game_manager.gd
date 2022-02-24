@@ -92,9 +92,8 @@ func LoadIMV(imv_path):
 	var imv_instance = imv_resource.instance()
 	self.add_child(imv_instance)
 
+var dialogue = preload("res://scenes/prefabs/Dialogue/Dialogue.tscn")
 func LoadDialogue(dialogue_path):
-	print("Load Dialogue " + dialogue_path)
-	var dialogue = load("res://scenes/prefabs/Dialogue/Dialogue.tscn")
 	var dialogue_instance = dialogue.instance()
 	dialogue_instance.dialogue_path = "res://" + dialogue_path
 	self.add_child(dialogue_instance)

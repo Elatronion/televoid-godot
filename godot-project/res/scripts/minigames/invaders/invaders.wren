@@ -89,7 +89,7 @@ class SpaceInvaders {
         ResourceManager.loadTexture("res/scripts/minigames/invaders/assets/ship.png", "INVADERS HEALTH")
 
         reset()
-        //Dialogue.load("res/dialogue/Arcade - Play Invaders.csv")
+        Dialogue.load("res/dialogue/Arcade - Play Invaders.csv")
     }
 
     reset() {
