@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.3.3" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="100" height="100" tilewidth="6" tileheight="6" infinite="0" nextlayerid="26" nextobjectid="98">
+<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="100" height="100" tilewidth="6" tileheight="6" infinite="0" nextlayerid="26" nextobjectid="99">
  <imagelayer id="14" name="background" visible="0" offsetx="-642.667" offsety="-214.667">
   <image source="background.png" width="1920" height="1080"/>
   <properties>
@@ -50,7 +50,11 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup color="#ff0000" id="18" name="floor"/>
+ <objectgroup color="#ff0000" id="18" name="floor">
+  <object id="98" x="236.125" y="319.125">
+   <polyline points="0,0 93.875,-0.125"/>
+  </object>
+ </objectgroup>
  <objectgroup color="#ff00ff" id="23" name="items"/>
  <objectgroup color="#0055ff" id="17" name="props"/>
  <objectgroup color="#00ff00" id="16" name="trigger"/>
