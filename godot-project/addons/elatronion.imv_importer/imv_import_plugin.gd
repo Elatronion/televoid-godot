@@ -111,12 +111,16 @@ func load_imv_scene(source_file, options):
 			var result = regex.search(line)
 			
 			var timestamp = float(strings[1])
-			var wren_snippet = result.get_string()
+			var wren_script_or_snippet = result.get_string()
+			var wren_is_script = ResourceLoader.exists("res://" + wren_script_or_snippet)
+			print("is " + wren_script_or_snippet + " a script? " + str(wren_is_script))
 			
 			var game_manager_track_index = animation.add_track(Animation.TYPE_METHOD)
 			animation.track_set_path(game_manager_track_index, "/root/GameManager")
-			animation.track_insert_key(game_manager_track_index, timestamp, {"method": "ExecuteWrenSnippet", "args": [wren_snippet]})
-			#print("Run snippet '" + wren_snippet + "' at timestemp " + str(timestamp))
+			if wren_is_script:
+				animation.track_insert_key(game_manager_track_index, timestamp, {"method": "ExecuteWrenScript", "args": [wren_script_or_snippet]})
+			else:
+				animation.track_insert_key(game_manager_track_index, timestamp, {"method": "ExecuteWrenSnippet", "args": [wren_script_or_snippet]})
 		elif first_char == 'm':
 			var regex = RegEx.new()
 			regex.compile("(?<=\").*(?=\")") # Find text between quotes exclusive
@@ -126,7 +130,6 @@ func load_imv_scene(source_file, options):
 			var game_manager_track_index = animation.add_track(Animation.TYPE_METHOD)
 			animation.track_set_path(game_manager_track_index, "/root/GameManager")
 			animation.track_insert_key(game_manager_track_index, 0, {"method": "PlayBGM", "args": [song_by_artist]})
-			#print("Play song " + song_by_artist)
 			
 		elif first_char == 't':
 			last_element_type = ElementType.TextElement
