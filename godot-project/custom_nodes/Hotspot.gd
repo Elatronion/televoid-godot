@@ -40,7 +40,10 @@ func _ready():
 		queue_free()
 
 func _process(delta):
+	if GameManager.game_state != GameManager.GameState.PLAY:
+		return
 	if mouse_hovering and Input.is_action_just_pressed("interact"):
 		if wireless:
+			get_node(GameManager.player_path).SetState(0)
 			execute()
 		GameManager.emit_signal("hotspot_interaction", self)
