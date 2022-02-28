@@ -1,6 +1,9 @@
 tool
 extends EditorImportPlugin
 
+const player_camera_path = "/root/SceneManager/CurrentScene/SceneTMX/Player/Camera2D"
+const og_tootl_camera_z_distance = 100 * 4
+
 func get_importer_name():
 	return "elatronion.imv_importer"
 
@@ -108,12 +111,16 @@ func load_imv_scene(source_file, options):
 			var result = regex.search(line)
 			
 			var timestamp = float(strings[1])
-			var wren_snippet = result.get_string()
+			var wren_script_or_snippet = result.get_string()
+			var wren_is_script = ResourceLoader.exists("res://" + wren_script_or_snippet)
+			print("is " + wren_script_or_snippet + " a script? " + str(wren_is_script))
 			
 			var game_manager_track_index = animation.add_track(Animation.TYPE_METHOD)
 			animation.track_set_path(game_manager_track_index, "/root/GameManager")
-			animation.track_insert_key(game_manager_track_index, timestamp, {"method": "ExecuteWrenSnippet", "args": [wren_snippet]})
-			#print("Run snippet '" + wren_snippet + "' at timestemp " + str(timestamp))
+			if wren_is_script:
+				animation.track_insert_key(game_manager_track_index, timestamp, {"method": "ExecuteWrenScript", "args": [wren_script_or_snippet]})
+			else:
+				animation.track_insert_key(game_manager_track_index, timestamp, {"method": "ExecuteWrenSnippet", "args": [wren_script_or_snippet]})
 		elif first_char == 'm':
 			var regex = RegEx.new()
 			regex.compile("(?<=\").*(?=\")") # Find text between quotes exclusive
@@ -123,7 +130,6 @@ func load_imv_scene(source_file, options):
 			var game_manager_track_index = animation.add_track(Animation.TYPE_METHOD)
 			animation.track_set_path(game_manager_track_index, "/root/GameManager")
 			animation.track_insert_key(game_manager_track_index, 0, {"method": "PlayBGM", "args": [song_by_artist]})
-			#print("Play song " + song_by_artist)
 			
 		elif first_char == 't':
 			last_element_type = ElementType.TextElement
@@ -281,7 +287,7 @@ func load_imv_scene(source_file, options):
 			regex.compile("(?<=\").*(?=\")") # Find text between quotes exclusive
 			var result = regex.search(line).get_string()
 			if result == "camera":
-				var camera_path = GameManager.player_camera_path
+				var camera_path = player_camera_path
 				position_x_track_index = animation.add_track(Animation.TYPE_VALUE)
 				animation.track_set_path(position_x_track_index, camera_path + ":global_position:x")
 				#animation.track_insert_key(position_x_track_index, 0, x)
@@ -314,7 +320,7 @@ func load_imv_scene(source_file, options):
 			elif keyframe_property == "z":
 				current_track_index = position_z_track_index
 				if last_element_type == ElementType.ObjectElement:
-					var converted_keyframe_data = keyframe_data / GameManager.og_tootl_camera_z_distance
+					var converted_keyframe_data = keyframe_data / og_tootl_camera_z_distance
 					keyframe_data = Vector2(converted_keyframe_data, converted_keyframe_data)
 			elif keyframe_property == "sx":
 				current_track_index = scale_x_track_index

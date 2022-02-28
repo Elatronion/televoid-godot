@@ -45,12 +45,12 @@ func end_dialogue():
 
 func _ready():
 	_proceed_dialogue()
-	GameManager.SetState(GameManager.GameState.DIALOGUE)
 
 func _process(delta):
 	if Input.is_action_just_pressed("progress_dialogue") or (_mouse_hover and Input.is_action_just_pressed("interact")):
 		_proceed_dialogue()
 	_animate_sprites(delta)
+	GameManager.SetState(GameManager.GameState.DIALOGUE)
 
 func _animate_sprites(delta):
 	if _is_finished:

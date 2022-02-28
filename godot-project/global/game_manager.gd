@@ -10,13 +10,13 @@ const default_zoom = 0.25
 const player_path = "/root/SceneManager/CurrentScene/SceneTMX/Player"
 const player_camera_path = "/root/SceneManager/CurrentScene/SceneTMX/Player/Camera2D"
 
-enum GameState {IMV, DIALOGUE, PLAY}
+enum GameState {IMV, DIALOGUE, PLAY, MINIGAME}
 
 var game_state = GameState.PLAY
 
 var previous_scene = ""
 var current_scene = ""
-var items = [null, null, null, null, null, null, null, null, null, null]
+var items = ["helmet", "VHS", "brutal moose", null, null, null, null, null, null, null]
 
 #onready var tootlwren = preload("res://gdnative/tootlwren.gdns").new()
 var tootlwren = null
@@ -32,13 +32,14 @@ func _ready():
 	tootlwren.parse_wren_snippet("System.print(\"Hello, GDWren!\")")
 
 func _process(delta):
+	GameManager.SetState(GameManager.GameState.PLAY)
 	if Input.is_action_just_pressed("F1"):
 		AddItem("blow torch")
 		#LoadMinigame("res/scripts/minigames/main_menu.wren", true)
 		#PlayBGM("sad again by brutalmoose")
 	if Input.is_action_just_pressed("F2"):
-		RemoveItem("blow torch")
-		#LoadIMV("res://res/imv/HUB - Look Up.imv")
+		#RemoveItem("blow torch")
+		LoadIMV("res://res/imv/HUB - Look Up.imv")
 	if Input.is_action_just_pressed("F3"):
 		LoadScene("res/scenes/HUB/HUB.tmx")
 	if Input.is_action_just_pressed("F4"):

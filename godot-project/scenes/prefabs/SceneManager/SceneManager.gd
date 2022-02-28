@@ -20,7 +20,7 @@ func _load_scene(scene_path):
 	var players = get_tree().get_nodes_in_group("Player")
 	var player_to_keep = null
 	print(players.size())
-	if players.size() > 1:
+	if players.size() >= 1:
 		for player in players:
 			if player.previous_scene_that_activates == GameManager.previous_scene:
 				player_to_keep = player

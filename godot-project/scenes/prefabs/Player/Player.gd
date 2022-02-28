@@ -75,10 +75,6 @@ func _process(delta):
 	
 	_processFloor(delta)
 	
-	if GameManager.game_state != GameManager.GameState.PLAY:
-		return
-	
-	_processControls()
 	match current_state:
 		State.IDLE:
 			pass
@@ -86,6 +82,9 @@ func _process(delta):
 			Walk(delta)
 		State.INTERACTING:
 			Interact(delta)
+	
+	if GameManager.game_state == GameManager.GameState.PLAY:
+		_processControls()
 
 func _floor_node_left_at_x(floor_polygon, floor_position, x):
 	var left_most_node_position = Vector2(-100000000, 0)
