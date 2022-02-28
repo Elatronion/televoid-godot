@@ -19,15 +19,15 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="AspectRatioContainer"]
-margin_left = 163.561
-margin_right = 860.439
+margin_left = 291.561
+margin_right = 988.439
 margin_bottom = 98.0
 texture = ExtResource( 1 )
 stretch_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="AspectRatioContainer"]
-margin_left = 163.561
-margin_right = 860.439
+margin_left = 291.561
+margin_right = 988.439
 margin_bottom = 98.0
 custom_constants/margin_top = 27
 custom_constants/margin_bottom = 22

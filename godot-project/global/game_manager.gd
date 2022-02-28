@@ -10,7 +10,7 @@ const default_zoom = 0.25
 const player_path = "/root/SceneManager/CurrentScene/SceneTMX/Player"
 const player_camera_path = "/root/SceneManager/CurrentScene/SceneTMX/Player/Camera2D"
 
-enum GameState {IMV, DIALOGUE, PLAY}
+enum GameState {IMV, DIALOGUE, PLAY, MINIGAME}
 
 var game_state = GameState.PLAY
 
@@ -32,6 +32,7 @@ func _ready():
 	tootlwren.parse_wren_snippet("System.print(\"Hello, GDWren!\")")
 
 func _process(delta):
+	GameManager.SetState(GameManager.GameState.PLAY)
 	if Input.is_action_just_pressed("F1"):
 		AddItem("blow torch")
 		#LoadMinigame("res/scripts/minigames/main_menu.wren", true)

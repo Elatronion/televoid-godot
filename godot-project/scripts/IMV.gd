@@ -7,7 +7,6 @@ func _ready():
 	
 	var animation = animation_player.get_animation("IMV Animation")
 	var player = get_node(GameManager.player_path)
-	GameManager.SetState(GameManager.GameState.IMV)
 	
 	if not player:
 		return
@@ -20,9 +19,9 @@ func _ready():
 	animation.track_insert_key(position_y_track_index, 0, y)
 
 func _process(delta):
+	GameManager.SetState(GameManager.GameState.IMV)
 	global_position.x = get_viewport().size.x / 2
 	global_position.y = get_viewport().size.y / 2
 
 func _on_AnimationPlayer_finished(anim_name):
-	GameManager.SetState(GameManager.GameState.PLAY)
 	queue_free()

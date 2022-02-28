@@ -56,6 +56,9 @@ func render_text(text, x, y, font_size):
 	nodes_to_render.append(center_container)
 
 func _process(delta):
+	if GameManager.game_state == GameManager.GameState.DIALOGUE:
+		return
+	GameManager.SetState(GameManager.GameState.MINIGAME)
 	minigame_tootlwren.func_minigame_update(delta)
 	
 	# Create viewport
