@@ -35,6 +35,7 @@ func SetState(state):
 				aniamted_sprite.play()
 		current_state = state
 
+var _just_stepped = false
 func Walk(delta):
 	var vec_to_destination = (destination - global_position) * 10
 	vec_to_destination.x = max(min(vec_to_destination.x, max_speed), -max_speed)
@@ -50,6 +51,13 @@ func Walk(delta):
 			SetState(State.IDLE)
 		else:
 			SetState(State.INTERACTING)
+	
+	if aniamted_sprite.frame == 2 or aniamted_sprite.frame == 6:
+		if not _just_stepped:
+			GameManager.PlaySFX("step"+str(randi() % 3 + 1))
+			_just_stepped = true
+	else:
+		_just_stepped = false
 
 func Interact(delta):
 	if current_hotspot != null and aniamted_sprite.frame == 2:

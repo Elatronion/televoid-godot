@@ -7,6 +7,7 @@ func _ready():
 	minigame_tootlwren.connect("render_text", self, "render_text")
 	minigame_tootlwren.connect("load_texture", self, "load_texture")
 	minigame_tootlwren.connect("load_audio", self, "load_audio")
+	minigame_tootlwren.connect("play_sfx", self, "play_sfx")
 	load_texture("res/textures/GUI/arcade_screen.png", "arcade screen")
 	load_texture("res/textures/GUI/wheelygoodbackground.png", "wheel-y good background")
 	load_texture("res/HGE/BLACK.png", "BLACK")
@@ -20,7 +21,16 @@ func load_texture(sprite_path, sprite_name):
 
 var resource_audio = {}
 func load_audio(audio_path, audio_name):
-	resource_textures[audio_name] = load(audio_path)
+	resource_audio[audio_name] = load(audio_path)
+
+func play_sfx(audio_name):
+	#GameManager.PlaySFX(resource_audio[audio_name])
+	if resource_audio.has(audio_name):
+		$AudioStreamPlayer.stream = resource_audio[audio_name]
+		$AudioStreamPlayer.play()
+	else:
+		GameManager.PlaySFX(audio_name)
+		print("ERROR::MINIGAME::AUDIO_NOT_FOUND : '" + audio_name + "'")
 
 var nodes_to_render = []
 func render(sprite_name, x, y, w, h, r):

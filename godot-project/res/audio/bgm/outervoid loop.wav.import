@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/outervoid loop.wav-db5caf3c45828d28dac75857bab8d559.sample"
+
+[deps]
+
+source_file="res://res/audio/bgm/outervoid loop.wav"
+dest_files=[ "res://.import/outervoid loop.wav-db5caf3c45828d28dac75857bab8d559.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

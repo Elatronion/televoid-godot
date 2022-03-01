@@ -12,7 +12,7 @@ font_data = ExtResource( 2 )
 [sub_resource type="Animation" id=2]
 resource_name = "AudioFadeIn"
 tracks/0/type = "value"
-tracks/0/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/0/path = NodePath("AudioStreamPlayerBGM:volume_db")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -27,7 +27,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=3]
 resource_name = "AudioFadeOut"
 tracks/0/type = "value"
-tracks/0/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/0/path = NodePath("AudioStreamPlayerBGM:volume_db")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -42,7 +42,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=4]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/0/path = NodePath("AudioStreamPlayerBGM:volume_db")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -92,11 +92,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayerBGM" type="AudioStreamPlayer" parent="."]
 volume_db = -80.0
 bus = "BGM"
 
-[node name="AudioFade" type="AnimationPlayer" parent="AudioStreamPlayer"]
+[node name="AudioFade" type="AnimationPlayer" parent="AudioStreamPlayerBGM"]
 root_node = NodePath("../..")
 playback_speed = 0.5
 anims/AudioFadeIn = SubResource( 2 )
@@ -107,5 +107,23 @@ anims/RESET = SubResource( 4 )
 wait_time = 5.0
 one_shot = true
 
-[connection signal="animation_finished" from="AudioStreamPlayer/AudioFade" to="." method="_on_AudioFade_animation_finished"]
+[node name="AudioStreamPlayerSFX1" type="AudioStreamPlayer" parent="."]
+bus = "SFX"
+
+[node name="AudioStreamPlayerSFX2" type="AudioStreamPlayer" parent="."]
+bus = "SFX"
+
+[node name="AudioStreamPlayerSFX3" type="AudioStreamPlayer" parent="."]
+bus = "SFX"
+
+[node name="AudioStreamPlayerSFX4" type="AudioStreamPlayer" parent="."]
+bus = "SFX"
+
+[node name="AudioStreamPlayerSFX5" type="AudioStreamPlayer" parent="."]
+bus = "SFX"
+
+[node name="AudioStreamPlayerVoice" type="AudioStreamPlayer" parent="."]
+bus = "Voice"
+
+[connection signal="animation_finished" from="AudioStreamPlayerBGM/AudioFade" to="." method="_on_AudioFade_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

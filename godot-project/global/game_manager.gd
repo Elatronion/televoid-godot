@@ -3,6 +3,8 @@ extends Node
 signal load_scene(scene)
 signal hotspot_interaction(hotspot)
 signal play_bgm(song_by_artist)
+signal play_sfx(sound)
+signal play_voice(voice)
 
 const og_tootl_camera_z_distance = 100 * 4
 
@@ -16,7 +18,7 @@ var game_state = GameState.PLAY
 
 var previous_scene = ""
 var current_scene = ""
-var items = ["helmet", "VHS", "brutal moose", null, null, null, null, null, null, null]
+var items = ["helmet", "VHS", "brutal moose", "recipe", null, null, null, null, null, null]
 
 #onready var tootlwren = preload("res://gdnative/tootlwren.gdns").new()
 var tootlwren = null
@@ -27,6 +29,8 @@ func _ready():
 	tootlwren.connect("load_scene", self, "LoadScene")
 	tootlwren.connect("load_dialogue", self, "LoadDialogue")
 	tootlwren.connect("play_bgm", self, "PlayBGM")
+	tootlwren.connect("play_sfx", self, "PlaySFX")
+	tootlwren.connect("play_voice", self, "PlayVoice")
 	tootlwren.connect("load_imv", self, "LoadIMV")
 	tootlwren.connect("load_minigame", self, "LoadMinigame")
 	tootlwren.parse_wren_snippet("System.print(\"Hello, GDWren!\")")
@@ -110,6 +114,8 @@ func LoadMinigame(minigame_path, can_exit):
 	minigame_tootlwren.connect("load_scene", self, "LoadScene")
 	minigame_tootlwren.connect("load_dialogue", self, "LoadDialogue")
 	minigame_tootlwren.connect("play_bgm", self, "PlayBGM")
+	#minigame_tootlwren.connect("play_sfx", self, "PlaySFX")
+	minigame_tootlwren.connect("play_voice", self, "PlayVoice")
 	minigame_tootlwren.connect("load_imv", self, "LoadIMV")
 	minigame_tootlwren.connect("load_minigame", self, "LoadMinigame")
 	add_child(minigame_tootlwren)
@@ -121,6 +127,10 @@ func LoadMinigame(minigame_path, can_exit):
 
 func PlayBGM(song_by_artist):
 	self.emit_signal("play_bgm", song_by_artist)
+func PlaySFX(sound):
+	self.emit_signal("play_sfx", sound)
+func PlayVoice(voice):
+	self.emit_signal("play_voice", voice)
 
 func ExecuteWrenSnippet(wren_snippet):
 	tootlwren.parse_wren_snippet("import \"televoid-core\" for Scene, Inventory, Dialogue, Minigame, Audio, Animation, Character, GameSaver\n" + wren_snippet)

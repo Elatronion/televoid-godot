@@ -31,4 +31,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = "SFX"
+
 [connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
