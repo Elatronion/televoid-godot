@@ -93,6 +93,7 @@ func HasItem(item_string):
 func LoadScene(scene):
 	previous_scene = current_scene
 	current_scene = scene
+	SaveGame()
 	self.emit_signal("load_scene", "res://"+scene)
 
 func LoadIMV(imv_path):
@@ -145,7 +146,7 @@ var SaveGameData = {
 }
 
 func SaveGame():
-	if current_scene == "res/scenes/End/End.tmx":
+	if current_scene == "res/scenes/End/End.tmx" or current_scene == "res/scenes/credits.tmx" or current_scene == "res://res/scenes/main_menu.tmx" or current_scene == "res://res/scenes/settings_menu.tmx":
 		return
 	var dir = Directory.new()
 	if !dir.dir_exists("user://Saves"):
@@ -156,7 +157,6 @@ func SaveGame():
 	var data = SaveGameData
 	data.scene = current_scene
 	data.items = items
-	print(JSON.print(data))
 	save_game.store_line(JSON.print(data))
 	save_game.close()
 
