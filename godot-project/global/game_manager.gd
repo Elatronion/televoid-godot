@@ -18,7 +18,7 @@ var game_state = GameState.PLAY
 
 var previous_scene = ""
 var current_scene = ""
-var items = ["helmet", "VHS", "brutal moose", "recipe", null, null, null, null, null, null]
+var items = [null, null, null, null, null, null, null, null, null, null]
 
 #onready var tootlwren = preload("res://gdnative/tootlwren.gdns").new()
 var tootlwren = null
@@ -42,10 +42,9 @@ func _process(delta):
 		#LoadMinigame("res/scripts/minigames/main_menu.wren", true)
 		#PlayBGM("sad again by brutalmoose")
 	if Input.is_action_just_pressed("F2"):
-		#RemoveItem("blow torch")
-		LoadIMV("res://res/imv/HUB - Look Up.imv")
+		SaveGame()
 	if Input.is_action_just_pressed("F3"):
-		LoadScene("res/scenes/HUB/HUB.tmx")
+		LoadGame()
 	if Input.is_action_just_pressed("F4"):
 		LoadScene("res/scenes/arcade.tmx")
 	if Input.is_action_just_pressed("F5"):
@@ -94,6 +93,7 @@ func HasItem(item_string):
 func LoadScene(scene):
 	previous_scene = current_scene
 	current_scene = scene
+	SaveGame()
 	self.emit_signal("load_scene", "res://"+scene)
 
 func LoadIMV(imv_path):
@@ -138,3 +138,36 @@ func ExecuteWrenSnippet(wren_snippet):
 func ExecuteWrenScript(wren_script):
 	var wren_script_resource = load(wren_script)
 	tootlwren.parse_wren_snippet(wren_script_resource.resource_name)
+
+
+var SaveGameData = {
+	scene="",
+	items=[null, null, null, null, null, null, null, null, null, null]
+}
+
+func SaveGame():
+	if current_scene == "res/scenes/End/End.tmx" or current_scene == "res/scenes/credits.tmx" or current_scene == "res://res/scenes/main_menu.tmx" or current_scene == "res://res/scenes/settings_menu.tmx":
+		return
+	var dir = Directory.new()
+	if !dir.dir_exists("user://Saves"):
+		dir.open("user://")
+		dir.make_dir("user://Saves")
+	var save_game = File.new()
+	save_game.open("user://Saves/save.sve", File.WRITE)
+	var data = SaveGameData
+	data.scene = current_scene
+	data.items = items
+	save_game.store_line(JSON.print(data))
+	save_game.close()
+
+func LoadGame():
+	var load_game = File.new()
+	if !load_game.file_exists("user://Saves/save.sve"):
+		print ("ERROR::LoadGame : File not found! Aborting...")
+		return
+	load_game.open("user://Saves/save.sve", File.READ)
+	var content = load_game.get_as_text()
+	var game_data = JSON.parse(content).result
+	items = game_data["items"]
+	LoadScene(game_data["scene"])
+	load_game.close()
