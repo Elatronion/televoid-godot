@@ -1,0 +1,145 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://VHS.theme" type="Theme" id=1]
+[ext_resource path="res://scenes/prefabs/OptionsMenu/OptionsMenu.gd" type="Script" id=2]
+
+[node name="OptionsMenu" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="Control" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.25098, 0.25098, 0.25098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -167.0
+margin_top = -280.0
+margin_right = 167.0
+margin_bottom = 280.0
+custom_constants/separation = 25
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonReset" type="Button" parent="Control/ColorRect/VBoxContainer"]
+margin_right = 334.0
+margin_bottom = 46.0
+text = "Reset To Default"
+
+[node name="Label" type="Label" parent="Control/ColorRect/VBoxContainer"]
+margin_top = 71.0
+margin_right = 334.0
+margin_bottom = 97.0
+text = "OPTIONS"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelMasterVolume" type="Label" parent="Control/ColorRect/VBoxContainer"]
+margin_top = 122.0
+margin_right = 334.0
+margin_bottom = 148.0
+text = "Master Volume"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSliderMasterVolume" type="HSlider" parent="Control/ColorRect/VBoxContainer"]
+margin_top = 173.0
+margin_right = 334.0
+margin_bottom = 195.0
+min_value = -50.0
+max_value = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelBGMVolume" type="Label" parent="Control/ColorRect/VBoxContainer"]
+margin_top = 220.0
+margin_right = 334.0
+margin_bottom = 246.0
+text = "BGM Volume"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSliderBGMVolume" type="HSlider" parent="Control/ColorRect/VBoxContainer"]
+margin_top = 271.0
+margin_right = 334.0
+margin_bottom = 293.0
+min_value = -50.0
+max_value = 0.0
+value = -12.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelSFXVolume" type="Label" parent="Control/ColorRect/VBoxContainer"]
+margin_top = 318.0
+margin_right = 334.0
+margin_bottom = 344.0
+text = "SFX Volume"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSliderSFXVolume" type="HSlider" parent="Control/ColorRect/VBoxContainer"]
+margin_top = 369.0
+margin_right = 334.0
+margin_bottom = 391.0
+min_value = -50.0
+max_value = 0.0
+value = -5.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelVoiceVolume" type="Label" parent="Control/ColorRect/VBoxContainer"]
+margin_top = 416.0
+margin_right = 334.0
+margin_bottom = 442.0
+text = "Voice Volume"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSliderVoiceVolume" type="HSlider" parent="Control/ColorRect/VBoxContainer"]
+margin_top = 467.0
+margin_right = 334.0
+margin_bottom = 489.0
+min_value = -50.0
+max_value = 0.0
+value = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="Button" parent="Control/ColorRect/VBoxContainer"]
+margin_top = 514.0
+margin_right = 334.0
+margin_bottom = 560.0
+text = "Save & Exit"
+
+[connection signal="pressed" from="Control/ColorRect/VBoxContainer/ButtonReset" to="." method="_on_ButtonReset_pressed"]
+[connection signal="value_changed" from="Control/ColorRect/VBoxContainer/HSliderMasterVolume" to="." method="_on_HSliderMasterVolume_value_changed"]
+[connection signal="value_changed" from="Control/ColorRect/VBoxContainer/HSliderBGMVolume" to="." method="_on_HSliderBGMVolume_value_changed"]
+[connection signal="value_changed" from="Control/ColorRect/VBoxContainer/HSliderSFXVolume" to="." method="_on_HSliderSFXVolume_value_changed"]
+[connection signal="value_changed" from="Control/ColorRect/VBoxContainer/HSliderVoiceVolume" to="." method="_on_HSliderVoiceVolume_value_changed"]
+[connection signal="pressed" from="Control/ColorRect/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]

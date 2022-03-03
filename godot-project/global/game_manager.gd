@@ -12,13 +12,22 @@ const default_zoom = 0.25
 const player_path = "/root/SceneManager/CurrentScene/SceneTMX/Player"
 const player_camera_path = "/root/SceneManager/CurrentScene/SceneTMX/Player/Camera2D"
 
-enum GameState {IMV, DIALOGUE, PLAY, MINIGAME}
+enum GameState {IMV, DIALOGUE, PLAY, MINIGAME, PAUSE}
 
 var game_state = GameState.PLAY
 
 var previous_scene = ""
 var current_scene = ""
 var items = [null, null, null, null, null, null, null, null, null, null]
+
+const default_master = 0
+const default_bgm = -12
+const default_sfx = -5
+const default_voice = -10
+var audio_master = 0
+var audio_bgm = -12
+var audio_sfx = -5
+var audio_voice = -10
 
 #onready var tootlwren = preload("res://gdnative/tootlwren.gdns").new()
 var tootlwren = null
@@ -36,7 +45,8 @@ func _ready():
 	tootlwren.parse_wren_snippet("System.print(\"Hello, GDWren!\")")
 
 func _process(delta):
-	GameManager.SetState(GameManager.GameState.PLAY)
+	if game_state != GameState.PAUSE:
+		SetState(GameState.PLAY)
 	if Input.is_action_just_pressed("F1"):
 		AddItem("blow torch")
 		#LoadMinigame("res/scripts/minigames/main_menu.wren", true)
@@ -139,6 +149,23 @@ func ExecuteWrenScript(wren_script):
 	var wren_script_resource = load(wren_script)
 	tootlwren.parse_wren_snippet(wren_script_resource.resource_name)
 
+func VolumeSetMaster(db):
+	audio_master = db
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), db)
+func VolumeSetBGM(db):
+	audio_bgm = db
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("BGM"), db)
+func VolumeSetSFX(db):
+	audio_sfx = db
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), db)
+func VolumeSetVoice(db):
+	audio_bgm = db
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Voice"), db)
+func reset_audio_defaults():
+	GameManager.VolumeSetMaster(default_master)
+	GameManager.VolumeSetBGM(default_bgm)
+	GameManager.VolumeSetSFX(default_sfx)
+	GameManager.VolumeSetVoice(default_voice)
 
 var SaveGameData = {
 	scene="",

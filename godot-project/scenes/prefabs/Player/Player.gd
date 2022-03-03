@@ -74,6 +74,10 @@ func _ready():
 		start_bpm_effect()
 
 func _process(delta):
+	if GameManager.game_state == GameManager.GameState.PAUSE:
+		aniamted_sprite.playing = false
+		return
+	aniamted_sprite.playing = true
 	if GameManager.game_state != GameManager.GameState.IMV:
 		$Camera2D.position.x = 0
 		$Camera2D.position.y = 0
