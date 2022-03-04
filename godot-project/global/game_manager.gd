@@ -109,7 +109,7 @@ func LoadScene(scene):
 func LoadIMV(imv_path):
 	var imv_resource = load(imv_path)
 	var imv_instance = imv_resource.instance()
-	self.add_child(imv_instance)
+	self.get_node("/root/SceneManager/CurrentScene").get_child(0).call_deferred("add_child", imv_instance)
 
 var dialogue = preload("res://scenes/prefabs/Dialogue/Dialogue.tscn")
 func LoadDialogue(dialogue_path):
