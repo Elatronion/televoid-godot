@@ -438,11 +438,6 @@ func make_layer(layer, parent, root, data):
 					### BEGIN PROP ###
 					#body.width = object.width
 					#body.height = object.height
-					if object.has("properties"):
-						if object["properties"].has("depth"): # Load Snippet
-							var depth = object["properties"]["depth"]
-							# T:OoTL TODO: Parallax depth
-					
 					
 					var image = null
 					image = load_image("%s_diffuse.png" % object.name, "res://res/textures/sprites/props/", options)
@@ -476,6 +471,15 @@ func make_layer(layer, parent, root, data):
 					sprite.position = pos
 					sprite.rotation_degrees = rot
 					sprite.set_owner(root)
+					
+					if object.has("properties"):
+						if object["properties"].has("depth"): # Load Snippet
+							var depth = object["properties"]["depth"]
+							# T:OoTL TODO: Parallax depth
+						if object["properties"].has("floater"):
+							sprite.set_script(load("res://floater.gd"))
+							#occluder.floater = object["properties"]["floater"]
+					
 					### END PROP ###
 				else:
 					var body
