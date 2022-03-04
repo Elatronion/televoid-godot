@@ -134,6 +134,7 @@ func LoadMinigame(minigame_path, can_exit):
 	minigame_scene_instance.minigame_tootlwren = minigame_tootlwren
 	self.add_child(minigame_scene_instance)
 	minigame_scene_instance.init(wren_script_resource.resource_name)
+	minigame_scene_instance.get_node("Button").visible = can_exit
 
 func PlayBGM(song_by_artist):
 	self.emit_signal("play_bgm", song_by_artist)
@@ -173,7 +174,7 @@ var SaveGameData = {
 }
 
 func SaveGame():
-	if current_scene == "res/scenes/End/End.tmx" or current_scene == "res/scenes/credits.tmx" or current_scene == "res://res/scenes/main_menu.tmx" or current_scene == "res://res/scenes/settings_menu.tmx":
+	if current_scene == "res/scenes/End/End.tmx" or current_scene == "res/scenes/credits.tmx" or current_scene == "res/scenes/main_menu.tmx" or current_scene == "res/scenes/settings_menu.tmx":
 		return
 	var dir = Directory.new()
 	if !dir.dir_exists("user://Saves"):
@@ -190,10 +191,11 @@ func SaveGame():
 func LoadGame():
 	var load_game = File.new()
 	if !load_game.file_exists("user://Saves/save.sve"):
-		print ("ERROR::LoadGame : File not found! Aborting...")
+		LoadScene("res/scenes/intro.tmx")
 		return
 	load_game.open("user://Saves/save.sve", File.READ)
 	var content = load_game.get_as_text()
+	print(content)
 	var game_data = JSON.parse(content).result
 	items = game_data["items"]
 	LoadScene(game_data["scene"])

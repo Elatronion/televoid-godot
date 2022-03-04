@@ -1,7 +1,14 @@
 extends CanvasLayer
 
+export var full_menu = false
+
 func _ready():
-	pass
+	if full_menu:
+		$Control.visible = true
+
+func _process(delta):
+	if full_menu:
+		GameManager.SetState(GameManager.GameState.PAUSE)
 
 func _set_slider_values():
 	$Control/ColorRect/VBoxContainer/HSliderMasterVolume.value = GameManager.audio_master
@@ -31,4 +38,7 @@ func _on_ButtonReset_pressed():
 
 
 func _on_Exit_pressed():
-	$Control.visible = false
+	if full_menu:
+		GameManager.LoadScene("res/scenes/main_menu.tmx")
+	else:
+		$Control.visible = false

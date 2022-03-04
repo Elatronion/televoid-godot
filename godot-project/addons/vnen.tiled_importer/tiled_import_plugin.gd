@@ -108,6 +108,16 @@ func get_option_visibility(option, options):
 	return true
 
 func import(source_file, save_path, options, r_platform_variants, r_gen_files):
+	if source_file == "res://res/scenes/settings_menu.tmx":
+		var scene = Node2D.new()
+		var options_menu = load("res://scenes/prefabs/OptionsMenu/OptionsMenu.tscn").instance()
+		scene.add_child(options_menu)
+		options_menu.owner = scene
+		options_menu.full_menu = true
+		var packed_scene = PackedScene.new()
+		packed_scene.pack(scene)
+		return ResourceSaver.save("%s.%s" % [save_path, get_save_extension()], packed_scene)
+	
 	var map_reader = TiledMapReader.new()
 
 	# Offset is only optional for importing TileSets
