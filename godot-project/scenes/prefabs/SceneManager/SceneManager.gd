@@ -13,6 +13,9 @@ func _load_scene(scene_path):
 	var scene_instance = scene.instance()
 	scene_instance.set_name("SceneTMX")
 	$CurrentScene.get_child(0).free()
+	var active_minigame = get_node("/root/GameManager/Minigame")
+	if active_minigame:
+		active_minigame.free()
 	$CurrentScene.add_child(scene_instance)
 	
 	GameManager.SetState(GameManager.GameState.PLAY)
