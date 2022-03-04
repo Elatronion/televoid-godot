@@ -81,10 +81,13 @@ func _process(delta):
 	if GameManager.game_state != GameManager.GameState.IMV:
 		$Camera2D.position.x = 0
 		$Camera2D.position.y = 0
+		$Camera2D.offset.y = -14
 		$Camera2D.zoom.x += (GameManager.default_zoom - $Camera2D.zoom.x) * 5 * delta
 		$Camera2D.zoom.y += (GameManager.default_zoom - $Camera2D.zoom.y) * 5 * delta
 		#$Camera2D.zoom = Vector2(GameManager.default_zoom, GameManager.default_zoom)
-	
+	else:
+		$Camera2D.offset.y = 0
+		
 	_processFloor(delta)
 	
 	match current_state:

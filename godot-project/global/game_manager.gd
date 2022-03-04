@@ -48,7 +48,9 @@ func _process(delta):
 	if game_state != GameState.PAUSE:
 		SetState(GameState.PLAY)
 	if Input.is_action_just_pressed("F1"):
-		AddItem("blow torch")
+		AddItem("VHS")
+		AddItem("helmet")
+		AddItem("brutal moose")
 		#LoadMinigame("res/scripts/minigames/main_menu.wren", true)
 		#PlayBGM("sad again by brutalmoose")
 	if Input.is_action_just_pressed("F2"):
@@ -110,6 +112,7 @@ func LoadIMV(imv_path):
 	var imv_resource = load(imv_path)
 	var imv_instance = imv_resource.instance()
 	self.get_node("/root/SceneManager/CurrentScene").get_child(0).call_deferred("add_child", imv_instance)
+	self.get_node("/root/SceneManager/CurrentScene").get_child(0).call_deferred("move_child", imv_instance, 0)
 
 var dialogue = preload("res://scenes/prefabs/Dialogue/Dialogue.tscn")
 func LoadDialogue(dialogue_path):
