@@ -575,6 +575,7 @@ func make_layer(layer, parent, root, data):
 					if object.type == "hotspot":
 						body.width = object.width
 						body.height = object.height
+						body.
 						if object.has("properties"):
 							if object["properties"].has("snippet"): # Load Snippet
 								var wren_snippet = object["properties"]["snippet"]

@@ -26,9 +26,11 @@ func execute():
 
 func _on_Hotspot_mouse_entered() -> void:
 	mouse_hovering = true
+	GameManager.set_mouse_point()
 
 func _on_Hotspot_mouse_exited() -> void:
 	mouse_hovering = false
+	GameManager.set_mouse_normal()
 
 func _ready():
 	connect("mouse_entered", self, "_on_Hotspot_mouse_entered")

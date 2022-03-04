@@ -30,6 +30,11 @@ var audio_bgm = -12
 var audio_sfx = -5
 var audio_voice = -10
 
+var mouse_cursor = load("res://res/textures/GUI/Cursor_Normal.bmp")
+var mouse_point = load("res://res/textures/GUI/Cursor_Point.bmp")
+var mouse_walk = load("res://res/textures/GUI/Cursor_Walk.bmp")
+var mouse_test = load("res://res/textures/GUI/Cursor_Walk.bmp")
+
 #onready var tootlwren = preload("res://gdnative/tootlwren.gdns").new()
 var tootlwren = null
 var minigame_tootlwren = null
@@ -44,6 +49,17 @@ func _ready():
 	tootlwren.connect("load_imv", self, "LoadIMV")
 	tootlwren.connect("load_minigame", self, "LoadMinigame")
 	tootlwren.parse_wren_snippet("System.print(\"Hello, GDWren!\")")
+	
+	set_mouse_normal()
+	Input.set_custom_mouse_cursor(mouse_cursor, Input.CURSOR_ARROW)
+	Input.set_custom_mouse_cursor(mouse_point, Input.CURSOR_POINTING_HAND)
+
+func set_mouse_normal():
+	Input.set_custom_mouse_cursor(mouse_cursor)
+func set_mouse_point():
+	Input.set_custom_mouse_cursor(mouse_point, 0, Vector2(5, 1))
+func set_mouse_walk():
+	Input.set_custom_mouse_cursor(mouse_walk)
 
 func _process(delta):
 	if game_state != GameState.PAUSE:
