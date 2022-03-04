@@ -29,7 +29,7 @@ func _on_ButtonOptions_pressed():
 	options_menu.visible = true
 
 func _on_ButtonSave_pressed():
-	pass # Replace with function body.
+	GameManager.SaveGame()
 
 func _on_ButtonQuit_pressed():
 	get_tree().quit()

@@ -5,6 +5,7 @@ signal hotspot_interaction(hotspot)
 signal play_bgm(song_by_artist)
 signal play_sfx(sound)
 signal play_voice(voice)
+signal save_game()
 
 const og_tootl_camera_z_distance = 100 * 4
 
@@ -190,6 +191,7 @@ func SaveGame():
 	data.items = items
 	save_game.store_line(JSON.print(data))
 	save_game.close()
+	self.emit_signal("save_game")
 
 func LoadGame():
 	var load_game = File.new()
