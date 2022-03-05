@@ -3,6 +3,7 @@ extends CanvasLayer
 export var full_menu = false
 
 func _ready():
+	_set_slider_values()
 	if full_menu:
 		$Control.visible = true
 
@@ -38,6 +39,7 @@ func _on_ButtonReset_pressed():
 
 
 func _on_Exit_pressed():
+	GameManager.SaveOptions()
 	if full_menu:
 		GameManager.LoadScene("res/scenes/main_menu.tmx")
 	else:
