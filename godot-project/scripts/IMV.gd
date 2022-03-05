@@ -22,6 +22,8 @@ func _process(delta):
 	GameManager.SetState(GameManager.GameState.IMV)
 	global_position.x = get_viewport().size.x / 2
 	global_position.y = get_viewport().size.y / 2
+	if Input.is_action_just_pressed("imv_skip"):
+		animation_player.playback_speed = 10
 
 func _on_AnimationPlayer_finished(anim_name):
 	queue_free()
