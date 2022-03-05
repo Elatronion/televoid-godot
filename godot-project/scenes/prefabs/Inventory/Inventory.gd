@@ -33,9 +33,10 @@ func show_item_info(i):
 		item_icon_node.get_material().set_shader_param("enable", false)
 		item_icon_node.get_material().set_shader_param("time_when_changed", OS.get_ticks_msec()/1000.0)
 	label_item_name.text = item_name
+	label_item_name.get_material().set_shader_param("enable", false)
+	label_item_name.get_material().set_shader_param("time_when_changed", OS.get_ticks_msec()/1000.0)
 
 func hide_item_info(i):
-	label_item_name.text = ""
 	if GameManager.items[i] != null:
 		var item_icon_node_path = ""
 		if i < 5:
@@ -45,6 +46,8 @@ func hide_item_info(i):
 		var item_icon_node = get_node(item_icon_node_path)
 		item_icon_node.get_material().set_shader_param("enable", true)
 		item_icon_node.get_material().set_shader_param("time_when_changed", OS.get_ticks_msec()/1000.0)
+	label_item_name.get_material().set_shader_param("enable", true)
+	label_item_name.get_material().set_shader_param("time_when_changed", OS.get_ticks_msec()/1000.0)
 
 func _on_ItemIcon_mouse_entered0():
 	show_item_info(0)
