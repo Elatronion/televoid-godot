@@ -182,7 +182,7 @@ func VolumeSetSFX(db):
 	audio_sfx = db
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), db)
 func VolumeSetVoice(db):
-	audio_bgm = db
+	audio_voice = db
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Voice"), db)
 func reset_audio_defaults():
 	GameManager.VolumeSetMaster(default_master)
