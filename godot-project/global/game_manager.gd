@@ -136,6 +136,7 @@ func LoadDialogue(dialogue_path):
 	var dialogue_instance = dialogue.instance()
 	dialogue_instance.dialogue_path = "res://" + dialogue_path
 	self.add_child(dialogue_instance)
+	self.move_child(dialogue_instance, dialogue_instance.get_index()-1)
 
 var minigame_scene = preload("res://scenes/prefabs/Minigame/Minigame.tscn")
 func LoadMinigame(minigame_path, can_exit):
