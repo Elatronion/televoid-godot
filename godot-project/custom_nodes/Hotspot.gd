@@ -39,7 +39,7 @@ func _ready():
 	if auto_exec:
 		execute()
 	if is_item and GameManager.HasItem(item_string):
-		queue_free()
+			queue_free()
 
 func _process(delta):
 	if GameManager.game_state != GameManager.GameState.PLAY:
