@@ -39,6 +39,7 @@ var mouse_test = load("res://res/textures/GUI/Cursor_Walk.bmp")
 var tootlwren = null
 var minigame_tootlwren = null
 func _ready():
+	LoadOptions()
 	tootlwren = load("res://gdnative/tootlwren.gdns").new()
 	add_child(tootlwren)
 	tootlwren.connect("load_scene", self, "LoadScene")
@@ -181,7 +182,7 @@ func VolumeSetSFX(db):
 	audio_sfx = db
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), db)
 func VolumeSetVoice(db):
-	audio_bgm = db
+	audio_voice = db
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Voice"), db)
 func reset_audio_defaults():
 	GameManager.VolumeSetMaster(default_master)
@@ -222,3 +223,34 @@ func LoadGame():
 	items = game_data["items"]
 	LoadScene(game_data["scene"])
 	load_game.close()
+
+var OptionsSaveData = {
+	audio_master = 0,
+	audio_bgm = -12,
+	audio_sfx = -5,
+	audio_voice = -10
+}
+
+func LoadOptions():
+	var file = File.new()
+	if !file.file_exists("user://options.json"):
+		return
+	file.open("user://options.json", File.READ)
+	var content = file.get_as_text()
+	var option_data = JSON.parse(content).result
+	audio_master = option_data["audio_master"]
+	audio_bgm = option_data["audio_bgm"]
+	audio_sfx = option_data["audio_sfx"]
+	audio_voice = option_data["audio_voice"]
+	file.close()
+
+func SaveOptions():
+	var file = File.new()
+	file.open("user://options.json", File.WRITE)
+	var data = OptionsSaveData
+	OptionsSaveData.audio_master = audio_master
+	OptionsSaveData.audio_bgm = audio_bgm
+	OptionsSaveData.audio_sfx = audio_sfx
+	OptionsSaveData.audio_voice = audio_voice
+	file.store_line(JSON.print(data))
+	file.close()
