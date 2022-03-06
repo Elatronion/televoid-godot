@@ -566,6 +566,7 @@ func make_layer(layer, parent, root, data):
 						body.is_item = true
 						
 						var item_sprite_node = Sprite.new()
+						item_sprite_node.set_script(load("res://item_floater.gd"))
 						item_sprite_node.texture = load("res://res/textures/sprites/inventory/items/" + body.item_string + ".png")
 						item_sprite_node.position.x = body.width / 2
 						item_sprite_node.position.y = body.height / 2
