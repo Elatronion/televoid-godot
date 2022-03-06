@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 export var previous_scene_that_activates = ""
 export var face_left_on_start = false
+export(float, 0, 1) var camera_max_offset = 0.5
 
 enum State {
 	IDLE,
@@ -79,6 +80,8 @@ func _process(delta):
 		return
 	aniamted_sprite.playing = true
 	if GameManager.game_state != GameManager.GameState.IMV:
+		$Camera2D.offset_h = lerp(-camera_max_offset, camera_max_offset, get_viewport().get_mouse_position().x / get_viewport_rect().size.x)
+		$Camera2D.offset_v = lerp(-camera_max_offset, camera_max_offset, get_viewport().get_mouse_position().y / get_viewport_rect().size.y)
 		$Camera2D.position.x = 0
 		$Camera2D.position.y = 0
 		$Camera2D.offset.y = -14
@@ -86,6 +89,8 @@ func _process(delta):
 		$Camera2D.zoom.y += (GameManager.default_zoom - $Camera2D.zoom.y) * 5 * delta
 		#$Camera2D.zoom = Vector2(GameManager.default_zoom, GameManager.default_zoom)
 	else:
+		$Camera2D.offset_h = 0
+		$Camera2D.offset_v = 0
 		$Camera2D.offset.y = 0
 		
 	_processFloor(delta)

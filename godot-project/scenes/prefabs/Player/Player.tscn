@@ -124,6 +124,7 @@ animations = [ {
 
 [node name="tmpPlayer" type="KinematicBody2D" groups=["Player"]]
 script = ExtResource( 2 )
+camera_max_offset = 0.15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.5, -16 )
