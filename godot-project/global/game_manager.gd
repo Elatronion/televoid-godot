@@ -72,9 +72,14 @@ func _process(delta):
 		#LoadMinigame("res/scripts/minigames/main_menu.wren", true)
 		#PlayBGM("sad again by brutalmoose")
 	if Input.is_action_just_pressed("F2"):
-		SaveGame()
+		AddItem("party invitation (arcade)")
+		AddItem("party invitation (door 100)")
+		AddItem("party invitation (kitchen)")
+		AddItem("party invitation (stairs)")
+		#SaveGame()
 	if Input.is_action_just_pressed("F3"):
-		LoadGame()
+		#LoadGame()
+		pass
 	if Input.is_action_just_pressed("F4"):
 		LoadScene("res/scenes/arcade.tmx")
 	if Input.is_action_just_pressed("F5"):
