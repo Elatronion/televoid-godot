@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://scenes/prefabs/BowlingPlayer/Player.gd" type="Script" id=1]
-[ext_resource path="res://scenes/prefabs/BowlingPlayer/MouseHandling.gd" type="Script" id=2]
+[ext_resource path="res://scenes/prefabs/Bowling/Player/Player.gd" type="Script" id=1]
+[ext_resource path="res://scenes/prefabs/Bowling/Player/MouseHandling.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.565101
@@ -21,3 +21,8 @@ script = ExtResource( 2 )
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.716666, -0.0904972 )
 current = true
+fov = 90.0
+
+[node name="RayCast" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.714145, 0 )
+cast_to = Vector3( 0, 0, -2 )
