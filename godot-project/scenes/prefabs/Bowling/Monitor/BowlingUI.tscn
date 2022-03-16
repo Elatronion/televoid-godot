@@ -343,8 +343,3 @@ margin_top = 108.0
 margin_right = 1105.0
 margin_bottom = 269.0
 text = "FRAME: 5"
-
-[node name="Timer" type="Timer" parent="."]
-autostart = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

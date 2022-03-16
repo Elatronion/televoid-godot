@@ -1,5 +1,7 @@
 extends Control
 
+signal new_frame
+
 onready var _frame_label = $Panel/VBoxContainer/BottomPanel/CenterContainer/Label
 onready var _first_throw_label = $Panel/VBoxContainer/HBoxContainer/CurrentFrame/VBoxContainer/TopHBoxContainer/LeftPanel/CenterContainer/Label
 onready var _second_throw_label = $Panel/VBoxContainer/HBoxContainer/CurrentFrame/VBoxContainer/TopHBoxContainer/RightPanel/CenterContainer/Label
@@ -11,29 +13,17 @@ var Frame = {
 	points = null
 }
 
-var my_frames = [Frame.duplicate(), Frame.duplicate(), Frame.duplicate()]
+var current_frame_number = 1
+var my_frames = [Frame.duplicate(), Frame.duplicate(), Frame.duplicate(), Frame.duplicate(), Frame.duplicate(), Frame.duplicate(), Frame.duplicate(), Frame.duplicate(), Frame.duplicate(), Frame.duplicate()]
 var total_points = 0
 
 func _ready():
-	var f1 = my_frames[0]
-	var f2 = my_frames[1]
-	var f3 = my_frames[2]
-	f1.first_throw = 10
-	
-	f2.first_throw = 3
-	f2.second_throw = 5
-	
-	f3.first_throw = 7
-	f3.second_throw = 3
-	
+	set_current_frame(1)
+
+func do_calculations():
 	calculate_frame_points()
 	calculate_frame_points_with_total()
-	
-	for my_frame in my_frames:
-		print_frame(my_frame)
-	
 	total_points = 0
-	draw_frame(f1)
 
 func calculate_frame_points():
 	for i in range(0, len(my_frames)):
@@ -102,72 +92,31 @@ func draw_frame(my_frame):
 			_second_throw_label.text = "/"
 		else:
 			_second_throw_label.text = str(my_frame.second_throw)
-	
 
-#var _current_throw = 0
-#var _frame = 1
-#var _total_points = 0
-#var _total_downed_pins = 0
-#var _first_throw_pins = 0
-#var _second_throw_pins = 0
-#var is_first_shot = true
-#var _frame_end = false
+func is_next_shot_new_frame():
+	var result = false
+	var frame = my_frames[current_frame_number-1]
+	if (frame.first_throw != null and frame.second_throw != null) or frame.first_throw == 10:
+		result = true
+	return result
 
-#var BowlingFrame = {
-#	audio_master = 0,
-#	audio_bgm = -12,
-#	audio_sfx = -5,
-#	audio_voice = -10
-#}
+func add_pins_to_frame(num_pins):
+	var frame = my_frames[current_frame_number-1]
+	if frame.first_throw == null:
+		frame.first_throw = num_pins
+		do_calculations()
+		draw_frame(frame)
+	elif frame.second_throw == null:
+		frame.second_throw = num_pins
+		do_calculations()
+		draw_frame(frame)
 
-#var BowlingFrames[10]
+func next_frame():
+	set_current_frame(current_frame_number + 1)
 
-#func _ready():
-#	_CleanUIScore()
-#	RegisterThrow(5)
-#	RegisterThrow(3)
-#	RegisterThrow(10)
-#	_update_graphics()
-
-#func _CleanUIScore():
-#	_points_label.text = ""
-#	_throw1_pins.text = ""
-#	_throw2_pins.text = ""
-
-#func RegisterNewFrame():
-#	_frame += 1
-#	_throw1_pins.text = ""
-#	_throw2_pins.text = ""
-#	_update_graphics()
-
-#func RegisterThrow(downed_pins):
-#	_total_downed_pins += downed_pins
-#	_current_throw += 1
-#	_update_graphics()
-#
-#func _IsFirstShot():
-#	return _current_throw % 2 == 1
-#
-#func _update_graphics():
-#	if _IsFirstShot():
-#		if _total_downed_pins == 10:
-#			_throw1_pins.text = "X"
-#			_throw2_pins.text = ""
-#		else:
-#			_throw1_pins.text = str(_total_downed_pins)
-#	else:
-#		if _total_downed_pins == 10:
-#			_throw2_pins.text = "/"
-#		else:
-#			_throw2_pins.text = str(_total_downed_pins)
-#
-#	_points_label.text = str(_total_points)
-#	_frame_label.text = "FRAME: %d" % _frame
-
-var idx = 0
-func _on_Timer_timeout():
-	idx += 1
-	if idx >= len(my_frames):
-		idx = 0
-	draw_frame(my_frames[idx])
-	_frame_label.text = "FRAME: %d" % (idx+1)
+func set_current_frame(frame_num):
+	emit_signal("new_frame")
+	do_calculations()
+	current_frame_number = frame_num
+	draw_frame(my_frames[frame_num-1])
+	_frame_label.text = "FRAME: %d" % frame_num
