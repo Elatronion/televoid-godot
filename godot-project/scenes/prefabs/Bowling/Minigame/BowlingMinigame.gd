@@ -18,7 +18,8 @@ enum BowlingMinigameState {
 	AIM,
 	ROLLING,
 	HIT,
-	SCREEN
+	SCREEN,
+	END
 }
 
 var current_state = BowlingMinigameState.AIM
@@ -89,3 +90,7 @@ func _on_ScreenTimer_timeout():
 	if bowling_points_manager.is_next_shot_new_frame():
 		bowling_points_manager.next_frame()
 		$BowlingPins.reset_pins()
+	
+	if bowling_points_manager.game_is_end():
+		print("GG")
+		current_state = BowlingMinigameState.END

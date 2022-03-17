@@ -33,9 +33,9 @@ func calculate_frame_points():
 		var next_next_frame = Frame.duplicate()
 		next_next_frame.first_throw = 0
 		next_next_frame.second_throw = 0
-		if i + 1 < len(my_frames):
+		if i + 1 < len(my_frames)-1:
 			next_frame = my_frames[i+1]
-		if i + 2 < len(my_frames):
+		if i + 2 < len(my_frames)-1:
 			next_next_frame = my_frames[i+2]
 		
 		if my_frame.first_throw == null:
@@ -113,6 +113,8 @@ func draw_frame(frame_number):
 			second_throw_label.text = str(my_frame.second_throw)
 
 func draw_current_frame():
+	if current_frame_number > len(my_frames):
+		return
 	var my_frame = my_frames[current_frame_number-1]
 	var first_throw_label = _current_first_throw_label
 	var second_throw_label = _current_second_throw_label
@@ -166,3 +168,11 @@ func set_current_frame(frame_num):
 	current_frame_number = frame_num
 	draw_frames()
 	_frame_label.text = "FRAME: %d" % frame_num
+
+func game_is_end():
+	var is_end = true
+	for frame in my_frames:
+		if frame.points == null:
+			is_end = false
+			break
+	return is_end
