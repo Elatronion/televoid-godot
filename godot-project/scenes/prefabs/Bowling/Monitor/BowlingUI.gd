@@ -104,13 +104,19 @@ func draw_frame(frame_number):
 		if my_frame.first_throw == 10:
 			first_throw_label.text = "X"
 		else:
-			first_throw_label.text = str(my_frame.first_throw)
+			if my_frame.first_throw == 0:
+				first_throw_label.text = "-"
+			else:
+				first_throw_label.text = str(my_frame.first_throw)
 	
 	if my_frame.second_throw != null:
 		if my_frame.first_throw + my_frame.second_throw == 10:
 			second_throw_label.text = "/"
 		else:
-			second_throw_label.text = str(my_frame.second_throw)
+			if my_frame.second_throw == 0:
+				second_throw_label.text = "-"
+			else:
+				second_throw_label.text = str(my_frame.second_throw)
 
 func draw_current_frame():
 	if current_frame_number > len(my_frames):
@@ -133,13 +139,19 @@ func draw_current_frame():
 		if my_frame.first_throw == 10:
 			first_throw_label.text = "X"
 		else:
-			first_throw_label.text = str(my_frame.first_throw)
+			if my_frame.first_throw == 0:
+				first_throw_label.text = "-"
+			else:
+				first_throw_label.text = str(my_frame.first_throw)
 	
 	if my_frame.second_throw != null:
 		if my_frame.first_throw + my_frame.second_throw == 10:
 			second_throw_label.text = "/"
 		else:
-			second_throw_label.text = str(my_frame.second_throw)
+			if my_frame.second_throw == 0:
+				second_throw_label.text = "-"
+			else:
+				second_throw_label.text = str(my_frame.second_throw)
 
 func is_next_shot_new_frame():
 	var result = false
