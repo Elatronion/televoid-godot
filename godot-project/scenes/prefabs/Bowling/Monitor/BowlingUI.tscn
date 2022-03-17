@@ -50,10 +50,10 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/CurrentFrame/CenterContainer"]
-margin_left = 114.0
-margin_top = 100.0
-margin_right = 247.0
-margin_bottom = 261.0
+margin_left = 129.0
+margin_top = 118.0
+margin_right = 233.0
+margin_bottom = 244.0
 text = "?"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/CurrentFrame"]
@@ -89,10 +89,10 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/CurrentFrame/VBoxContainer/TopHBoxContainer/LeftPanel/CenterContainer"]
-margin_left = 34.0
-margin_top = 15.0
-margin_right = 167.0
-margin_bottom = 176.0
+margin_left = 48.0
+margin_top = 32.0
+margin_right = 152.0
+margin_bottom = 158.0
 text = "7"
 
 [node name="RightPanel" type="Panel" parent="Panel/VBoxContainer/HBoxContainer/CurrentFrame/VBoxContainer/TopHBoxContainer"]
@@ -112,11 +112,11 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/CurrentFrame/VBoxContainer/TopHBoxContainer/RightPanel/CenterContainer"]
-margin_left = 14.0
-margin_top = 15.0
-margin_right = 166.0
-margin_bottom = 176.0
-text = "x"
+margin_left = 46.0
+margin_top = 32.0
+margin_right = 135.0
+margin_bottom = 158.0
+text = "/"
 
 [node name="BottomHBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/CurrentFrame/VBoxContainer"]
 margin_top = 171.0
@@ -145,11 +145,11 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/CurrentFrame/VBoxContainer/BottomHBoxContainer2/Panel/CenterContainer"]
-margin_left = 48.0
-margin_top = 15.0
-margin_right = 314.0
-margin_bottom = 176.0
-text = "78"
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 329.0
+margin_bottom = 158.0
+text = "178"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -832,8 +832,8 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer/BottomPanel/CenterContainer"]
-margin_left = 174.0
-margin_top = 108.0
-margin_right = 1105.0
-margin_bottom = 269.0
+margin_left = 276.0
+margin_top = 126.0
+margin_right = 1004.0
+margin_bottom = 252.0
 text = "FRAME: 5"
