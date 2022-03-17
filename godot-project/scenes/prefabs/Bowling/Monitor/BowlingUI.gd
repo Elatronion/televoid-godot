@@ -21,9 +21,9 @@ func _ready():
 	set_current_frame(1)
 
 func do_calculations():
+	total_points = 0
 	calculate_frame_points()
 	calculate_frame_points_with_total()
-	total_points = 0
 
 func calculate_frame_points():
 	for i in range(0, len(my_frames)):

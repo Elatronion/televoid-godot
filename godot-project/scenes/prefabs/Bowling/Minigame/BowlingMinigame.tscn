@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/prefabs/Bowling/Minigame/BowlingMinigame.gd" type="Script" id=1]
 [ext_resource path="res://scenes/prefabs/Bowling/Pins/BowlingPin.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/prefabs/Bowling/Monitor/BowlingUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/prefabs/Bowling/Minigame/BowlingPins.gd" type="Script" id=4]
 
 [sub_resource type="PrismMesh" id=18]
 size = Vector3( 0.25, 0.25, 0.05 )
@@ -38,35 +39,71 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.72278, 3.33966, -0.504455 )
 
 [node name="BowlingPins" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.4809, 0, -0.000700384 )
+script = ExtResource( 4 )
 
-[node name="BowlingPin1" parent="BowlingPins" instance=ExtResource( 2 )]
+[node name="Pins" type="Spatial" parent="BowlingPins"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.4809, 0, 0.000700384 )
+
+[node name="BowlingPin1" parent="BowlingPins/Pins" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.4809, 0.5, -0.000700384 )
+
+[node name="BowlingPin2" parent="BowlingPins/Pins" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9809, 0.5, 0.2993 )
+
+[node name="BowlingPin3" parent="BowlingPins/Pins" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9809, 0.5, -0.3007 )
+
+[node name="BowlingPin4" parent="BowlingPins/Pins" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.4809, 0.5, -0.000700384 )
+
+[node name="BowlingPin5" parent="BowlingPins/Pins" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.4809, 0.5, 0.5993 )
+
+[node name="BowlingPin6" parent="BowlingPins/Pins" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.4809, 0.5, -0.6007 )
+
+[node name="BowlingPin7" parent="BowlingPins/Pins" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.9809, 0.5, 0.2993 )
+
+[node name="BowlingPin8" parent="BowlingPins/Pins" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.9809, 0.5, -0.3007 )
+
+[node name="BowlingPin9" parent="BowlingPins/Pins" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.9809, 0.5, -0.9007 )
+
+[node name="BowlingPin10" parent="BowlingPins/Pins" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.9809, 0.5, 0.8993 )
+
+[node name="Positions" type="Spatial" parent="BowlingPins"]
+
+[node name="BowlingPinPosition" type="Position3D" parent="BowlingPins/Positions"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
 
-[node name="BowlingPin2" parent="BowlingPins" instance=ExtResource( 2 )]
+[node name="BowlingPinPosition2" type="Position3D" parent="BowlingPins/Positions"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, 0.3 )
 
-[node name="BowlingPin3" parent="BowlingPins" instance=ExtResource( 2 )]
+[node name="BowlingPinPosition3" type="Position3D" parent="BowlingPins/Positions"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, -0.3 )
 
-[node name="BowlingPin4" parent="BowlingPins" instance=ExtResource( 2 )]
+[node name="BowlingPinPosition4" type="Position3D" parent="BowlingPins/Positions"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, 0 )
 
-[node name="BowlingPin5" parent="BowlingPins" instance=ExtResource( 2 )]
+[node name="BowlingPinPosition5" type="Position3D" parent="BowlingPins/Positions"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, 0.6 )
 
-[node name="BowlingPin6" parent="BowlingPins" instance=ExtResource( 2 )]
+[node name="BowlingPinPosition6" type="Position3D" parent="BowlingPins/Positions"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, -0.6 )
 
-[node name="BowlingPin7" parent="BowlingPins" instance=ExtResource( 2 )]
+[node name="BowlingPinPosition7" type="Position3D" parent="BowlingPins/Positions"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.5, 0.3 )
 
-[node name="BowlingPin8" parent="BowlingPins" instance=ExtResource( 2 )]
+[node name="BowlingPinPosition8" type="Position3D" parent="BowlingPins/Positions"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.5, -0.3 )
 
-[node name="BowlingPin9" parent="BowlingPins" instance=ExtResource( 2 )]
+[node name="BowlingPinPosition9" type="Position3D" parent="BowlingPins/Positions"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.5, -0.9 )
 
-[node name="BowlingPin10" parent="BowlingPins" instance=ExtResource( 2 )]
+[node name="BowlingPinPosition10" type="Position3D" parent="BowlingPins/Positions"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.5, 0.9 )
 
 [node name="HitTimer" type="Timer" parent="."]
