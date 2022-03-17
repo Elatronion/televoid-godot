@@ -3,9 +3,9 @@ extends Control
 signal new_frame
 
 onready var _frame_label = $Panel/VBoxContainer/BottomPanel/CenterContainer/Label
-onready var _first_throw_label = $Panel/VBoxContainer/HBoxContainer/CurrentFrame/VBoxContainer/TopHBoxContainer/LeftPanel/CenterContainer/Label
-onready var _second_throw_label = $Panel/VBoxContainer/HBoxContainer/CurrentFrame/VBoxContainer/TopHBoxContainer/RightPanel/CenterContainer/Label
-onready var _points_label = $Panel/VBoxContainer/HBoxContainer/CurrentFrame/VBoxContainer/BottomHBoxContainer2/Panel/CenterContainer/Label
+onready var _current_first_throw_label = $Panel/VBoxContainer/HBoxContainer/CurrentFrame/VBoxContainer/TopHBoxContainer/LeftPanel/CenterContainer/Label
+onready var _current_second_throw_label = $Panel/VBoxContainer/HBoxContainer/CurrentFrame/VBoxContainer/TopHBoxContainer/RightPanel/CenterContainer/Label
+onready var _current_points_label = $Panel/VBoxContainer/HBoxContainer/CurrentFrame/VBoxContainer/BottomHBoxContainer2/Panel/CenterContainer/Label
 
 var Frame = {
 	first_throw = null,
@@ -23,7 +23,6 @@ func _ready():
 func do_calculations():
 	total_points = 0
 	calculate_frame_points()
-	calculate_frame_points_with_total()
 
 func calculate_frame_points():
 	for i in range(0, len(my_frames)):
@@ -62,36 +61,83 @@ func calculate_frame_points():
 		if my_frame.points == null:
 			my_frame.points = my_frame.first_throw + my_frame.second_throw
 
-func calculate_frame_points_with_total():
-	for my_frame in my_frames:
-		if my_frame.points != null:
-			total_points += my_frame.points
-			my_frame.points = total_points
-			
+func total_points_for_frame(frame_number):
+	var points = 0
+	for i in frame_number-1:
+		var frame = my_frames[i]
+		if frame.points != null:
+			points += frame.points
+	return points
 
 func print_frame(my_frame):
 	print("\n| %s L %s |\n|   %s   |\n" % [str(my_frame.first_throw), str(my_frame.second_throw), str(my_frame.points)])
 
-func draw_frame(my_frame):
-	_first_throw_label.text = ""
-	_second_throw_label.text = ""
-	_points_label.text = ""
+func draw_frames():
+	for i in 10:
+		draw_frame(i+1)
+	draw_current_frame()
+
+func draw_frame(frame_number):
+	var my_frame = my_frames[frame_number-1]
+	var first_throw_label = null
+	var second_throw_label = null
+	var points_label = null
+	if frame_number <= 5:
+		first_throw_label = get_node("Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame%d/VBoxContainer/HBoxContainer/CenterContainer/Label" % frame_number)
+		second_throw_label = get_node("Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame%d/VBoxContainer/HBoxContainer/Panel/CenterContainer/Label" % frame_number)
+		points_label = get_node("Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame%d/VBoxContainer/CenterContainer/Label" % frame_number)
+	else:
+		first_throw_label = get_node("Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame%d/VBoxContainer/HBoxContainer/CenterContainer/Label" % frame_number)
+		second_throw_label = get_node("Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame%d/VBoxContainer/HBoxContainer/Panel/CenterContainer/Label" % frame_number)
+		points_label = get_node("Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame%d/VBoxContainer/CenterContainer/Label" % frame_number)
+	
+	first_throw_label.text = ""
+	second_throw_label.text = ""
+	points_label.text = ""
 	
 	var frame_total_points = my_frame.points
 	if frame_total_points != null:
-		_points_label.text = str(frame_total_points)
+		frame_total_points += total_points_for_frame(frame_number)
+		points_label.text = str(frame_total_points)
 	
 	if my_frame.first_throw != null:
 		if my_frame.first_throw == 10:
-			_first_throw_label.text = "X"
+			first_throw_label.text = "X"
 		else:
-			_first_throw_label.text = str(my_frame.first_throw)
+			first_throw_label.text = str(my_frame.first_throw)
 	
 	if my_frame.second_throw != null:
 		if my_frame.first_throw + my_frame.second_throw == 10:
-			_second_throw_label.text = "/"
+			second_throw_label.text = "/"
 		else:
-			_second_throw_label.text = str(my_frame.second_throw)
+			second_throw_label.text = str(my_frame.second_throw)
+
+func draw_current_frame():
+	var my_frame = my_frames[current_frame_number-1]
+	var first_throw_label = _current_first_throw_label
+	var second_throw_label = _current_second_throw_label
+	var points_label = _current_points_label
+	
+	first_throw_label.text = ""
+	second_throw_label.text = ""
+	points_label.text = ""
+	
+	var frame_total_points = my_frame.points
+	if frame_total_points != null:
+		frame_total_points += total_points_for_frame(current_frame_number)
+		points_label.text = str(frame_total_points)
+	
+	if my_frame.first_throw != null:
+		if my_frame.first_throw == 10:
+			first_throw_label.text = "X"
+		else:
+			first_throw_label.text = str(my_frame.first_throw)
+	
+	if my_frame.second_throw != null:
+		if my_frame.first_throw + my_frame.second_throw == 10:
+			second_throw_label.text = "/"
+		else:
+			second_throw_label.text = str(my_frame.second_throw)
 
 func is_next_shot_new_frame():
 	var result = false
@@ -105,11 +151,11 @@ func add_pins_to_frame(num_pins):
 	if frame.first_throw == null:
 		frame.first_throw = num_pins
 		do_calculations()
-		draw_frame(frame)
+		draw_frames()
 	elif frame.second_throw == null:
 		frame.second_throw = num_pins
 		do_calculations()
-		draw_frame(frame)
+		draw_frames()
 
 func next_frame():
 	set_current_frame(current_frame_number + 1)
@@ -118,5 +164,5 @@ func set_current_frame(frame_num):
 	emit_signal("new_frame")
 	do_calculations()
 	current_frame_number = frame_num
-	draw_frame(my_frames[frame_num-1])
+	draw_frames()
 	_frame_label.text = "FRAME: %d" % frame_num
