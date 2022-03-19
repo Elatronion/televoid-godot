@@ -24,7 +24,9 @@ func _physics_process(delta: float) -> void:
 func handle_movement_input() -> void:
 	if GameManager.game_state != GameManager.GameState.PLAY:
 		interaction_action_label.visible = false
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		return
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	interaction_action_label.visible = true
 	
 	direction = Vector3.ZERO
