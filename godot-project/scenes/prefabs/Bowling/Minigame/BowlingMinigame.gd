@@ -33,11 +33,13 @@ func activate():
 	active = true
 	just_active = true
 	throw_arrow_mesh.visible = true
+	$Button.visible = true
 	$Camera.current = true
 
 func deactivate():
 	active = false
 	throw_arrow_mesh.visible = false
+	$Button.visible = false
 	$Camera.current = false
 
 func throw_ball():
@@ -59,8 +61,6 @@ func _process(delta):
 	
 	if active:
 		GameManager.SetState(GameManager.GameState.MINIGAME)
-		if Input.is_action_just_pressed("leave"):
-			deactivate()
 	
 	if just_active:
 		just_active = false
@@ -128,3 +128,7 @@ func _on_ScreenTimer_timeout():
 
 func _on_Hotspot3D_interact():
 	activate()
+
+
+func _on_Button_pressed():
+	deactivate()

@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/prefabs/Bowling/Minigame/BowlingMinigame.gd" type="Script" id=1]
 [ext_resource path="res://scenes/prefabs/Bowling/Pins/BowlingPin.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/prefabs/Bowling/Monitor/BowlingUI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/prefabs/Bowling/Minigame/BowlingPins.gd" type="Script" id=4]
 [ext_resource path="res://scenes/prefabs/Bowling/Hotspot/Hotspot3D.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/prefabs/Minigame/exit.gd" type="Script" id=6]
+[ext_resource path="res://res/textures/sprites/minigame-exit-button.png" type="Texture" id=7]
 
 [sub_resource type="PrismMesh" id=18]
 size = Vector3( 0.25, 10, 0.05 )
@@ -131,6 +133,20 @@ render_target_v_flip = true
 [node name="Hotspot3D" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 2.66832, 0, 0, 0, 2.62952, 0.0237305, 1.28014, 0 )
 
+[node name="Button" type="Button" parent="."]
+visible = false
+margin_right = 76.0
+margin_bottom = 70.0
+rect_scale = Vector2( 2, 2 )
+focus_mode = 0
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+keep_pressed_outside = true
+icon = ExtResource( 7 )
+flat = true
+script = ExtResource( 6 )
+
 [connection signal="timeout" from="HitTimer" to="." method="_on_HitTimer_timeout"]
 [connection signal="timeout" from="ScreenTimer" to="." method="_on_ScreenTimer_timeout"]
 [connection signal="interact" from="Hotspot3D" to="." method="_on_Hotspot3D_interact"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
