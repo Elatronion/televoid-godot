@@ -5,6 +5,7 @@ onready var hit_timer = $HitTimer
 onready var screen_timer = $ScreenTimer
 onready var bowling_ball = preload("res://scenes/prefabs/Bowling/Ball/BowlingBall.tscn")
 onready var throw_arrow = $ThrowArrow
+onready var throw_arrow_mesh = $ThrowArrow/ThrowArrowPivot/ThrowArrowMesh
 onready var throw_arrow_camera_position = $ThrowArrow/ThrowArrowCameraPosition
 onready var view_camera_position = $ViewPosition
 onready var points_camera_position = $PointsPosition
@@ -25,9 +26,19 @@ enum BowlingMinigameState {
 
 var current_state = BowlingMinigameState.AIM
 
+var active = false
+var just_active = false
+
 func activate():
-	visible = true
+	active = true
+	just_active = true
+	throw_arrow_mesh.visible = true
 	$Camera.current = true
+
+func deactivate():
+	active = false
+	throw_arrow_mesh.visible = false
+	$Camera.current = false
 
 func throw_ball():
 	var bowling_ball_instance = bowling_ball.instance()
@@ -37,6 +48,7 @@ func throw_ball():
 	bowling_ball_instance.apply_impulse(Vector3(0, 0, 0), throw_direction * throw_power)
 	current_state = BowlingMinigameState.ROLLING
 	
+	throw_arrow.visible = false
 	throw_arrow.get_node("ThrowArrowPivot").look_at(throw_arrow.global_transform.origin + Vector3(-1, 0, 0), Vector3.UP)
 
 var hit_timer_active = false
@@ -45,7 +57,18 @@ var t = 0
 func _process(delta):
 	t += delta
 	
+	if active:
+		GameManager.SetState(GameManager.GameState.MINIGAME)
+		if Input.is_action_just_pressed("leave"):
+			deactivate()
+	
+	if just_active:
+		just_active = false
+		return
+	
 	if current_state == BowlingMinigameState.AIM:
+		if not active:
+			return
 		throw_arrow.transform.origin.z = cos(t) * 1.75
 		minigame_camera.global_transform.origin = throw_arrow_camera_position.global_transform.origin
 		minigame_camera.look_at(Vector3(-28.481, 0, -1), Vector3.UP)
@@ -53,7 +76,9 @@ func _process(delta):
 		if Input.is_action_just_pressed("interact"):
 			current_state = BowlingMinigameState.YAW
 	elif current_state == BowlingMinigameState.YAW:
-		throw_direction.z = sin(t*(82/60)) * 0.5
+		if not active:
+			return
+		throw_direction.z = sin(t*(1.366666667)) * 0.5
 		throw_arrow.get_node("ThrowArrowPivot").look_at(throw_arrow.global_transform.origin + throw_direction, Vector3.UP)
 		if Input.is_action_just_pressed("interact"):
 			throw_ball()
@@ -75,10 +100,6 @@ func _process(delta):
 		minigame_camera.global_transform.origin = points_camera_position.global_transform.origin
 		minigame_camera.look_at(minigame_camera.global_transform.origin + Vector3(-1, 0, -0.5), Vector3.UP)
 		minigame_camera.fov = 70
-		
-		
-	if Input.is_action_just_pressed("fps_jump"):
-		activate()
 
 
 func _on_HitTimer_timeout():
@@ -92,13 +113,18 @@ func _on_HitTimer_timeout():
 
 
 func _on_ScreenTimer_timeout():
+	throw_arrow.visible = true
 	screen_timer_active = false
 	current_state = BowlingMinigameState.AIM
-	
-	if bowling_points_manager.is_next_shot_new_frame():
-		bowling_points_manager.next_frame()
-		$BowlingPins.reset_pins()
 	
 	if bowling_points_manager.game_is_end():
 		print("GG")
 		current_state = BowlingMinigameState.END
+	else:
+		if bowling_points_manager.is_next_shot_new_frame():
+			bowling_points_manager.next_frame()
+			$BowlingPins.reset_pins()
+
+
+func _on_Hotspot3D_interact():
+	activate()

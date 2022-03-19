@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/prefabs/Bowling/Minigame/BowlingMinigame.gd" type="Script" id=1]
 [ext_resource path="res://scenes/prefabs/Bowling/Pins/BowlingPin.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/prefabs/Bowling/Monitor/BowlingUI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/prefabs/Bowling/Minigame/BowlingPins.gd" type="Script" id=4]
+[ext_resource path="res://scenes/prefabs/Bowling/Hotspot/Hotspot3D.tscn" type="PackedScene" id=5]
 
 [sub_resource type="PrismMesh" id=18]
 size = Vector3( 0.25, 10, 0.05 )
@@ -25,6 +26,7 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0
 
 [node name="ThrowArrowMesh" type="MeshInstance" parent="ThrowArrow/ThrowArrowPivot"]
 transform = Transform( 1, -1.06581e-14, -4.02341e-21, 0, -4.37114e-08, 1, -1.06581e-14, -1, -4.37114e-08, 0.001178, -0.0156239, -4.79879 )
+visible = false
 mesh = SubResource( 18 )
 skeleton = NodePath("../../..")
 material/0 = SubResource( 19 )
@@ -126,5 +128,9 @@ render_target_v_flip = true
 
 [node name="BowlingUI" parent="UIViewport" instance=ExtResource( 3 )]
 
+[node name="Hotspot3D" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 2.66832, 0, 0, 0, 2.62952, 0.0237305, 1.28014, 0 )
+
 [connection signal="timeout" from="HitTimer" to="." method="_on_HitTimer_timeout"]
 [connection signal="timeout" from="ScreenTimer" to="." method="_on_ScreenTimer_timeout"]
+[connection signal="interact" from="Hotspot3D" to="." method="_on_Hotspot3D_interact"]

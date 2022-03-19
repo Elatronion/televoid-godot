@@ -14,11 +14,19 @@ var gravity_vec = Vector3()
 
 var jumping: bool = false;
 
+onready var interaction_action_label = $UI/CenterContainer/InteractionActionLabel
+var hovered_hotspot = null
+
 func _physics_process(delta: float) -> void:
 	handle_movement_input()
 	move(delta)
 
 func handle_movement_input() -> void:
+	if GameManager.game_state != GameManager.GameState.PLAY:
+		interaction_action_label.visible = false
+		return
+	interaction_action_label.visible = true
+	
 	direction = Vector3.ZERO
 	if(Input.is_action_pressed("fps_move_front")):
 		direction += -transform.basis.z
@@ -31,6 +39,9 @@ func handle_movement_input() -> void:
 	direction = direction.normalized()
 	
 	jumping = Input.is_action_just_pressed("fps_jump")
+	
+	if Input.is_action_just_pressed("interact") and hovered_hotspot != null:
+		hovered_hotspot.interact()
 
 func move(delta: float) -> void:
 	velocity = velocity.linear_interpolate(direction * walk_speed, acceleration * delta)
@@ -56,3 +67,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		rotate_y(deg2rad(-event.relative.x * mouse_sensitivity))
 		$Camera.rotate_x(deg2rad(-event.relative.y * mouse_sensitivity))
 		$Camera.rotation_degrees.x = clamp($Camera.rotation_degrees.x, -90, 90)
+
+
+func _on_InteractionArea_area_entered(area):
+	hovered_hotspot = area
+	interaction_action_label.text = area.action_name
+
+func _on_InteractionArea_area_exited(area):
+	hovered_hotspot = null
+	interaction_action_label.text = ""
