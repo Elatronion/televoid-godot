@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://res/meshes/bowling/bowling-blue-metal.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://res/meshes/bowling/red wood.png" type="Texture" id=2]
@@ -29,6 +29,8 @@
 [ext_resource path="res://scenes/prefabs/Bowling/Player/Character.tscn" type="PackedScene" id=27]
 [ext_resource path="res://scenes/prefabs/Bowling/Ball/BowlingBall.tscn" type="PackedScene" id=28]
 [ext_resource path="res://scenes/prefabs/Bowling/Monitor/BowlingMonitor.tscn" type="PackedScene" id=29]
+[ext_resource path="res://scenes/prefabs/Bowling/Hotspot/Hotspot3D.tscn" type="PackedScene" id=30]
+[ext_resource path="res://scenes/levels/Bowling/BowlingInteractions.gd" type="Script" id=31]
 [ext_resource path="res://scenes/prefabs/Bowling/Minigame/BowlingMinigame.tscn" type="PackedScene" id=32]
 
 [sub_resource type="Environment" id=15]
@@ -111,6 +113,7 @@ extents = Vector3( 12.6317, 7.49849, 4.26893 )
 viewport_path = NodePath("BowlingMinigame/UIViewport")
 
 [node name="BowlingScene" type="Spatial"]
+script = ExtResource( 31 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 15 )
@@ -309,13 +312,21 @@ light_energy = 0.5
 spot_range = 8.08365
 spot_angle = 22.6137
 
-[node name="PurpleFrontDoorLight" type="SpotLight" parent="BowlingAlley"]
-transform = Transform( -1.45955e-07, 0.0756823, 3.33247, -1.10084e-08, 3.33247, -0.0756823, -3.33333, -1.43195e-08, -1.45667e-07, 19.185, 6.8762, 5.30864 )
+[node name="LeftTableLight" type="SpotLight" parent="BowlingAlley"]
+transform = Transform( -5.83418e-08, -3.33247, 0.0756829, -1.10085e-08, 0.0756829, 3.33247, -3.33333, 5.80768e-08, -1.23303e-08, -1.88601, 18.8383, 14.1188 )
 light_color = Color( 0.0156863, 0, 0.501961, 1 )
-light_energy = 5.061
+light_energy = 3.093
 shadow_bias = 2.237
-spot_range = 12.4538
-spot_angle = 38.4438
+spot_range = 10.6307
+spot_angle = 40.51
+
+[node name="RightTableLight" type="SpotLight" parent="BowlingAlley"]
+transform = Transform( -5.83418e-08, -3.33247, 0.0756829, -1.10085e-08, 0.0756829, 3.33247, -3.33333, 5.80768e-08, -1.23303e-08, -2.46256, 18.8513, -4.57334 )
+light_color = Color( 0.0156863, 0, 0.501961, 1 )
+light_energy = 3.093
+shadow_bias = 2.237
+spot_range = 10.1335
+spot_angle = 32.7227
 
 [node name="StaticBody" type="StaticBody" parent="BowlingAlley"]
 
@@ -330,6 +341,18 @@ collision_mask = 2
 [node name="CollisionShape" type="CollisionShape" parent="BowlingAlley/PlayerBounds"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.7454, 0, 1.36291 )
 shape = SubResource( 18 )
+
+[node name="PlantHotspot3D" parent="BowlingAlley" instance=ExtResource( 30 )]
+transform = Transform( 3.80108, 0, 0, 0, 6.85248, 0, 0, 0, 3.71757, 0.173256, 3.42466, 22.0159 )
+action_name = "Plant"
+
+[node name="ExitHotspot3D" parent="BowlingAlley" instance=ExtResource( 30 )]
+transform = Transform( 1, 0, 0, 0, 17.0797, 0, 0, 0, 10.637, 10.7961, 5.1159, 4.97621 )
+action_name = "Exit"
+
+[node name="StrangeBrickWallHotspot3D" parent="BowlingAlley" instance=ExtResource( 30 )]
+transform = Transform( 7.31474, 0, 0, 0, 11.6122, 0, 0, 0, 1, -97.7779, 4.75737, 24.1184 )
+action_name = "Strange Brick Wall"
 
 [node name="Character" parent="." instance=ExtResource( 27 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.75496, 1.50802, 1.5085 )
@@ -355,5 +378,9 @@ transform = Transform( -0.5, 0.134401, 0.855533, 0, 0.987884, -0.155193, -0.8660
 
 [node name="BowlingMinigame" parent="." instance=ExtResource( 32 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -0.915 )
+
+[connection signal="interact" from="BowlingAlley/PlantHotspot3D" to="." method="_on_PlantHotspot3D_interact"]
+[connection signal="interact" from="BowlingAlley/ExitHotspot3D" to="." method="_on_ExitHotspot3D_interact"]
+[connection signal="interact" from="BowlingAlley/StrangeBrickWallHotspot3D" to="." method="_on_StrangeBrickWallHotspot3D_interact"]
 
 [editable path="BowlingMinigame"]
