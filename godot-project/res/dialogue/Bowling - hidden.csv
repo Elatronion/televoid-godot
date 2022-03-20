@@ -1,0 +1,12 @@
+TYPE,DATA
+RIGHT,NULL
+LEFT,IAN_ANGRY
+MESSAGE,"Hm."
+MESSAGE,"What the?"
+LEFT,IAN_VOID
+MESSAGE,"Is that...a key!?
+How strange."
+LEFT,IAN_THINKING
+MESSAGE,"But..where does this key lead to?"
+LEFT,IAN_HAPPY
+MESSAGE,"I'm starting to feel like Nancy Drew!"

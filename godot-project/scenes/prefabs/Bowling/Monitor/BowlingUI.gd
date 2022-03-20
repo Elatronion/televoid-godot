@@ -188,3 +188,9 @@ func game_is_end():
 			is_end = false
 			break
 	return is_end
+
+func is_allowed_extra_shot():
+	var result = false
+	if game_is_end() and (_current_first_throw_label.text == "X" or _current_second_throw_label.text == "/"):
+		result = true
+	return result

@@ -15,6 +15,9 @@ onready var minigame_camera = $Camera
 export var throw_power = 50
 var throw_direction = Vector3(-1, 0, 0)
 
+var minigame_is_end = false
+var super_secret = false
+
 enum BowlingMinigameState {
 	AIM,
 	YAW,
@@ -30,6 +33,8 @@ var active = false
 var just_active = false
 
 func activate():
+	if minigame_is_end:
+		return
 	active = true
 	just_active = true
 	throw_arrow_mesh.visible = true
@@ -101,6 +106,8 @@ func _process(delta):
 		minigame_camera.look_at(minigame_camera.global_transform.origin + Vector3(-1, 0, -0.5), Vector3.UP)
 		minigame_camera.fov = 70
 
+func is_allowed_extra_shot():
+	return bowling_points_manager.is_allowed_extra_shot()
 
 func _on_HitTimer_timeout():
 	hit_timer_active = false
@@ -118,8 +125,12 @@ func _on_ScreenTimer_timeout():
 	current_state = BowlingMinigameState.AIM
 	
 	if bowling_points_manager.game_is_end():
-		print("GG")
+		minigame_is_end = true
+		throw_arrow.visible = false
 		current_state = BowlingMinigameState.END
+		deactivate()
+		if is_allowed_extra_shot():
+			super_secret = true
 	else:
 		if bowling_points_manager.is_next_shot_new_frame():
 			bowling_points_manager.next_frame()
