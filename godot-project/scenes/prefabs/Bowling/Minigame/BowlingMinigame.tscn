@@ -146,7 +146,12 @@ icon = ExtResource( 7 )
 flat = true
 script = ExtResource( 6 )
 
+[node name="BallTimeout" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
 [connection signal="timeout" from="HitTimer" to="." method="_on_HitTimer_timeout"]
 [connection signal="timeout" from="ScreenTimer" to="." method="_on_ScreenTimer_timeout"]
 [connection signal="interact" from="Hotspot3D" to="." method="_on_Hotspot3D_interact"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="timeout" from="BallTimeout" to="." method="_on_BallTimeout_timeout"]

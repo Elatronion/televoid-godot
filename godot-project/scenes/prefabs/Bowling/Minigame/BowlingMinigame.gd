@@ -57,6 +57,7 @@ func throw_ball():
 	
 	throw_arrow.visible = false
 	throw_arrow.get_node("ThrowArrowPivot").look_at(throw_arrow.global_transform.origin + Vector3(-1, 0, 0), Vector3.UP)
+	$BallTimeout.start()
 
 var hit_timer_active = false
 var screen_timer_active = false
@@ -143,3 +144,8 @@ func _on_Hotspot3D_interact():
 
 func _on_Button_pressed():
 	deactivate()
+
+
+func _on_BallTimeout_timeout():
+	for bowling_ball in bowling_balls.get_children():
+		bowling_ball.queue_free()
