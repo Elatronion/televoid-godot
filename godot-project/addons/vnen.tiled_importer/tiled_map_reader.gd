@@ -193,6 +193,10 @@ func build(source_path, options):
 		var infinihallway_instance = infinihallway.instance()
 		root.add_child(infinihallway_instance)
 		infinihallway_instance.set_owner(root)
+	elif source_path == "res://res/scenes/bowling.tmx":
+		var bowling_scene_instance = load("res://scenes/levels/Bowling/Bowling.tscn").instance()
+		root.add_child(bowling_scene_instance)
+		bowling_scene_instance.set_owner(root)
 
 	return root
 

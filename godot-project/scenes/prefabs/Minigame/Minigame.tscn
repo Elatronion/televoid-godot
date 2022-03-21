@@ -27,9 +27,6 @@ keep_pressed_outside = true
 icon = ExtResource( 3 )
 flat = true
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 bus = "SFX"

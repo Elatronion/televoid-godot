@@ -1,0 +1,839 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://BowlingUI.theme" type="Theme" id=1]
+[ext_resource path="res://scenes/prefabs/Bowling/Monitor/BowlingUI.gd" type="Script" id=2]
+[ext_resource path="res://BowlingUI.small.theme" type="Theme" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[node name="BowlingUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = -20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_right = 1280.0
+margin_bottom = 362.0
+custom_constants/separation = 0
+
+[node name="CurrentFrame" type="Panel" parent="Panel/VBoxContainer/HBoxContainer"]
+margin_right = 362.0
+margin_bottom = 362.0
+rect_min_size = Vector2( 362, 362 )
+size_flags_horizontal = 0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/HBoxContainer/CurrentFrame"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/CurrentFrame/CenterContainer"]
+margin_left = 129.0
+margin_top = 118.0
+margin_right = 233.0
+margin_bottom = 244.0
+text = "?"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/CurrentFrame"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = -20
+
+[node name="TopHBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/CurrentFrame/VBoxContainer"]
+margin_right = 362.0
+margin_bottom = 191.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = -20
+
+[node name="LeftPanel" type="Panel" parent="Panel/VBoxContainer/HBoxContainer/CurrentFrame/VBoxContainer/TopHBoxContainer"]
+margin_right = 201.0
+margin_bottom = 191.0
+rect_min_size = Vector2( 181, 181 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/HBoxContainer/CurrentFrame/VBoxContainer/TopHBoxContainer/LeftPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/CurrentFrame/VBoxContainer/TopHBoxContainer/LeftPanel/CenterContainer"]
+margin_left = 48.0
+margin_top = 32.0
+margin_right = 152.0
+margin_bottom = 158.0
+text = "7"
+
+[node name="RightPanel" type="Panel" parent="Panel/VBoxContainer/HBoxContainer/CurrentFrame/VBoxContainer/TopHBoxContainer"]
+margin_left = 181.0
+margin_right = 362.0
+margin_bottom = 191.0
+rect_min_size = Vector2( 181, 181 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/HBoxContainer/CurrentFrame/VBoxContainer/TopHBoxContainer/RightPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/CurrentFrame/VBoxContainer/TopHBoxContainer/RightPanel/CenterContainer"]
+margin_left = 46.0
+margin_top = 32.0
+margin_right = 135.0
+margin_bottom = 158.0
+text = "/"
+
+[node name="BottomHBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/CurrentFrame/VBoxContainer"]
+margin_top = 171.0
+margin_right = 362.0
+margin_bottom = 362.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = -20
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/HBoxContainer/CurrentFrame/VBoxContainer/BottomHBoxContainer2"]
+margin_right = 362.0
+margin_bottom = 191.0
+rect_min_size = Vector2( 181, 181 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/HBoxContainer/CurrentFrame/VBoxContainer/BottomHBoxContainer2/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/CurrentFrame/VBoxContainer/BottomHBoxContainer2/Panel/CenterContainer"]
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 329.0
+margin_bottom = 158.0
+text = "178"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AllFrames" type="Panel" parent="Panel/VBoxContainer/HBoxContainer"]
+margin_left = 362.0
+margin_right = 1280.0
+margin_bottom = 362.0
+rect_min_size = Vector2( 362, 362 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = -20
+
+[node name="TopRow" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer"]
+margin_right = 918.0
+margin_bottom = 191.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = -20
+
+[node name="Frame1" type="Panel" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow"]
+margin_right = 199.0
+margin_bottom = 191.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = -10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame1/VBoxContainer"]
+margin_right = 199.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = -10
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame1/VBoxContainer/HBoxContainer"]
+margin_right = 104.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame1/VBoxContainer/HBoxContainer/CenterContainer"]
+margin_left = 52.0
+margin_top = 17.0
+margin_right = 52.0
+margin_bottom = 82.0
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame1/VBoxContainer/HBoxContainer"]
+margin_left = 94.0
+margin_right = 199.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame1/VBoxContainer/HBoxContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame1/VBoxContainer/HBoxContainer/Panel/CenterContainer"]
+margin_left = 52.0
+margin_top = 17.0
+margin_right = 52.0
+margin_bottom = 82.0
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame1/VBoxContainer"]
+margin_top = 90.0
+margin_right = 199.0
+margin_bottom = 191.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame1/VBoxContainer/CenterContainer"]
+margin_left = 99.0
+margin_top = 18.0
+margin_right = 99.0
+margin_bottom = 83.0
+
+[node name="Frame2" type="Panel" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow"]
+margin_left = 179.0
+margin_right = 379.0
+margin_bottom = 191.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = -10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame2/VBoxContainer"]
+margin_right = 200.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = -10
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame2/VBoxContainer/HBoxContainer"]
+margin_right = 105.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame2/VBoxContainer/HBoxContainer/CenterContainer"]
+margin_left = 52.0
+margin_top = 17.0
+margin_right = 52.0
+margin_bottom = 82.0
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame2/VBoxContainer/HBoxContainer"]
+margin_left = 95.0
+margin_right = 200.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame2/VBoxContainer/HBoxContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame2/VBoxContainer/HBoxContainer/Panel/CenterContainer"]
+margin_left = 52.0
+margin_top = 17.0
+margin_right = 52.0
+margin_bottom = 82.0
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame2/VBoxContainer"]
+margin_top = 90.0
+margin_right = 200.0
+margin_bottom = 191.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame2/VBoxContainer/CenterContainer"]
+margin_left = 100.0
+margin_top = 18.0
+margin_right = 100.0
+margin_bottom = 83.0
+
+[node name="Frame3" type="Panel" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow"]
+margin_left = 359.0
+margin_right = 558.0
+margin_bottom = 191.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = -10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame3/VBoxContainer"]
+margin_right = 199.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = -10
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame3/VBoxContainer/HBoxContainer"]
+margin_right = 104.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame3/VBoxContainer/HBoxContainer/CenterContainer"]
+margin_left = 52.0
+margin_top = 17.0
+margin_right = 52.0
+margin_bottom = 82.0
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame3/VBoxContainer/HBoxContainer"]
+margin_left = 94.0
+margin_right = 199.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame3/VBoxContainer/HBoxContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame3/VBoxContainer/HBoxContainer/Panel/CenterContainer"]
+margin_left = 52.0
+margin_top = 17.0
+margin_right = 52.0
+margin_bottom = 82.0
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame3/VBoxContainer"]
+margin_top = 90.0
+margin_right = 199.0
+margin_bottom = 191.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame3/VBoxContainer/CenterContainer"]
+margin_left = 99.0
+margin_top = 18.0
+margin_right = 99.0
+margin_bottom = 83.0
+
+[node name="Frame4" type="Panel" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow"]
+margin_left = 538.0
+margin_right = 738.0
+margin_bottom = 191.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = -10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame4/VBoxContainer"]
+margin_right = 200.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = -10
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame4/VBoxContainer/HBoxContainer"]
+margin_right = 105.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame4/VBoxContainer/HBoxContainer/CenterContainer"]
+margin_left = 52.0
+margin_top = 17.0
+margin_right = 52.0
+margin_bottom = 82.0
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame4/VBoxContainer/HBoxContainer"]
+margin_left = 95.0
+margin_right = 200.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame4/VBoxContainer/HBoxContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame4/VBoxContainer/HBoxContainer/Panel/CenterContainer"]
+margin_left = 52.0
+margin_top = 17.0
+margin_right = 52.0
+margin_bottom = 82.0
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame4/VBoxContainer"]
+margin_top = 90.0
+margin_right = 200.0
+margin_bottom = 191.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame4/VBoxContainer/CenterContainer"]
+margin_left = 100.0
+margin_top = 18.0
+margin_right = 100.0
+margin_bottom = 83.0
+
+[node name="Frame5" type="Panel" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow"]
+margin_left = 718.0
+margin_right = 918.0
+margin_bottom = 191.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame5"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = -10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame5/VBoxContainer"]
+margin_right = 200.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = -10
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame5/VBoxContainer/HBoxContainer"]
+margin_right = 105.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame5/VBoxContainer/HBoxContainer/CenterContainer"]
+margin_left = 52.0
+margin_top = 17.0
+margin_right = 52.0
+margin_bottom = 82.0
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame5/VBoxContainer/HBoxContainer"]
+margin_left = 95.0
+margin_right = 200.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame5/VBoxContainer/HBoxContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame5/VBoxContainer/HBoxContainer/Panel/CenterContainer"]
+margin_left = 52.0
+margin_top = 17.0
+margin_right = 52.0
+margin_bottom = 82.0
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame5/VBoxContainer"]
+margin_top = 90.0
+margin_right = 200.0
+margin_bottom = 191.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/TopRow/Frame5/VBoxContainer/CenterContainer"]
+margin_left = 100.0
+margin_top = 18.0
+margin_right = 100.0
+margin_bottom = 83.0
+
+[node name="BottomRow" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer"]
+margin_top = 171.0
+margin_right = 918.0
+margin_bottom = 362.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = -20
+
+[node name="Frame6" type="Panel" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow"]
+margin_right = 199.0
+margin_bottom = 191.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame6"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = -10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame6/VBoxContainer"]
+margin_right = 199.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = -10
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame6/VBoxContainer/HBoxContainer"]
+margin_right = 104.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame6/VBoxContainer/HBoxContainer/CenterContainer"]
+margin_left = 52.0
+margin_top = 17.0
+margin_right = 52.0
+margin_bottom = 82.0
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame6/VBoxContainer/HBoxContainer"]
+margin_left = 94.0
+margin_right = 199.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame6/VBoxContainer/HBoxContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame6/VBoxContainer/HBoxContainer/Panel/CenterContainer"]
+margin_left = 52.0
+margin_top = 17.0
+margin_right = 52.0
+margin_bottom = 82.0
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame6/VBoxContainer"]
+margin_top = 90.0
+margin_right = 199.0
+margin_bottom = 191.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame6/VBoxContainer/CenterContainer"]
+margin_left = 99.0
+margin_top = 18.0
+margin_right = 99.0
+margin_bottom = 83.0
+
+[node name="Frame7" type="Panel" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow"]
+margin_left = 179.0
+margin_right = 379.0
+margin_bottom = 191.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame7"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = -10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame7/VBoxContainer"]
+margin_right = 200.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = -10
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame7/VBoxContainer/HBoxContainer"]
+margin_right = 105.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame7/VBoxContainer/HBoxContainer/CenterContainer"]
+margin_left = 52.0
+margin_top = 17.0
+margin_right = 52.0
+margin_bottom = 82.0
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame7/VBoxContainer/HBoxContainer"]
+margin_left = 95.0
+margin_right = 200.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame7/VBoxContainer/HBoxContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame7/VBoxContainer/HBoxContainer/Panel/CenterContainer"]
+margin_left = 52.0
+margin_top = 17.0
+margin_right = 52.0
+margin_bottom = 82.0
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame7/VBoxContainer"]
+margin_top = 90.0
+margin_right = 200.0
+margin_bottom = 191.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame7/VBoxContainer/CenterContainer"]
+margin_left = 100.0
+margin_top = 18.0
+margin_right = 100.0
+margin_bottom = 83.0
+
+[node name="Frame8" type="Panel" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow"]
+margin_left = 359.0
+margin_right = 558.0
+margin_bottom = 191.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame8"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = -10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame8/VBoxContainer"]
+margin_right = 199.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = -10
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame8/VBoxContainer/HBoxContainer"]
+margin_right = 104.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame8/VBoxContainer/HBoxContainer/CenterContainer"]
+margin_left = 52.0
+margin_top = 17.0
+margin_right = 52.0
+margin_bottom = 82.0
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame8/VBoxContainer/HBoxContainer"]
+margin_left = 94.0
+margin_right = 199.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame8/VBoxContainer/HBoxContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame8/VBoxContainer/HBoxContainer/Panel/CenterContainer"]
+margin_left = 52.0
+margin_top = 17.0
+margin_right = 52.0
+margin_bottom = 82.0
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame8/VBoxContainer"]
+margin_top = 90.0
+margin_right = 199.0
+margin_bottom = 191.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame8/VBoxContainer/CenterContainer"]
+margin_left = 99.0
+margin_top = 18.0
+margin_right = 99.0
+margin_bottom = 83.0
+
+[node name="Frame9" type="Panel" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow"]
+margin_left = 538.0
+margin_right = 738.0
+margin_bottom = 191.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame9"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = -10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame9/VBoxContainer"]
+margin_right = 200.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = -10
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame9/VBoxContainer/HBoxContainer"]
+margin_right = 105.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame9/VBoxContainer/HBoxContainer/CenterContainer"]
+margin_left = 52.0
+margin_top = 17.0
+margin_right = 52.0
+margin_bottom = 82.0
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame9/VBoxContainer/HBoxContainer"]
+margin_left = 95.0
+margin_right = 200.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame9/VBoxContainer/HBoxContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame9/VBoxContainer/HBoxContainer/Panel/CenterContainer"]
+margin_left = 52.0
+margin_top = 17.0
+margin_right = 52.0
+margin_bottom = 82.0
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame9/VBoxContainer"]
+margin_top = 90.0
+margin_right = 200.0
+margin_bottom = 191.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame9/VBoxContainer/CenterContainer"]
+margin_left = 100.0
+margin_top = 18.0
+margin_right = 100.0
+margin_bottom = 83.0
+
+[node name="Frame10" type="Panel" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow"]
+margin_left = 718.0
+margin_right = 918.0
+margin_bottom = 191.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame10"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = -10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame10/VBoxContainer"]
+margin_right = 200.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = -10
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame10/VBoxContainer/HBoxContainer"]
+margin_right = 105.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame10/VBoxContainer/HBoxContainer/CenterContainer"]
+margin_left = 52.0
+margin_top = 17.0
+margin_right = 52.0
+margin_bottom = 82.0
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame10/VBoxContainer/HBoxContainer"]
+margin_left = 95.0
+margin_right = 200.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame10/VBoxContainer/HBoxContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame10/VBoxContainer/HBoxContainer/Panel/CenterContainer"]
+margin_left = 52.0
+margin_top = 17.0
+margin_right = 52.0
+margin_bottom = 82.0
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame10/VBoxContainer"]
+margin_top = 90.0
+margin_right = 200.0
+margin_bottom = 191.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/AllFrames/VBoxContainer/BottomRow/Frame10/VBoxContainer/CenterContainer"]
+margin_left = 100.0
+margin_top = 18.0
+margin_right = 100.0
+margin_bottom = 83.0
+
+[node name="BottomPanel" type="Panel" parent="Panel/VBoxContainer"]
+margin_top = 342.0
+margin_right = 1280.0
+margin_bottom = 720.0
+rect_min_size = Vector2( 1216, 362 )
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/BottomPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/BottomPanel/CenterContainer"]
+margin_left = 276.0
+margin_top = 126.0
+margin_right = 1004.0
+margin_bottom = 252.0
+text = "FRAME: 5"

@@ -1,0 +1,12 @@
+TYPE,DATA
+RIGHT,NULL
+LEFT,IAN_IDLE
+MESSAGE,"I didn't notice this last time,
+there's a key hole!"
+MESSAGE,"..."
+LEFT,IAN_VOID
+MESSAGE,"But uhm uuh,
+someone just leaving a key in some obvious key-hiding
+spot would be too convenient.
+
+Right?"
