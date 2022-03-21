@@ -4,7 +4,7 @@ onready var menu = $Menu
 onready var options_menu = $OptionsMenu/Control
 #onready var pause_button = $PauseButton
 
-func _input(event):
+func _process(delta):
 	if GameManager.game_state == GameManager.GameState.PLAY and Input.is_action_just_pressed("pause"):
 		_pause()
 	elif GameManager.game_state == GameManager.GameState.PAUSE and Input.is_action_just_pressed("pause"):
