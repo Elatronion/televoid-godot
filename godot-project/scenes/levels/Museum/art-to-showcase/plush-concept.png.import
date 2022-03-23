@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+path="res://.import/plush-concept.png-b5b0bb1aebc4afb4c4e91a8378666262.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.png"
-dest_files=[ "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex" ]
+source_file="res://scenes/levels/Museum/art-to-showcase/plush-concept.png"
+dest_files=[ "res://.import/plush-concept.png-b5b0bb1aebc4afb4c4e91a8378666262.stex" ]
 
 [params]
 

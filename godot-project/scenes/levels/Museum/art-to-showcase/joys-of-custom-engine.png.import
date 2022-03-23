@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+path="res://.import/joys-of-custom-engine.png-576acaa549bb353308363db700e1cd3e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.png"
-dest_files=[ "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex" ]
+source_file="res://scenes/levels/Museum/art-to-showcase/joys-of-custom-engine.png"
+dest_files=[ "res://.import/joys-of-custom-engine.png-576acaa549bb353308363db700e1cd3e.stex" ]
 
 [params]
 

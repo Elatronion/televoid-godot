@@ -24,6 +24,7 @@ shape = SubResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.716666, -0.0904972 )
 current = true
 fov = 90.0
+far = 250.0
 
 [node name="InteractionArea" type="Area" parent="Camera"]
 collision_layer = 4
