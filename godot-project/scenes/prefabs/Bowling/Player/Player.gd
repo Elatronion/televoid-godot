@@ -6,6 +6,8 @@ export(float) var gravity = 15
 export(float) var mouse_sensitivity = 0.05
 export(float) var jump_strength = 6
 
+export(NodePath) var respawn_location = ""
+
 var velocity = Vector3()
 var movement = Vector3()
 var direction = Vector3()
@@ -20,6 +22,10 @@ var hovered_hotspot = null
 func _physics_process(delta: float) -> void:
 	handle_movement_input()
 	move(delta)
+	if global_transform.origin.y <= -300:
+		if respawn_location != "":
+			var respawn_location_node = get_node(respawn_location)
+			global_transform.origin = respawn_location_node.global_transform.origin
 
 func handle_movement_input() -> void:
 	if GameManager.game_state != GameManager.GameState.PLAY:

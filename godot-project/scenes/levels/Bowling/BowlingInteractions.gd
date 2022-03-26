@@ -8,15 +8,13 @@ func _on_PlantHotspot3D_interact():
 	else:
 		GameManager.LoadDialogue("res/dialogue/Bowling - Plant.csv")
 
-
 func _on_ExitHotspot3D_interact():
 	get_tree().quit()
-
 
 func _on_StrangeBrickWallHotspot3D_interact():
 	if $BowlingMinigame.super_secret:
 		if GameManager.HasItem("key"):
-			get_tree().change_scene("res://scenes/levels/Museum/Museum.tscn")
+			GameManager.LoadScene("res/scenes/museum.tmx")
 		else:
 			GameManager.LoadDialogue("res/dialogue/Bowling - wall2.csv")
 	else:

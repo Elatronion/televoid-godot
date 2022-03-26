@@ -208,8 +208,12 @@ is completely open source!
 
 The development has in part been logged through a T:OoTL playlist found on my YouTube (Elatronion), if you're curious."
 
+[node name="PlayerRespawn" type="Position3D" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.156, 200, 0.717 )
+
 [node name="Character" parent="." instance=ExtResource( 1 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.156107, 186.399, 0.717009 )
+respawn_location = NodePath("../PlayerRespawn")
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.722364, 0.488973, 0.488974, 0, -0.707107, 0.707107, 0.691513, -0.510788, -0.510789, 11.1719, 24.3157, -24.0855 )
@@ -658,7 +662,7 @@ texture = ExtResource( 55 )
 text = "Ian's voice SFX were ripped from
 Asagao Academy: Normal Boots Club
 
-You check out the game on Itch!
+You can check out the game on Itch!
 "
 
 [node name="Inspiration" parent="Frames" instance=ExtResource( 5 )]
