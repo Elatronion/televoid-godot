@@ -54,5 +54,10 @@ margin_bottom = 373.0
 
 [node name="PauseMenu" parent="." instance=ExtResource( 4 )]
 
+[node name="StepTimer" type="Timer" parent="."]
+wait_time = 0.45
+autostart = true
+
 [connection signal="area_entered" from="Camera/InteractionArea" to="." method="_on_InteractionArea_area_entered"]
 [connection signal="area_exited" from="Camera/InteractionArea" to="." method="_on_InteractionArea_area_exited"]
+[connection signal="timeout" from="StepTimer" to="." method="_on_StepTimer_timeout"]

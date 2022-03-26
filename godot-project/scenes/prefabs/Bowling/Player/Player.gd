@@ -8,6 +8,8 @@ export(float) var jump_strength = 6
 
 export(NodePath) var respawn_location = ""
 
+onready var step_timer = $StepTimer
+
 var velocity = Vector3()
 var movement = Vector3()
 var direction = Vector3()
@@ -31,6 +33,8 @@ func handle_movement_input() -> void:
 	if GameManager.game_state != GameManager.GameState.PLAY:
 		interaction_action_label.visible = false
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		step_timer.stop()
+		direction = Vector3.ZERO
 		return
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	interaction_action_label.visible = true
@@ -45,6 +49,12 @@ func handle_movement_input() -> void:
 	if(Input.is_action_pressed("fps_move_right")):
 		direction += transform.basis.x
 	direction = direction.normalized()
+	
+	if not is_on_floor() or direction.length() == 0:
+		step_timer.stop()
+	else:
+		if step_timer.time_left == 0:
+			step_timer.start()
 	
 	jumping = Input.is_action_just_pressed("fps_jump")
 	
@@ -84,3 +94,7 @@ func _on_InteractionArea_area_entered(area):
 func _on_InteractionArea_area_exited(area):
 	hovered_hotspot = null
 	interaction_action_label.text = ""
+
+
+func _on_StepTimer_timeout():
+	GameManager.PlaySFX("step"+str(randi() % 3 + 1))
