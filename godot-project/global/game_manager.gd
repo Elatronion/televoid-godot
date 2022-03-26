@@ -65,25 +65,25 @@ func set_mouse_walk():
 func _process(delta):
 	if game_state != GameState.PAUSE:
 		SetState(GameState.PLAY)
-	if Input.is_action_just_pressed("F1"):
-		AddItem("VHS")
-		AddItem("helmet")
-		AddItem("brutal moose")
-		#LoadMinigame("res/scripts/minigames/main_menu.wren", true)
-		#PlayBGM("sad again by brutalmoose")
-	if Input.is_action_just_pressed("F2"):
-		AddItem("party invitation (arcade)")
-		AddItem("party invitation (door 100)")
-		AddItem("party invitation (kitchen)")
-		AddItem("party invitation (stairs)")
-		#SaveGame()
-	if Input.is_action_just_pressed("F3"):
-		#LoadGame()
-		pass
-	if Input.is_action_just_pressed("F4"):
-		LoadScene("res/scenes/arcade.tmx")
-	if Input.is_action_just_pressed("F5"):
-		LoadScene("res/scenes/Infinihallway/Infinihallway.tmx")
+#	if Input.is_action_just_pressed("F1"):
+#		AddItem("VHS")
+#		AddItem("helmet")
+#		AddItem("brutal moose")
+#		#LoadMinigame("res/scripts/minigames/main_menu.wren", true)
+#		#PlayBGM("sad again by brutalmoose")
+#	if Input.is_action_just_pressed("F2"):
+#		AddItem("party invitation (arcade)")
+#		AddItem("party invitation (door 100)")
+#		AddItem("party invitation (kitchen)")
+#		AddItem("party invitation (stairs)")
+#		#SaveGame()
+#	if Input.is_action_just_pressed("F3"):
+#		#LoadGame()
+#		pass
+#	if Input.is_action_just_pressed("F4"):
+#		LoadScene("res/scenes/arcade.tmx")
+#	if Input.is_action_just_pressed("F5"):
+#		LoadScene("res/scenes/Infinihallway/Infinihallway.tmx")
 
 func GetKey(key_code):
 	return GlobalInput.is_key_pressed(key_code)
