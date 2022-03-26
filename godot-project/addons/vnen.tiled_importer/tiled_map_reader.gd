@@ -197,6 +197,10 @@ func build(source_path, options):
 		var bowling_scene_instance = load("res://scenes/levels/Bowling/Bowling.tscn").instance()
 		root.add_child(bowling_scene_instance)
 		bowling_scene_instance.set_owner(root)
+	elif source_path == "res://res/scenes/museum.tmx":
+		var museum_scene_instance = load("res://scenes/levels/Museum/Museum.tscn").instance()
+		root.add_child(museum_scene_instance)
+		museum_scene_instance.set_owner(root)
 
 	return root
 

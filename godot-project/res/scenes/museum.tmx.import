@@ -1,0 +1,22 @@
+[remap]
+
+importer="vnen.tiled_importer"
+type="PackedScene"
+path="res://.import/museum.tmx-e80bb9bc4ad78e639934868220bff189.scn"
+
+[deps]
+
+source_file="res://res/scenes/museum.tmx"
+dest_files=[ "res://.import/museum.tmx-e80bb9bc4ad78e639934868220bff189.scn" ]
+
+[params]
+
+custom_properties=true
+tile_metadata=true
+uv_clip=true
+image_flags=7
+collision_layer=1
+embed_internal_images=false
+save_tiled_properties=true
+add_background=true
+post_import_script=""
