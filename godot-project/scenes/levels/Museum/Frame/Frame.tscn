@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/levels/Museum/Frame/frame.glb" type="PackedScene" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://scenes/levels/Museum/Frame/Frame3D.gd" type="Script" id=3]
+[ext_resource path="res://scenes/prefabs/Bowling/Hotspot/Hotspot3D.tscn" type="PackedScene" id=4]
+[ext_resource path="res://VHS.theme" type="Theme" id=5]
+
+[node name="Frame3D" type="Sprite3D"]
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="Hotspot3D" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1.95269, 0, 0, 0, 1.92023, 0, 0, 0, 0.149133, 0, 0, 0 )
+action_name = "Frame"
+
+[node name="frame" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0102014 )
+
+[node name="SpotLight" type="SpotLight" parent="frame"]
+transform = Transform( 1, 0, 0, 0, 0.516728, -0.85615, 0, 0.85615, 0.516728, 0, -0.834756, 0.272251 )
+visible = false
+light_energy = 1.5
+spot_range = 2.0
+
+[node name="SpotLight2" type="SpotLight" parent="frame"]
+transform = Transform( 1, 0, 0, 0, 0.516728, -0.85615, 0, 0.85615, 0.516728, 0.5, -0.835, 0.272 )
+visible = false
+light_energy = 1.5
+spot_range = 2.0
+
+[node name="SpotLight3" type="SpotLight" parent="frame"]
+transform = Transform( 1, 0, 0, 0, 0.516728, -0.85615, 0, 0.85615, 0.516728, -0.5, -0.835, 0.272 )
+visible = false
+light_energy = 1.5
+spot_range = 2.0
+
+[node name="Control" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 5 )
+
+[node name="Panel" type="Panel" parent="Control"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -541.0
+margin_top = -252.0
+margin_right = 541.0
+margin_bottom = -33.0
+
+[node name="Label" type="Label" parent="Control/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Hello, World"
+align = 1
+valign = 1
+autowrap = true
+
+[connection signal="interact" from="Hotspot3D" to="." method="_on_Hotspot3D_interact"]

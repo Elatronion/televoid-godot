@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.wren_importer"
+type="Resource"
+path="res://.import/Kitchen - Microwave.wren-c8a635c5890f4a45d102d8a038a71629.tres"
+
+[deps]
+
+source_file="res://res/scripts/Kitchen - Microwave.wren"
+dest_files=[ "res://.import/Kitchen - Microwave.wren-c8a635c5890f4a45d102d8a038a71629.tres" ]
+
+[params]
+

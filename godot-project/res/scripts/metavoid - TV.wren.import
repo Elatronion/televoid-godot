@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.wren_importer"
+type="Resource"
+path="res://.import/metavoid - TV.wren-f6ba17e12dca12b8170e76668c8bd17a.tres"
+
+[deps]
+
+source_file="res://res/scripts/metavoid - TV.wren"
+dest_files=[ "res://.import/metavoid - TV.wren-f6ba17e12dca12b8170e76668c8bd17a.tres" ]
+
+[params]
+

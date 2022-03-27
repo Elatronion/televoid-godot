@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.tootl_csv_dialogue_importer"
+type="Resource"
+path="res://.import/Door Else.csv-28b86faaa959cf07a1b3d6eaded84513.tres"
+
+[deps]
+
+source_file="res://res/dialogue/Infinihallway/Door Else.csv"
+dest_files=[ "res://.import/Door Else.csv-28b86faaa959cf07a1b3d6eaded84513.tres" ]
+
+[params]
+

@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.wren_importer"
+type="Resource"
+path="res://.import/televoid-core.wren-3c38e628aae2f34ae5ddc3e774a782ec.tres"
+
+[deps]
+
+source_file="res://res/scripts/televoid-core.wren"
+dest_files=[ "res://.import/televoid-core.wren-3c38e628aae2f34ae5ddc3e774a782ec.tres" ]
+
+[params]
+

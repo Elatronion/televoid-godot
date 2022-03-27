@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="CubeMesh" id=17]
+size = Vector3( 16, 9, 0.25 )
+
+[sub_resource type="SpatialMaterial" id=18]
+albedo_color = Color( 0.117647, 0.121569, 0.168627, 1 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="BowlingMonitor" type="MeshInstance" parent="."]
+transform = Transform( 0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0, 0, 0 )
+mesh = SubResource( 17 )
+material/0 = SubResource( 18 )

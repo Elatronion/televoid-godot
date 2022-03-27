@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.wren_importer"
+type="Resource"
+path="res://.import/game.wren-50066deb78bd25eed30ed5b17983c4d7.tres"
+
+[deps]
+
+source_file="res://res/scripts/minigames/spin_wheel/game.wren"
+dest_files=[ "res://.import/game.wren-50066deb78bd25eed30ed5b17983c4d7.tres" ]
+
+[params]
+

@@ -1,0 +1,123 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/prefabs/PauseMenu/PauseMenu.gd" type="Script" id=1]
+[ext_resource path="res://VHS.theme" type="Theme" id=2]
+[ext_resource path="res://res/fonts/VCR OSD Mono.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://scenes/prefabs/OptionsMenu/OptionsMenu.tscn" type="PackedScene" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 3 )
+
+[node name="PauseMenu" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="Menu" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/CenterContainer"]
+margin_left = 545.0
+margin_top = 181.0
+margin_right = 735.0
+margin_bottom = 538.0
+
+[node name="MarginContainerTitle" type="MarginContainer" parent="Menu/CenterContainer/VBoxContainer"]
+margin_right = 190.0
+margin_bottom = 77.0
+
+[node name="Label" type="Label" parent="Menu/CenterContainer/VBoxContainer/MarginContainerTitle"]
+margin_top = 10.0
+margin_right = 190.0
+margin_bottom = 67.0
+custom_fonts/font = SubResource( 1 )
+text = "PAUSE"
+align = 1
+valign = 1
+
+[node name="MarginContainerResume" type="MarginContainer" parent="Menu/CenterContainer/VBoxContainer"]
+margin_top = 81.0
+margin_right = 190.0
+margin_bottom = 147.0
+
+[node name="ButtonResume" type="Button" parent="Menu/CenterContainer/VBoxContainer/MarginContainerResume"]
+margin_top = 10.0
+margin_right = 190.0
+margin_bottom = 56.0
+text = "RESUME"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainerOptions" type="MarginContainer" parent="Menu/CenterContainer/VBoxContainer"]
+margin_top = 151.0
+margin_right = 190.0
+margin_bottom = 217.0
+
+[node name="ButtonOptions" type="Button" parent="Menu/CenterContainer/VBoxContainer/MarginContainerOptions"]
+margin_top = 10.0
+margin_right = 190.0
+margin_bottom = 56.0
+text = "OPTIONS"
+
+[node name="MarginContainerSave" type="MarginContainer" parent="Menu/CenterContainer/VBoxContainer"]
+margin_top = 221.0
+margin_right = 190.0
+margin_bottom = 287.0
+
+[node name="ButtonSave" type="Button" parent="Menu/CenterContainer/VBoxContainer/MarginContainerSave"]
+margin_top = 10.0
+margin_right = 190.0
+margin_bottom = 56.0
+text = "SAVE"
+
+[node name="MarginContainerQuit" type="MarginContainer" parent="Menu/CenterContainer/VBoxContainer"]
+margin_top = 291.0
+margin_right = 190.0
+margin_bottom = 357.0
+
+[node name="ButtonQuit" type="Button" parent="Menu/CenterContainer/VBoxContainer/MarginContainerQuit"]
+margin_top = 10.0
+margin_right = 190.0
+margin_bottom = 56.0
+text = "QUIT"
+
+[node name="PauseButton" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="PauseButton"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -105.0
+margin_bottom = 46.0
+text = "PAUSE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionsMenu" parent="." instance=ExtResource( 4 )]
+layer = 2
+
+[connection signal="pressed" from="Menu/CenterContainer/VBoxContainer/MarginContainerResume/ButtonResume" to="." method="_on_ButtonResume_pressed"]
+[connection signal="pressed" from="Menu/CenterContainer/VBoxContainer/MarginContainerOptions/ButtonOptions" to="." method="_on_ButtonOptions_pressed"]
+[connection signal="pressed" from="Menu/CenterContainer/VBoxContainer/MarginContainerSave/ButtonSave" to="." method="_on_ButtonSave_pressed"]
+[connection signal="pressed" from="Menu/CenterContainer/VBoxContainer/MarginContainerQuit/ButtonQuit" to="." method="_on_ButtonQuit_pressed"]
+[connection signal="pressed" from="PauseButton/Button" to="." method="_on_Button_pressed"]

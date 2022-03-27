@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.wren_importer"
+type="Resource"
+path="res://.import/Kitchen - Ingredients.wren-22f9502dcb64d027b26e82138512d161.tres"
+
+[deps]
+
+source_file="res://res/scripts/Kitchen - Ingredients.wren"
+dest_files=[ "res://.import/Kitchen - Ingredients.wren-22f9502dcb64d027b26e82138512d161.tres" ]
+
+[params]
+

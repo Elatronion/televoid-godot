@@ -1,0 +1,343 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://BowlingUI.theme" type="Theme" id=1]
+[ext_resource path="res://scenes/prefabs/Bowling/Monitor/BowlingUI.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[node name="BowlingUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HelloPanel" type="Panel" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="HelloPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HelloPanel/CenterContainer"]
+margin_top = 279.0
+margin_right = 1520.0
+margin_bottom = 440.0
+text = "Hello, World!"
+align = 1
+valign = 1
+
+[node name="TestPanel" type="Panel" parent="."]
+visible = false
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 1216.0
+margin_bottom = 656.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TestPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TestPanel/VBoxContainer"]
+margin_right = 1152.0
+margin_bottom = 145.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonL" type="Button" parent="TestPanel/VBoxContainer/HBoxContainer"]
+margin_right = 381.0
+margin_bottom = 145.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Top Left"
+
+[node name="ButtonR" type="Button" parent="TestPanel/VBoxContainer/HBoxContainer"]
+margin_left = 385.0
+margin_right = 766.0
+margin_bottom = 145.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Top Center"
+
+[node name="ButtonR2" type="Button" parent="TestPanel/VBoxContainer/HBoxContainer"]
+margin_left = 770.0
+margin_right = 1152.0
+margin_bottom = 145.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Top Right"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TestPanel/VBoxContainer"]
+margin_top = 149.0
+margin_right = 1152.0
+margin_bottom = 294.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonL" type="Button" parent="TestPanel/VBoxContainer/HBoxContainer2"]
+margin_right = 574.0
+margin_bottom = 145.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Bottom Left"
+
+[node name="ButtonR" type="Button" parent="TestPanel/VBoxContainer/HBoxContainer2"]
+margin_left = 578.0
+margin_right = 1152.0
+margin_bottom = 145.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Bottom Right"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="TestPanel/VBoxContainer"]
+margin_top = 298.0
+margin_right = 1152.0
+margin_bottom = 443.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonL" type="Button" parent="TestPanel/VBoxContainer/HBoxContainer3"]
+margin_right = 381.0
+margin_bottom = 145.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Bottom Left"
+
+[node name="ButtonR" type="Button" parent="TestPanel/VBoxContainer/HBoxContainer3"]
+margin_left = 385.0
+margin_right = 766.0
+margin_bottom = 145.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Bottom Right"
+
+[node name="ButtonR2" type="Button" parent="TestPanel/VBoxContainer/HBoxContainer3"]
+margin_left = 770.0
+margin_right = 1152.0
+margin_bottom = 145.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Bottom Right"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="TestPanel/VBoxContainer"]
+margin_top = 447.0
+margin_right = 1152.0
+margin_bottom = 592.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonL" type="Button" parent="TestPanel/VBoxContainer/HBoxContainer4"]
+margin_right = 1152.0
+margin_bottom = 145.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Bottom Left"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 32
+custom_constants/margin_top = 32
+custom_constants/margin_left = 32
+custom_constants/margin_bottom = 32
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = -20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TopPanel" type="Panel" parent="Panel/VBoxContainer"]
+margin_right = 362.0
+margin_bottom = 370.0
+rect_min_size = Vector2( 362, 362 )
+size_flags_horizontal = 0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/TopPanel"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/TopPanel/CenterContainer"]
+margin_left = 114.0
+margin_top = 104.0
+margin_right = 247.0
+margin_bottom = 265.0
+text = "?"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/TopPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = -20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TopHBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/TopPanel/VBoxContainer"]
+margin_right = 362.0
+margin_bottom = 195.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = -20
+
+[node name="LeftPanel" type="Panel" parent="Panel/VBoxContainer/TopPanel/VBoxContainer/TopHBoxContainer"]
+margin_right = 201.0
+margin_bottom = 195.0
+rect_min_size = Vector2( 181, 181 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/TopPanel/VBoxContainer/TopHBoxContainer/LeftPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/TopPanel/VBoxContainer/TopHBoxContainer/LeftPanel/CenterContainer"]
+margin_left = 34.0
+margin_top = 17.0
+margin_right = 167.0
+margin_bottom = 178.0
+text = "7"
+
+[node name="RightPanel" type="Panel" parent="Panel/VBoxContainer/TopPanel/VBoxContainer/TopHBoxContainer"]
+margin_left = 181.0
+margin_right = 362.0
+margin_bottom = 195.0
+rect_min_size = Vector2( 181, 181 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/TopPanel/VBoxContainer/TopHBoxContainer/RightPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/TopPanel/VBoxContainer/TopHBoxContainer/RightPanel/CenterContainer"]
+margin_left = 14.0
+margin_top = 17.0
+margin_right = 166.0
+margin_bottom = 178.0
+text = "x"
+
+[node name="BottomHBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer/TopPanel/VBoxContainer"]
+margin_top = 175.0
+margin_right = 362.0
+margin_bottom = 370.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = -20
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/TopPanel/VBoxContainer/BottomHBoxContainer2"]
+margin_right = 362.0
+margin_bottom = 195.0
+rect_min_size = Vector2( 181, 181 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/TopPanel/VBoxContainer/BottomHBoxContainer2/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/TopPanel/VBoxContainer/BottomHBoxContainer2/Panel/CenterContainer"]
+margin_left = 48.0
+margin_top = 17.0
+margin_right = 314.0
+margin_bottom = 178.0
+text = "78"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BottomPanel" type="Panel" parent="Panel/VBoxContainer"]
+margin_top = 350.0
+margin_right = 1280.0
+margin_bottom = 720.0
+rect_min_size = Vector2( 1216, 362 )
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer/BottomPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/BottomPanel/CenterContainer"]
+margin_left = 174.0
+margin_top = 104.0
+margin_right = 1105.0
+margin_bottom = 265.0
+text = "FRAME: 5"

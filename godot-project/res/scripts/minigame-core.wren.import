@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.wren_importer"
+type="Resource"
+path="res://.import/minigame-core.wren-5cd3489ef6c4d33c408e2fa2674fa4d1.tres"
+
+[deps]
+
+source_file="res://res/scripts/minigame-core.wren"
+dest_files=[ "res://.import/minigame-core.wren-5cd3489ef6c4d33c408e2fa2674fa4d1.tres" ]
+
+[params]
+

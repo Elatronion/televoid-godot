@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.wren_importer"
+type="Resource"
+path="res://.import/HUB - Sam.wren-f3256577d32f75f9c2e32a609eb67015.tres"
+
+[deps]
+
+source_file="res://res/scripts/HUB - Sam.wren"
+dest_files=[ "res://.import/HUB - Sam.wren-f3256577d32f75f9c2e32a609eb67015.tres" ]
+
+[params]
+

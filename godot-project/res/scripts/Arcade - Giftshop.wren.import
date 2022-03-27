@@ -1,0 +1,13 @@
+[remap]
+
+importer="elatronion.wren_importer"
+type="Resource"
+path="res://.import/Arcade - Giftshop.wren-1b366ae5ae3ebcdd309c0757c650ef99.tres"
+
+[deps]
+
+source_file="res://res/scripts/Arcade - Giftshop.wren"
+dest_files=[ "res://.import/Arcade - Giftshop.wren-1b366ae5ae3ebcdd309c0757c650ef99.tres" ]
+
+[params]
+
